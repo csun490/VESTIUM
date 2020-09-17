@@ -8,7 +8,9 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    @IBOutlet weak var myImage: UIImageView!
     
     let transiton = SlideInTransition()
 
@@ -16,7 +18,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+   
     @IBAction func didTapMenu(_ sender: UIBarButtonItem) {
        guard let menuViewController = storyboard?.instantiateViewController(withIdentifier:"MenuViewController") as?
         MenuViewController else {return}
@@ -26,6 +28,36 @@ class HomeViewController: UIViewController {
         menuViewController.modalPresentationStyle = .overCurrentContext
         menuViewController.transitioningDelegate = self
         present(menuViewController, animated: true)
+    }
+    
+    
+    @IBAction func cameraButton(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let imagePicker = UIImagePickerController()
+               imagePicker.delegate = self
+               imagePicker.sourceType = .camera;
+               imagePicker.allowsEditing = true
+               present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    
+    @IBAction func libraryButton(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary;
+            imagePicker.allowsEditing = true
+            present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            myImage.image = image
+        }
+        dismiss(animated: true, completion: nil)
     }
     
 }
