@@ -2,10 +2,11 @@
 //  ViewController.swift
 //  SlideInTransition
 //
-//  Created by Murat Bekgi on 9/15/20.
-//  Copyright © 2020 Murat Bekgi. All rights reserved.
+//  Created by CSUN-Vestium on 9/15/20.
+//  Copyright © 2020 CSUN-Vestium. All rights reserved.
 //
 
+import SwiftUI
 import UIKit
 
 class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -13,10 +14,11 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var myImage: UIImageView!
     
     let transiton = SlideInTransition()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // Do any additionl setup after loading the view.
     }
    
     @IBAction func didTapMenu(_ sender: UIBarButtonItem) {
@@ -72,4 +74,6 @@ extension HomeViewController: UIViewControllerTransitioningDelegate {
         transiton.isPresenting = false
         return transiton
     }
+    
+
 }

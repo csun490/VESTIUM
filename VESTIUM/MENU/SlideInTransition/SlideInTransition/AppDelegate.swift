@@ -2,11 +2,12 @@
 //  AppDelegate.swift
 //  SlideInTransition
 //
-//  Created by Murat Bekgi on 9/15/20.
-//  Copyright © 2020 Murat Bekgi. All rights reserved.
+//  Created by CSUN-Vestium on 9/15/20.
+//  Copyright © 2020 CSUN-Vestium. All rights reserved.
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        FirebaseApp.configure()
         return true
     }
 

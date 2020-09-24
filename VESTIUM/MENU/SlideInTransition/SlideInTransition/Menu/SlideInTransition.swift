@@ -2,8 +2,8 @@
 //  SlideInTransition.swift
 //  SlideInTransition
 //
-//  Created by Murat Bekgi on 9/15/20.
-//  Copyright © 2020 Murat Bekgi. All rights reserved.
+//  Created by CSUN-Vestium on 9/15/20.
+//  Copyright © 2020 CSUN-Vestium. All rights reserved.
 //
 
 import UIKit
