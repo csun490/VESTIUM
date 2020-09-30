@@ -16,6 +16,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     let transiton = SlideInTransition()
     
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additionl setup after loading the view.
@@ -32,7 +33,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         present(menuViewController, animated: true)
     }
     
-    
+    // camera button
     @IBAction func cameraButton(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let imagePicker = UIImagePickerController()
@@ -43,7 +44,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
     }
     
-    
+    // photo library button
     @IBAction func libraryButton(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let imagePicker = UIImagePickerController()
@@ -54,13 +55,14 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
     }
     
-    
+    // accessing photo library
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             myImage.image = image
         }
         dismiss(animated: true, completion: nil)
     }
+ 
     
 }
 
