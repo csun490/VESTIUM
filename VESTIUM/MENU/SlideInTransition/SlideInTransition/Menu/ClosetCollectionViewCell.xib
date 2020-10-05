@@ -30,10 +30,7 @@
                 <constraint firstItem="jBU-xq-GqC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="v6H-UE-yNk"/>
             </constraints>
             <size key="customSize" width="353" height="418"/>
-            <connections>
-                <outlet property="imageView" destination="jBU-xq-GqC" id="xqY-H7-RCg"/>
-            </connections>
-            <point key="canvasLocation" x="137" y="222"/>
+            <point key="canvasLocation" x="136.95652173913044" y="221.65178571428569"/>
         </collectionViewCell>
     </objects>
 </document>
