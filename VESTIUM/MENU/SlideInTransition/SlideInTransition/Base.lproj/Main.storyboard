@@ -447,10 +447,10 @@
             </objects>
             <point key="canvasLocation" x="-39" y="4169"/>
         </scene>
-        <!--View Controller-->
+        <!--Favorites View Controller-->
         <scene sceneID="pga-9k-xHY">
             <objects>
-                <viewController id="Gdt-C2-bbt" sceneMemberID="viewController">
+                <viewController id="Gdt-C2-bbt" customClass="FavoritesViewController" customModule="SlideInTransition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BBH-7S-zma">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -469,7 +469,18 @@
                             <constraint firstItem="MKR-hV-Hky" firstAttribute="centerY" secondItem="BBH-7S-zma" secondAttribute="centerY" id="wHE-1x-qjl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="hxk-fH-sJO"/>
+                    <navigationItem key="navigationItem" id="hxk-fH-sJO">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="NTv-xQ-FBZ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Siy-EK-y4F">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Photo Library"/>
+                                <connections>
+                                    <action selector="photoLibraryButton:" destination="Gdt-C2-bbt" eventType="touchUpInside" id="Aw9-Uk-3GI"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YFL-5h-gHx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -12,7 +12,7 @@ import FirebaseStorage
 class ClosetViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
    
     @IBOutlet var imageView: UIImageView!
-    @IBOutlet var collectionView: UICollectionView!
+  //  @IBOutlet var collectionView: UICollectionView!
     
     private let storage = Storage.storage().reference()
     
