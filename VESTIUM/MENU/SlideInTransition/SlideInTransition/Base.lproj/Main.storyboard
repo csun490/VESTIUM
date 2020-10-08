@@ -20,7 +20,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0D-67-OoT">
                                 <rect key="frame" x="95" y="718" width="224" height="34"/>
                                 <state key="normal" title="camera">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <connections>
                                     <action selector="cameraButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NXg-xg-4uB"/>
@@ -29,7 +29,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2v-Kb-HmT">
                                 <rect key="frame" x="95" y="784" width="224" height="34"/>
                                 <state key="normal" title="library">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <connections>
                                     <action selector="libraryButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JaF-vr-Qnz"/>
@@ -516,6 +516,9 @@
         </systemColor>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
