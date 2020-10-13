@@ -76,9 +76,11 @@ class ClosetViewController: UIViewController, UIImagePickerControllerDelegate, U
             return
         }
         
+        let imageName = UUID().uuidString
+        print(imageName)
         
         // reference of url = storage.child("images/file.png")
-        storage.child("images/file.png").putData(imageData, metadata: nil, completion: {_, error in
+        storage.child(imageName).putData(imageData, metadata: nil, completion: {_, error in
             guard error == nil else {
                 print("Failed to upload")
                 return

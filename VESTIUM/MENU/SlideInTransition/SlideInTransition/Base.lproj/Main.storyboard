@@ -368,7 +368,10 @@
                         <viewLayoutGuide key="safeArea" id="hBW-2R-E5e"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Closet" id="9W2-im-Zua"/>
+                    <tabBarItem key="tabBarItem" title="Closet" id="9W2-im-Zua">
+                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="Mze-ZF-VeV">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="nHQ-N7-VB4">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="yVe-2f-lXU">
@@ -431,7 +434,10 @@
                             <outlet property="delegate" destination="utm-Pa-PTf" id="eBH-VY-77r"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Library" id="Vwy-sm-UIQ"/>
+                    <tabBarItem key="tabBarItem" title="Library" id="Vwy-sm-UIQ">
+                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
+                    </tabBarItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vJJ-BR-jxH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
