@@ -359,7 +359,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uxU-dz-kxB">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uxU-dz-kxB">
                                 <rect key="frame" x="20" y="88" width="374" height="279"/>
                             </imageView>
                         </subviews>
@@ -368,6 +368,7 @@
                         <constraints>
                             <constraint firstItem="hBW-2R-E5e" firstAttribute="trailing" secondItem="uxU-dz-kxB" secondAttribute="trailing" constant="20" id="5pw-Vw-0Fx"/>
                             <constraint firstItem="uxU-dz-kxB" firstAttribute="top" secondItem="hBW-2R-E5e" secondAttribute="top" id="GEP-nP-ghG"/>
+                            <constraint firstItem="hBW-2R-E5e" firstAttribute="bottom" secondItem="uxU-dz-kxB" secondAttribute="bottom" constant="495" id="VOy-vG-v2L"/>
                             <constraint firstItem="uxU-dz-kxB" firstAttribute="leading" secondItem="hBW-2R-E5e" secondAttribute="leading" constant="20" id="jAv-Oy-oEb"/>
                         </constraints>
                     </view>
@@ -391,27 +392,15 @@
             </objects>
             <point key="canvasLocation" x="-39.130434782608695" y="1577.6785714285713"/>
         </scene>
-        <!--View Controller-->
+        <!--Calendar View Controller-->
         <scene sceneID="8ft-Fg-mE7">
             <objects>
-                <viewController id="bLf-Hd-Jez" sceneMemberID="viewController">
+                <viewController id="bLf-Hd-Jez" customClass="CalendarViewController" customModule="SlideInTransition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eNN-eX-zEi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calendar Tab" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpG-MW-YaY">
-                                <rect key="frame" x="156.66666666666666" y="437.66666666666669" width="100.99999999999997" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="sof-Gt-z4s"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="qpG-MW-YaY" firstAttribute="centerY" secondItem="eNN-eX-zEi" secondAttribute="centerY" id="E1p-mk-XNh"/>
-                            <constraint firstItem="qpG-MW-YaY" firstAttribute="centerX" secondItem="eNN-eX-zEi" secondAttribute="centerX" id="Ymo-7R-12T"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rjV-Sh-Prk"/>
                 </viewController>

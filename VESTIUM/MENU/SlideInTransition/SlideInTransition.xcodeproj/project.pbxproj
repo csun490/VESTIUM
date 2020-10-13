@@ -21,6 +21,7 @@
 		AF3B85FA25118CEF0040FA7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF3B85F825118CEF0040FA7E /* LaunchScreen.storyboard */; };
 		AF3B860225118E340040FA7E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3B860125118E340040FA7E /* MenuViewController.swift */; };
 		AF3B8604251198770040FA7E /* SlideInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3B8603251198770040FA7E /* SlideInTransition.swift */; };
+		AFB92CC925361B8C003F9DA3 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB92CC825361B8C003F9DA3 /* CalendarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		AF3B85FB25118CEF0040FA7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF3B860125118E340040FA7E /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		AF3B8603251198770040FA7E /* SlideInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInTransition.swift; sourceTree = "<group>"; };
+		AFB92CC825361B8C003F9DA3 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				AF3B85F125118CE80040FA7E /* HomeViewController.swift */,
+				AFB92CC825361B8C003F9DA3 /* CalendarViewController.swift */,
 				39D9EB43251D4434005FED69 /* ClosestViewController.swift */,
 				AF3B860125118E340040FA7E /* MenuViewController.swift */,
 				39F4E7D8252CEC65000E45D0 /* FavoritesViewController.swift */,
@@ -272,6 +275,7 @@
 				AF3B85EE25118CE80040FA7E /* AppDelegate.swift in Sources */,
 				398F08972523F66A00FA143A /* ClosetCollectionViewCell.swift in Sources */,
 				AF3B85F025118CE80040FA7E /* SceneDelegate.swift in Sources */,
+				AFB92CC925361B8C003F9DA3 /* CalendarViewController.swift in Sources */,
 				AF3B860225118E340040FA7E /* MenuViewController.swift in Sources */,
 				AF3B8604251198770040FA7E /* SlideInTransition.swift in Sources */,
 			);
