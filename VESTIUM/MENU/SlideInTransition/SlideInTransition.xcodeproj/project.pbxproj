@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		397B13DC253581190070B046 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397B13DB253581190070B046 /* LibraryViewController.swift */; };
 		398F08972523F66A00FA143A /* ClosetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398F08952523F66A00FA143A /* ClosetCollectionViewCell.swift */; };
 		398F08982523F66A00FA143A /* ClosetCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 398F08962523F66A00FA143A /* ClosetCollectionViewCell.xib */; };
 		39AAB17B251D307000F6BDC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39AAB17A251D307000F6BDC4 /* GoogleService-Info.plist */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		2823EB27D08DDE789CDFAC9C /* Pods-SlideInTransition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideInTransition.debug.xcconfig"; path = "Target Support Files/Pods-SlideInTransition/Pods-SlideInTransition.debug.xcconfig"; sourceTree = "<group>"; };
+		397B13DB253581190070B046 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		398F08952523F66A00FA143A /* ClosetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetCollectionViewCell.swift; sourceTree = "<group>"; };
 		398F08962523F66A00FA143A /* ClosetCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClosetCollectionViewCell.xib; sourceTree = "<group>"; };
 		39AAB17A251D307000F6BDC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				AF3B85F125118CE80040FA7E /* HomeViewController.swift */,
+				397B13DB253581190070B046 /* LibraryViewController.swift */,
 				39D9EB43251D4434005FED69 /* ClosestViewController.swift */,
 				AF3B860125118E340040FA7E /* MenuViewController.swift */,
 				39F4E7D8252CEC65000E45D0 /* FavoritesViewController.swift */,
@@ -273,6 +276,7 @@
 				398F08972523F66A00FA143A /* ClosetCollectionViewCell.swift in Sources */,
 				AF3B85F025118CE80040FA7E /* SceneDelegate.swift in Sources */,
 				AF3B860225118E340040FA7E /* MenuViewController.swift in Sources */,
+				397B13DC253581190070B046 /* LibraryViewController.swift in Sources */,
 				AF3B8604251198770040FA7E /* SlideInTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

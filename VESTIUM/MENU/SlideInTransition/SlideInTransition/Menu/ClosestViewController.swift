@@ -76,6 +76,7 @@ class ClosetViewController: UIViewController, UIImagePickerControllerDelegate, U
             return
         }
         
+        
         // reference of url = storage.child("images/file.png")
         storage.child("images/file.png").putData(imageData, metadata: nil, completion: {_, error in
             guard error == nil else {
