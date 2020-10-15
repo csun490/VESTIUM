@@ -12,6 +12,7 @@
 		398F08982523F66A00FA143A /* ClosetCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 398F08962523F66A00FA143A /* ClosetCollectionViewCell.xib */; };
 		39AAB17B251D307000F6BDC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39AAB17A251D307000F6BDC4 /* GoogleService-Info.plist */; };
 		39D9EB44251D4434005FED69 /* ClosestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D9EB43251D4434005FED69 /* ClosestViewController.swift */; };
+		39DCDC422538CA95005C6E7B /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DCDC412538CA95005C6E7B /* CalendarViewController.swift */; };
 		39F4E7D9252CEC65000E45D0 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F4E7D8252CEC65000E45D0 /* FavoritesViewController.swift */; };
 		8579E294DCE84465A0265828 /* Pods_SlideInTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B650606163D3DD6BF1A36C2 /* Pods_SlideInTransition.framework */; };
 		AF3B85EE25118CE80040FA7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3B85ED25118CE80040FA7E /* AppDelegate.swift */; };
@@ -31,6 +32,7 @@
 		398F08962523F66A00FA143A /* ClosetCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClosetCollectionViewCell.xib; sourceTree = "<group>"; };
 		39AAB17A251D307000F6BDC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		39D9EB43251D4434005FED69 /* ClosestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosestViewController.swift; sourceTree = "<group>"; };
+		39DCDC412538CA95005C6E7B /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		39F4E7D8252CEC65000E45D0 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		5B650606163D3DD6BF1A36C2 /* Pods_SlideInTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlideInTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C293503DA87140267F19BDD /* Pods-SlideInTransition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideInTransition.release.xcconfig"; path = "Target Support Files/Pods-SlideInTransition/Pods-SlideInTransition.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				AF3B860125118E340040FA7E /* MenuViewController.swift */,
 				39F4E7D8252CEC65000E45D0 /* FavoritesViewController.swift */,
 				AF3B8603251198770040FA7E /* SlideInTransition.swift */,
+				39DCDC412538CA95005C6E7B /* CalendarViewController.swift */,
 				398F08952523F66A00FA143A /* ClosetCollectionViewCell.swift */,
 				398F08962523F66A00FA143A /* ClosetCollectionViewCell.xib */,
 			);
@@ -269,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39DCDC422538CA95005C6E7B /* CalendarViewController.swift in Sources */,
 				39D9EB44251D4434005FED69 /* ClosestViewController.swift in Sources */,
 				AF3B85F225118CE80040FA7E /* HomeViewController.swift in Sources */,
 				39F4E7D9252CEC65000E45D0 /* FavoritesViewController.swift in Sources */,

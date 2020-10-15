@@ -11,7 +11,8 @@ pod 'Firebase/Core'
 pod 'Firebase/Crashlytics'
 pod 'Firebase/Database'
 pod 'Firebase/Storage'
- 
+pod 'FSCalendar'
+
   # Pods for SlideInTransition
 
 end

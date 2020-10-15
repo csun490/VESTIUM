@@ -441,7 +441,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vJJ-BR-jxH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2269.5652173913045" y="1597.7678571428571"/>
+            <point key="canvasLocation" x="2264" y="1586"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7s0-cf-YbD">
@@ -462,27 +462,15 @@
             </objects>
             <point key="canvasLocation" x="533" y="1586"/>
         </scene>
-        <!--View Controller-->
+        <!--Calendar-->
         <scene sceneID="8ft-Fg-mE7">
             <objects>
-                <viewController id="bLf-Hd-Jez" sceneMemberID="viewController">
+                <viewController title="Calendar" id="bLf-Hd-Jez" customClass="CalendarViewController" customModule="SlideInTransition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eNN-eX-zEi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calendar Tab" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpG-MW-YaY">
-                                <rect key="frame" x="156.66666666666666" y="410.66666666666669" width="100.99999999999997" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="sof-Gt-z4s"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="qpG-MW-YaY" firstAttribute="centerY" secondItem="eNN-eX-zEi" secondAttribute="centerY" id="E1p-mk-XNh"/>
-                            <constraint firstItem="qpG-MW-YaY" firstAttribute="centerX" secondItem="eNN-eX-zEi" secondAttribute="centerX" id="Ymo-7R-12T"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rjV-Sh-Prk"/>
                 </viewController>
@@ -490,10 +478,10 @@
             </objects>
             <point key="canvasLocation" x="-39" y="2426"/>
         </scene>
-        <!--View Controller-->
+        <!--Find-->
         <scene sceneID="nIC-ur-HcH">
             <objects>
-                <viewController id="0Zv-cm-JGs" sceneMemberID="viewController">
+                <viewController title="Find" id="0Zv-cm-JGs" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9jD-1u-74t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -516,12 +504,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WSk-lc-fh1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-39" y="4169"/>
+            <point key="canvasLocation" x="-39" y="4149"/>
         </scene>
-        <!--Favorites View Controller-->
+        <!--Favorites-->
         <scene sceneID="pga-9k-xHY">
             <objects>
-                <viewController id="Gdt-C2-bbt" customClass="FavoritesViewController" customModule="SlideInTransition" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Favorites" id="Gdt-C2-bbt" customClass="FavoritesViewController" customModule="SlideInTransition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BBH-7S-zma">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -555,7 +543,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YFL-5h-gHx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-39" y="3309"/>
+            <point key="canvasLocation" x="-39" y="3243"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
