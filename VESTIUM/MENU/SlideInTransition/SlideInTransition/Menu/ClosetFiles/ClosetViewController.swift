@@ -47,48 +47,43 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         case 0:
             data["cat_name"] = "HEAD"
             data["cat_id"]   = "\(index)"
-            data["cat_description"] = "birds pics shot in the Forest"
-            data["cat_items"] = ["Image_0","Image_1","Image_2","Image_3","Image_4"]
+            data["cat_description"] = "HEAD"
+            data["cat_items"] = ["beanie","glasses","egg_hat","fleece_hat","brown_hat", "cap"]
         case 1:
             data["cat_name"] = "TOP-INNER"
             data["cat_id"]   = "\(index)"
-            data["cat_description"] = "Animals pics shot in the Forest"
-            data["cat_items"] = ["Image_5","Image_6","Image_7","Image_8","Image_9"]
+            data["cat_description"] = "TOP-INNER"
+            data["cat_items"] = ["black_shirt", "muscle_tank", "green_tank", "white_shirt", "black_tank", "shirt_pack"]
         case 2:
             data["cat_name"] = "TOP-MID"
             data["cat_id"]   = "\(index)"
-            data["cat_description"] = "Fishes pics shot in the Lake"
-            data["cat_items"] = ["Image_10","Image_11","Image_12","Image_13","Image_14"]
+            data["cat_description"] = "TOP-MID"
+            data["cat_items"] = ["black_tur","red_fl","green_fl","green_but","tan_sweater", "brown_but"]
         case 3:
             data["cat_name"] = "TOP-OUTER"
             data["cat_id"]   = "\(index)"
-            data["cat_description"] = "Plants pics shot in the Forest"
-            data["cat_items"] = ["Image_15","Image_16","Image_17","Image_18","Image_19"]
+            data["cat_description"] = "TOP-OUTER"
+            data["cat_items"] = ["black_jac", "brown_jac", "green_jac", "wool_coat", "leather_jac", "tan_jac"]
         case 4:
-            data["cat_name"] = "TOP-BOTTOM"
-            data["cat_id"]   = "\(index)"
-            data["cat_description"] = "Trees pics shot in the Forest"
-            data["cat_items"] = ["Image_20","Image_21","Image_22","Image_23","Image_24"]
-        case 5:
             data["cat_name"] = "BOTTOM"
             data["cat_id"]   = "\(index)"
-            data["cat_description"] = "Trees pics shot in the Forest"
-            data["cat_items"] = ["Image_20","Image_21","Image_22","Image_23","Image_24"]
-        case 6:
+            data["cat_description"] = "BOTTOM"
+            data["cat_items"] = ["black_jeans", "dark_jeans", "sweats", "camo_cargo", "light_jeans", "green_cargo"]
+        case 5:
             data["cat_name"] = "FEET"
             data["cat_id"]   = "\(index)"
-            data["cat_description"] = "Trees pics shot in the Forest"
-            data["cat_items"] = ["Image_20","Image_21","Image_22","Image_23","Image_24"]
-        case 7:
+            data["cat_description"] = "FEET"
+            data["cat_items"] = ["black_shoes", "brown_shoes", "grey_shoes", "red_blue", "white_shoes", "tan_boots"]
+        case 6:
             data["cat_name"] = "OTHER"
             data["cat_id"]   = "\(index)"
-            data["cat_description"] = "Trees pics shot in the Forest"
-            data["cat_items"] = ["Image_20","Image_21","Image_22","Image_23","Image_24"]
+            data["cat_description"] = "OTHER"
+            data["cat_items"] = ["belt_bag", "black_bag", "green_back", "grey_back", "sport_set", "tan_bag"]
         default:
-            data["cat_name"] = "RandomPics"
+            data["cat_name"] = "..."
             data["cat_id"]   = "\(index)"
-            data["cat_description"] = "Random pics"
-            data["cat_items"] = ["Image_2","Image_7","Image_12","Image_16","Image_5"]
+            data["cat_description"] = "..."
+            data["cat_items"] = []
         }
         return data
     }
