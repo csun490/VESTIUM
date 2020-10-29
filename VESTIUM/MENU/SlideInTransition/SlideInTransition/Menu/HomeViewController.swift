@@ -54,6 +54,16 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             present(imagePicker, animated: true, completion: nil)
         }
     }
+    // share button
+    @IBAction func shareButton(_ sender: Any) {
+          
+          var items = [Any]()
+              items = [myImage.image!]
+          let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+          present(ac, animated: true)
+                
+      }
+      
     
     // accessing photo library
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
