@@ -22,6 +22,7 @@
 		AF3B860225118E340040FA7E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3B860125118E340040FA7E /* MenuViewController.swift */; };
 		AF3B8604251198770040FA7E /* SlideInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3B8603251198770040FA7E /* SlideInTransition.swift */; };
 		AFB92CC925361B8C003F9DA3 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB92CC825361B8C003F9DA3 /* CalendarViewController.swift */; };
+		B7F6C50B254C8CCF00293511 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F6C50A254C8CCF00293511 /* StartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		AF3B860125118E340040FA7E /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		AF3B8603251198770040FA7E /* SlideInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInTransition.swift; sourceTree = "<group>"; };
 		AFB92CC825361B8C003F9DA3 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		B7F6C50A254C8CCF00293511 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				AF3B8603251198770040FA7E /* SlideInTransition.swift */,
 				398F08952523F66A00FA143A /* ClosetCollectionViewCell.swift */,
 				398F08962523F66A00FA143A /* ClosetCollectionViewCell.xib */,
+				B7F6C50A254C8CCF00293511 /* StartViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				39F4E7D9252CEC65000E45D0 /* FavoritesViewController.swift in Sources */,
 				AF3B85EE25118CE80040FA7E /* AppDelegate.swift in Sources */,
 				398F08972523F66A00FA143A /* ClosetCollectionViewCell.swift in Sources */,
+				B7F6C50B254C8CCF00293511 /* StartViewController.swift in Sources */,
 				AF3B85F025118CE80040FA7E /* SceneDelegate.swift in Sources */,
 				AFB92CC925361B8C003F9DA3 /* CalendarViewController.swift in Sources */,
 				AF3B860225118E340040FA7E /* MenuViewController.swift in Sources */,
@@ -425,14 +429,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 73NKW9B5KK;
+				DEVELOPMENT_TEAM = 8N8228S873;
 				INFOPLIST_FILE = SlideInTransition/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "csun-vestium00";
+				PRODUCT_BUNDLE_IDENTIFIER = "csun-vestium88";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -445,14 +449,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 73NKW9B5KK;
+				DEVELOPMENT_TEAM = 8N8228S873;
 				INFOPLIST_FILE = SlideInTransition/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "csun-vestium00";
+				PRODUCT_BUNDLE_IDENTIFIER = "csun-vestium88";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
