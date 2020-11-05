@@ -36,7 +36,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beanie" translatesAutoresizingMaskIntoConstraints="NO" id="kZk-ej-Kl6">
-                                <rect key="frame" x="20" y="140" width="375" height="398"/>
+                                <rect key="frame" x="20" y="44" width="375" height="398"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="398" id="CK6-jI-5ED"/>
                                 </constraints>
@@ -96,6 +96,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-39.130434782608695" y="738.61607142857144"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="LPs-rx-lFH">
+            <objects>
+                <viewController id="T3b-pW-ju2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7uW-cG-d2n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ckX-OS-vBA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vCH-bp-ZhL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1012" y="726"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="qAk-ZP-co3">
@@ -384,7 +399,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uxU-dz-kxB">
-                                <rect key="frame" x="20" y="88" width="374" height="230"/>
+                                <rect key="frame" x="20" y="44" width="374" height="274"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hBW-2R-E5e"/>
@@ -501,11 +516,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="naQ-GH-EbX"/>
         <segue reference="wyl-9O-ojV"/>
-        <segue reference="03C-Lm-oIx"/>
-        <segue reference="NGb-f7-Qgb"/>
-        <segue reference="W0G-ze-AMw"/>
-        <segue reference="9oJ-uL-hgL"/>
+        <segue reference="bvB-M7-5g7"/>
+        <segue reference="k61-hv-9At"/>
+        <segue reference="LBe-fc-DIg"/>
+        <segue reference="zUF-JZ-wlB"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
