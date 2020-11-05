@@ -499,57 +499,56 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ka7-ja-fUL">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Los Angeles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYp-bP-9Ig">
-                                        <rect key="frame" x="151.66666666666666" y="408" width="110.99999999999997" height="28"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bef-xX-kKw">
-                                        <rect key="frame" x="174" y="444" width="66" height="28"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunny" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qm-fZ-sFC">
-                                        <rect key="frame" x="188" y="616" width="38.333333333333343" height="28"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="28" id="Qb1-ui-WAi"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOo-8D-tIG">
-                                        <rect key="frame" x="179" y="639" width="56" height="69"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="50"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="℉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzn-xV-0KA">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Eix-n8-MBJ">
+                                        <rect key="frame" x="132" y="444.66666666666663" width="150" height="288"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Sunday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bef-xX-kKw">
+                                                <rect key="frame" x="42" y="0.0" width="66" height="27.333333333333332"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="01d" translatesAutoresizingMaskIntoConstraints="NO" id="HlK-pO-8eT">
+                                                <rect key="frame" x="0.0" y="32.333333333333371" width="150" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="i7b-dQ-Aro"/>
+                                                    <constraint firstAttribute="height" constant="150" id="ylo-bS-qvh"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunny" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qm-fZ-sFC">
+                                                <rect key="frame" x="56" y="187.33333333333337" width="38.333333333333343" height="28"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="28" id="Qb1-ui-WAi"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOo-8D-tIG">
+                                                <rect key="frame" x="47.333333333333343" y="220.33333333333337" width="55.666666666666657" height="67.666666666666686"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="50"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="℉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzn-xV-0KA">
                                         <rect key="frame" x="243" y="675" width="38.333333333333343" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="01d" translatesAutoresizingMaskIntoConstraints="NO" id="HlK-pO-8eT">
-                                        <rect key="frame" x="142" y="483" width="131" height="122"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="i7b-dQ-Aro"/>
-                                            <constraint firstAttribute="height" constant="150" id="ylo-bS-qvh"/>
-                                        </constraints>
-                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Los Angeles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYp-bP-9Ig">
+                                        <rect key="frame" x="141" y="408" width="110.33333333333331" height="27.333333333333314"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" name="darkAndWhite"/>
                                 <constraints>
+                                    <constraint firstItem="HlK-pO-8eT" firstAttribute="centerX" secondItem="FYp-bP-9Ig" secondAttribute="centerX" id="2Lq-Bo-cRX"/>
                                     <constraint firstAttribute="bottom" secondItem="FYp-bP-9Ig" secondAttribute="bottom" constant="338" id="9hg-yJ-kiG"/>
-                                    <constraint firstItem="5qm-fZ-sFC" firstAttribute="centerX" secondItem="ka7-ja-fUL" secondAttribute="centerX" id="CGA-Sl-LlR"/>
-                                    <constraint firstItem="oOo-8D-tIG" firstAttribute="firstBaseline" secondItem="bzn-xV-0KA" secondAttribute="firstBaseline" id="F7c-cX-a0L"/>
                                     <constraint firstItem="FYp-bP-9Ig" firstAttribute="centerX" secondItem="ka7-ja-fUL" secondAttribute="centerX" id="FSh-Xl-z5W"/>
-                                    <constraint firstItem="HlK-pO-8eT" firstAttribute="centerX" secondItem="ka7-ja-fUL" secondAttribute="centerX" id="GTm-xf-l6r"/>
-                                    <constraint firstAttribute="bottom" secondItem="5qm-fZ-sFC" secondAttribute="bottom" constant="130" id="P1K-ht-0U7"/>
-                                    <constraint firstItem="bef-xX-kKw" firstAttribute="centerX" secondItem="ka7-ja-fUL" secondAttribute="centerX" id="VtZ-hi-CdX"/>
-                                    <constraint firstItem="HlK-pO-8eT" firstAttribute="centerX" secondItem="ka7-ja-fUL" secondAttribute="centerX" id="biA-oi-WJf"/>
-                                    <constraint firstItem="5qm-fZ-sFC" firstAttribute="top" secondItem="HlK-pO-8eT" secondAttribute="bottom" constant="8" id="dr0-vl-DRX"/>
-                                    <constraint firstItem="5qm-fZ-sFC" firstAttribute="centerX" secondItem="oOo-8D-tIG" secondAttribute="centerX" id="iYo-qd-Mwd"/>
-                                    <constraint firstItem="bef-xX-kKw" firstAttribute="top" secondItem="FYp-bP-9Ig" secondAttribute="bottom" constant="8" id="l0z-iX-LOC"/>
-                                    <constraint firstItem="bzn-xV-0KA" firstAttribute="leading" secondItem="oOo-8D-tIG" secondAttribute="trailing" constant="8" id="qZb-5g-tsf"/>
-                                    <constraint firstItem="oOo-8D-tIG" firstAttribute="top" secondItem="HlK-pO-8eT" secondAttribute="bottom" constant="31" id="sL9-rU-lIt"/>
+                                    <constraint firstItem="Eix-n8-MBJ" firstAttribute="centerX" secondItem="ka7-ja-fUL" secondAttribute="centerX" id="FeU-lQ-Z35"/>
+                                    <constraint firstAttribute="bottom" secondItem="Eix-n8-MBJ" secondAttribute="bottom" constant="41.333333333333258" id="J86-yd-yvR"/>
+                                    <constraint firstItem="Eix-n8-MBJ" firstAttribute="top" secondItem="FYp-bP-9Ig" secondAttribute="bottom" constant="8.6666666666666856" id="bqX-uI-UnZ"/>
                                 </constraints>
                             </view>
                         </subviews>
