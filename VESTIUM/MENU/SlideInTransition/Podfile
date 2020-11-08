@@ -12,6 +12,7 @@ pod 'Firebase/Crashlytics'
 pod 'Firebase/Database'
 pod 'Firebase/Storage'
 pod 'FSCalendar'
+pod 'Firebase/Auth'
 
   # Pods for SlideInTransition
 
