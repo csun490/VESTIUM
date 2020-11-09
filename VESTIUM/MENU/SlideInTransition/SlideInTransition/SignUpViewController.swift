@@ -16,13 +16,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var signUp: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        userNameTextField.delegate = self
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
+        
     }
     
     // dismiss keyboard when 'return' key is pressed
@@ -35,15 +35,22 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
 
-    // sign up button
+    
+    // go to login view
+    @IBAction func goToLoginView(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+        // sign up button
     @IBAction func signUpButton(_ sender: Any) {
         // create new user
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (result, error) in
                    if let _eror = error {
                        // user was not created, error
-                       print(_eror.localizedDescription )
-                   }else{
+                       print(_eror.localizedDescription)
+                   } else {
                        //user registered successfully
                        print(result)
                     
@@ -61,8 +68,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                     // store username and email to database
                     newUserReference.setValue(["username": self.userNameTextField.text!, "email": self.emailTextField.text!])
                     print("location: \(newUserReference.description())")
+                    
                    }
-                }
+        }
     }
     
 }

@@ -13,21 +13,21 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>csun-vestium</string>
+	<string>csun-vestium99</string>
 	<key>PROJECT_ID</key>
 	<string>csun-vestium</string>
 	<key>STORAGE_BUCKET</key>
 	<string>csun-vestium.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:332919625659:ios:c10c7cb72f8d3c2395969e</string>
 	<key>DATABASE_URL</key>
