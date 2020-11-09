@@ -410,6 +410,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signUpButton:" destination="eGN-iQ-n35" eventType="touchUpInside" id="MBh-iS-jVr"/>
+                                    <segue destination="Kns-Eg-a3k" kind="presentation" identifier="signUpToHome" modalPresentationStyle="fullScreen" id="o0t-5P-SUC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hm-Jj-QCr">
@@ -451,7 +452,6 @@
                     <connections>
                         <outlet property="emailTextField" destination="kGb-o6-xSD" id="gyw-v1-rwM"/>
                         <outlet property="passwordTextField" destination="IXl-kn-EUt" id="0nE-dq-adz"/>
-                        <outlet property="signUp" destination="xZU-vR-FtS" id="CBA-nV-yiC"/>
                         <outlet property="userNameTextField" destination="hFe-Pt-S84" id="7ID-dY-dRe"/>
                     </connections>
                 </viewController>
@@ -688,6 +688,10 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logInButton:" destination="dZ5-Wg-Xbl" eventType="touchUpInside" id="HxJ-Se-0CS"/>
+                                    <segue destination="Kns-Eg-a3k" kind="presentation" identifier="loginToHome" modalPresentationStyle="fullScreen" id="fhd-fZ-KSZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qH3-DR-HTc">
                                 <rect key="frame" x="20" y="822" width="374" height="40"/>
@@ -698,7 +702,8 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="0.69792583626760563" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="eGN-iQ-n35" kind="presentation" modalPresentationStyle="fullScreen" id="8Xm-XH-glT"/>
+                                    <action selector="createAccountButton:" destination="dZ5-Wg-Xbl" eventType="touchUpInside" id="phi-84-Ezl"/>
+                                    <segue destination="eGN-iQ-n35" kind="presentation" identifier="createAccount" modalPresentationStyle="fullScreen" id="8Xm-XH-glT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -737,6 +742,7 @@
         <segue reference="03C-Lm-oIx"/>
         <segue reference="k61-hv-9At"/>
         <segue reference="2Gg-II-jjN"/>
+        <segue reference="o0t-5P-SUC"/>
         <segue reference="9oJ-uL-hgL"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LogInViewController: UIViewController, UITextFieldDelegate {
 
@@ -21,6 +22,10 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.delegate = self
     }
     
+    @IBAction func createAccountButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "createAccount", sender: nil )
+    }
+    
     // dismiss keyboard when 'return' key is pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
           textField.resignFirstResponder()
@@ -30,5 +35,21 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     // dismiss keyboard when user taps on view
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    // log in via Firebase
+    @IBAction func logInButton(_ sender: Any) {
+        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (authResult, error) in
+            if let _eror = error {
+                print(_eror.localizedDescription)
+                
+            } else {
+                let userInfo = Auth.auth().currentUser
+                let email = userInfo?.email
+                print(email)
+                self.performSegue(withIdentifier: "loginToHome", sender: nil )
+            
+            }
+        }
     }
 }

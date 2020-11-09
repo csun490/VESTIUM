@@ -16,7 +16,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBOutlet weak var signUp: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +67,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                     // store username and email to database
                     newUserReference.setValue(["username": self.userNameTextField.text!, "email": self.emailTextField.text!])
                     print("location: \(newUserReference.description())")
+                    self.performSegue(withIdentifier: "signUpToHome", sender: nil )
                     
                    }
         }
