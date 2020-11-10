@@ -20,10 +20,22 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // if user is still logged in from previous session, go to home screen
+        let user = Auth.auth().currentUser
+        if user != nil {
+            print("current user:  \(user)")
+            self.performSegue(withIdentifier: "loginToHome", sender: nil)
+        }
     }
     
     @IBAction func createAccountButton(_ sender: Any) {
-        self.performSegue(withIdentifier: "createAccount", sender: nil )
+        self.performSegue(withIdentifier: "createAccount", sender: nil)
     }
     
     // dismiss keyboard when 'return' key is pressed
