@@ -47,7 +47,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                 let userInfo = Auth.auth().currentUser
                 let email = userInfo?.email
                 print(email)
-                self.performSegue(withIdentifier: "loginToHome", sender: nil )
+                //self.performSegue(withIdentifier: "loginToHome", sender: nil )
             
             }
         }

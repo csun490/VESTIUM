@@ -14,6 +14,7 @@ enum MenuType: Int {
     case calendar
     case favorites
     case find
+    case settings
 }
 
 class MenuViewController: UITableViewController {

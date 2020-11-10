@@ -8,14 +8,13 @@
 
 import SwiftUI
 import UIKit
+import FirebaseAuth
 
 class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var myImage: UIImageView!
     
     let transiton = SlideInTransition()
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
