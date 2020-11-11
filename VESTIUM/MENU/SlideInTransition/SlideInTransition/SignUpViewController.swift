@@ -16,6 +16,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var errorMessage: UILabel!
+    @IBOutlet weak var signup_button: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +27,41 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
+        signup_button.isEnabled = false
+        errorMessage.isHidden = true
+        signup_button.setTitleColor(UIColor.red, for: UIControl.State.normal)
+        handleTextField()
+        
     }
     
-    // dismiss keyboard when 'return' key is pressed
+    
+    func handleTextField() {
+        userNameTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControl.Event.editingChanged)
+        emailTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControl.Event.editingChanged)
+        passwordTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControl.Event.editingChanged)
+    }
+    
+    // disables sign up button if text fields are empty
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        guard let username = userNameTextField.text, !username.isEmpty,
+              let email = emailTextField.text, !email.isEmpty,
+              let password = passwordTextField.text, !password.isEmpty else {
+                signup_button.setTitleColor(UIColor.red, for: UIControl.State.normal)
+                signup_button.isEnabled = false
+                return
+        }
+        
+        signup_button.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        signup_button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
+        signup_button.isEnabled = true
+        
+    }
+    
+
+    
+
+    
+        // dismiss keyboard when 'return' key is pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
           textField.resignFirstResponder()
           return true
@@ -45,7 +79,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         dismiss(animated: true, completion: nil)
     }
     
-        // sign up button
+        // creates new user
     @IBAction func signUpButton(_ sender: Any) {
         // create new user
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (result, error) in

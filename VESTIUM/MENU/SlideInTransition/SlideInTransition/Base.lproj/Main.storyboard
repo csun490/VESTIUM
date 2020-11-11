@@ -472,6 +472,13 @@
                                     <action selector="goToLoginView:" destination="eGN-iQ-n35" eventType="touchUpInside" id="8Pk-Gt-YVE"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2K-Fv-pBB">
+                                <rect key="frame" x="20" y="280" width="373" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GSC-cv-ctc"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -498,7 +505,9 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="kGb-o6-xSD" id="gyw-v1-rwM"/>
+                        <outlet property="errorMessage" destination="U2K-Fv-pBB" id="Gnb-go-LxE"/>
                         <outlet property="passwordTextField" destination="IXl-kn-EUt" id="0nE-dq-adz"/>
+                        <outlet property="signup_button" destination="xZU-vR-FtS" id="cni-wK-g6j"/>
                         <outlet property="userNameTextField" destination="hFe-Pt-S84" id="7ID-dY-dRe"/>
                     </connections>
                 </viewController>
@@ -805,6 +814,7 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="zGf-tb-c3u" id="a6A-6z-dPs"/>
+                        <outlet property="login_button" destination="xDT-fz-vwN" id="OzO-dC-DOG"/>
                         <outlet property="passwordTextField" destination="8gW-11-VWi" id="EhC-yX-pnn"/>
                     </connections>
                 </viewController>
