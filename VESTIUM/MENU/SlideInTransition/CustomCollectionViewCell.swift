@@ -29,5 +29,5 @@ class CustomCollectionViewCell: UICollectionViewCell {
         self.cellImageName = name
         self.cellImageView.image = UIImage(named: name)
     }
-
+    
 }

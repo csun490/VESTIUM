@@ -457,7 +457,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signUpButton:" destination="eGN-iQ-n35" eventType="touchUpInside" id="MBh-iS-jVr"/>
-                                    <segue destination="Kns-Eg-a3k" kind="presentation" identifier="signUpToHome" modalPresentationStyle="fullScreen" id="o0t-5P-SUC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hm-Jj-QCr">
@@ -509,6 +508,7 @@
                         <outlet property="passwordTextField" destination="IXl-kn-EUt" id="0nE-dq-adz"/>
                         <outlet property="signup_button" destination="xZU-vR-FtS" id="cni-wK-g6j"/>
                         <outlet property="userNameTextField" destination="hFe-Pt-S84" id="7ID-dY-dRe"/>
+                        <segue destination="Kns-Eg-a3k" kind="presentation" identifier="signUpToHome" modalPresentationStyle="fullScreen" id="wfN-TK-PMi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eg7-SM-83k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -518,8 +518,9 @@
         <!--Navigation Controller-->
         <scene sceneID="BC4-s0-quj">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kns-Eg-a3k" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="Kns-Eg-a3k" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="xY8-CG-mYW"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="vQ1-DJ-xWo">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -776,7 +777,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="logInButton:" destination="dZ5-Wg-Xbl" eventType="touchUpInside" id="HxJ-Se-0CS"/>
-                                    <segue destination="Kns-Eg-a3k" kind="presentation" identifier="loginToHome" modalPresentationStyle="fullScreen" id="fhd-fZ-KSZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qH3-DR-HTc">
@@ -816,6 +816,7 @@
                         <outlet property="emailTextField" destination="zGf-tb-c3u" id="a6A-6z-dPs"/>
                         <outlet property="login_button" destination="xDT-fz-vwN" id="OzO-dC-DOG"/>
                         <outlet property="passwordTextField" destination="8gW-11-VWi" id="EhC-yX-pnn"/>
+                        <segue destination="Kns-Eg-a3k" kind="presentation" identifier="loginToHome" modalPresentationStyle="fullScreen" id="Fb6-xL-KHa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sbh-eH-JiV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -829,7 +830,7 @@
         <segue reference="03C-Lm-oIx"/>
         <segue reference="k61-hv-9At"/>
         <segue reference="2Gg-II-jjN"/>
-        <segue reference="fhd-fZ-KSZ"/>
+        <segue reference="Fb6-xL-KHa"/>
         <segue reference="9oJ-uL-hgL"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

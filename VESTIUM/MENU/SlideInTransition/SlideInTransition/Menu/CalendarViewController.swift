@@ -14,7 +14,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         calendar.delegate = self
-
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -29,6 +29,6 @@ class CalendarViewController: UIViewController,FSCalendarDelegate {
         let string = formatter.string(from: date)
         print("\(string)")
     }
-
-
+    
+    
 }

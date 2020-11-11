@@ -71,7 +71,7 @@ class CustomTableViewCell:UITableViewCell, UICollectionViewDataSource, UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseId, for: indexPath) as? CustomCollectionViewCell
         if let categoryImageName = self.aCategory?.categoryItems[indexPath.item] {
-           cell?.updateCellWithImage(name: categoryImageName)
+            cell?.updateCellWithImage(name: categoryImageName)
         }
         return cell!
     }

@@ -25,12 +25,12 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         setupData()
         self.myTableView.reloadData()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     //MARK: Data initlisers methods
     func setupData() {
         for index in 0..<8 {
@@ -90,7 +90,7 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     //MARK:Tableview Delegates and Datasource Methods
     func numberOfSections(in tableView: UITableView) -> Int {
-       return categories.count
+        return categories.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
