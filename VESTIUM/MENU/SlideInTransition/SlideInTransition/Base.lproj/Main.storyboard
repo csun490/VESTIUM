@@ -654,19 +654,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorites Tab" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKR-hV-Hky">
-                                <rect key="frame" x="156.66666666666666" y="437.66666666666669" width="100.99999999999997" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tshirtIcon" translatesAutoresizingMaskIntoConstraints="NO" id="L6I-An-VvX">
+                                <rect key="frame" x="87" y="169" width="240" height="198"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pantsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="mGr-EH-bBI">
+                                <rect key="frame" x="87" y="375" width="240" height="215"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b31-Yg-9uc">
+                                <rect key="frame" x="289" y="186" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="TshirtButton" image="addIcon"/>
+                                <connections>
+                                    <action selector="tshirtButton:" destination="Gdt-C2-bbt" eventType="touchUpInside" id="vi2-Hp-npA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEm-AF-TXM">
+                                <rect key="frame" x="289" y="392" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="PantsButton" image="addIcon"/>
+                                <connections>
+                                    <action selector="pantsButton:" destination="Gdt-C2-bbt" eventType="touchUpInside" id="qLs-KY-8dY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ad8-t3-4MU">
+                                <rect key="frame" x="289" y="598" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ShoeButton" image="addIcon"/>
+                                <connections>
+                                    <action selector="shoeButton:" destination="Gdt-C2-bbt" eventType="touchUpInside" id="cP2-0W-M6n"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shoeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ogK-Kn-bh9">
+                                <rect key="frame" x="87" y="598" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Eao-fh-5EI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="MKR-hV-Hky" firstAttribute="centerX" secondItem="BBH-7S-zma" secondAttribute="centerX" id="70f-9n-ffr"/>
-                            <constraint firstItem="MKR-hV-Hky" firstAttribute="centerY" secondItem="BBH-7S-zma" secondAttribute="centerY" id="wHE-1x-qjl"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hxk-fH-sJO">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="NTv-xQ-FBZ">
@@ -680,10 +706,15 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="pantsImage" destination="mGr-EH-bBI" id="XZG-Lg-Qxe"/>
+                        <outlet property="shirtImage" destination="L6I-An-VvX" id="lEi-w6-gkO"/>
+                        <outlet property="shoeImage" destination="ogK-Kn-bh9" id="EsM-2a-FzD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YFL-5h-gHx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-39" y="3243"/>
+            <point key="canvasLocation" x="-39.130434782608695" y="3242.4107142857142"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="JlC-Kr-BeZ">
@@ -835,6 +866,7 @@
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
+        <image name="addIcon" width="720" height="720"/>
         <image name="bag.badge.plus" catalog="system" width="124" height="128"/>
         <image name="beanie" width="768" height="1152"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
@@ -842,25 +874,28 @@
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="pantsIcon" width="512" height="512"/>
+        <image name="shoeIcon" width="256" height="256"/>
         <image name="star" catalog="system" width="128" height="116"/>
+        <image name="tshirtIcon" width="512" height="512"/>
         <image name="vestium_logo" width="200" height="200"/>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
