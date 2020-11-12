@@ -56,17 +56,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         signup_button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
         signup_button.isEnabled = true
         errorMessage.isHidden = true
-    }
-    
-    /*
-     // checks if email is valid with @
-     func isValidEmail(emailID:String) -> Bool {
-     let emailRegEx = "[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}"
-     let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
-     return emailTest.evaluate(with: emailID)
-     }
-     */
-    
+    }    
     
     // dismiss keyboard when 'return' key is pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

@@ -7,11 +7,19 @@
 //
 
 import UIKit
+import FirebaseStorage
+import FirebaseAuth
+import FirebaseDatabase
+import ProgressHUD
+
 
 class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var addNewItem_button: UIButton!
+    
     // to hold the data to be displayed
     var categories = [ImageCategory]()
+    var selectedImage: UIImage?
     
     @IBOutlet weak var myTableView: UITableView!
     
@@ -31,61 +39,60 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK: Data initlisers methods
+    //MARK: Data initializers methods
     func setupData() {
         for index in 0..<8 {
             var infoDict = [String:Any]()
-            infoDict = dataForIndex(index: index)
+            infoDict = ClothesData.dataForIndex(index: index)
             let aCategory = ImageCategory(withInfo: infoDict)
             categories.append(aCategory)
         }
     }
     
-    func dataForIndex(index:Int) -> [String:Any] {
-        var data = [String:Any]()
-        switch index {
-        case 0:
-            data["cat_name"] = "HEAD"
-            data["cat_id"]   = "\(index)"
-            data["cat_description"] = "HEAD"
-            data["cat_items"] = ["beanie","glasses","egg_hat","fleece_hat","brown_hat", "cap"]
-        case 1:
-            data["cat_name"] = "TOP-INNER"
-            data["cat_id"]   = "\(index)"
-            data["cat_description"] = "TOP-INNER"
-            data["cat_items"] = ["black_shirt", "muscle_tank", "green_tank", "white_shirt", "black_tank", "shirt_pack"]
-        case 2:
-            data["cat_name"] = "TOP-MID"
-            data["cat_id"]   = "\(index)"
-            data["cat_description"] = "TOP-MID"
-            data["cat_items"] = ["black_tur","red_fl","green_fl","green_but","tan_sweater", "brown_but"]
-        case 3:
-            data["cat_name"] = "TOP-OUTER"
-            data["cat_id"]   = "\(index)"
-            data["cat_description"] = "TOP-OUTER"
-            data["cat_items"] = ["black_jac", "brown_jac", "green_jac", "wool_coat", "leather_jac", "tan_jac"]
-        case 4:
-            data["cat_name"] = "BOTTOM"
-            data["cat_id"]   = "\(index)"
-            data["cat_description"] = "BOTTOM"
-            data["cat_items"] = ["black_jeans", "dark_jeans", "sweats", "camo_cargo", "light_jeans", "green_cargo"]
-        case 5:
-            data["cat_name"] = "FEET"
-            data["cat_id"]   = "\(index)"
-            data["cat_description"] = "FEET"
-            data["cat_items"] = ["black_shoes", "brown_shoes", "grey_shoes", "red_blue", "white_shoes", "tan_boots"]
-        case 6:
-            data["cat_name"] = "OTHER"
-            data["cat_id"]   = "\(index)"
-            data["cat_description"] = "OTHER"
-            data["cat_items"] = ["belt_bag", "black_bag", "green_back", "grey_back", "sport_set", "tan_bag"]
-        default:
-            data["cat_name"] = "..."
-            data["cat_id"]   = "\(index)"
-            data["cat_description"] = "..."
-            data["cat_items"] = []
+    func sendDataToDatabase(photoUrl: String) {
+        let ref = Database.database().reference()
+        let itemReference = ref.child("new items")
+        // new item img location
+        let newItemID = itemReference.childByAutoId().key
+        let newItemReference = itemReference.child(newItemID!)
+        // push img to firebase storage
+        newItemReference.setValue(["photoUrl": photoUrl])
+    }
+    
+    // access to photolibrary to add new item in closet
+    @IBAction func addNewItem(_ sender: Any) {
+        handleSelectPhoto()
+        
+        ProgressHUD.show("Waiting...", interaction: false)
+        if let newItemImg = self.selectedImage, let imageData = newItemImg.jpegData(compressionQuality: 0.1) {
+            // generate unique photo id
+            let photoIdString = NSUUID().uuidString
+            // create storage node
+            let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOF_REF).child("New Item").child(photoIdString)
+            // store image to Firebase Storage
+            storageRef.putData(imageData, metadata: nil) { (metadata, error) in
+                if error != nil {
+                    return
+                }
+                storageRef.downloadURL(completion: { (url: URL?, error: Error?) in
+                    if let photoUrl = url?.absoluteString {
+                       // onSuccess(photoUrl)
+                    }
+                })
+            }
+            
+        } else {
+            ProgressHUD.showError("Profile Image can't be empty")
         }
-        return data
+    }
+    
+    func handleSelectPhoto() {
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        pickerController.sourceType = .photoLibrary;
+        pickerController.mediaTypes = ["public.image", "public.movie"]
+        pickerController.allowsEditing = true
+        present(pickerController, animated: true, completion: nil)
     }
     
     //MARK:Tableview Delegates and Datasource Methods
@@ -141,4 +148,16 @@ extension ClosetViewController: CustomCollectionCellDelegate {
         }
     }
 }
+
+extension ClosetViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        print("image chosen")
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            selectedImage = image
+            
+        }
+        dismiss(animated: true, completion: nil)
+    }
+}
+
 

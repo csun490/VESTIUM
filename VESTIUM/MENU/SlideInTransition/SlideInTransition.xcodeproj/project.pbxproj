@@ -20,6 +20,9 @@
 		399EC1342558566500E69C38 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399EC1332558566500E69C38 /* LogInViewController.swift */; };
 		399EC154255B44EB00E69C38 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399EC153255B44EB00E69C38 /* SettingsViewController.swift */; };
 		399EC158255B94F600E69C38 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399EC157255B94F500E69C38 /* AuthService.swift */; };
+		399EC176255CA78F00E69C38 /* AddNewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399EC175255CA78E00E69C38 /* AddNewItemViewController.swift */; };
+		399EC17A255CADD200E69C38 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399EC179255CADD200E69C38 /* Config.swift */; };
+		399EC17D255CB38600E69C38 /* ClothesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399EC17C255CB38600E69C38 /* ClothesData.swift */; };
 		39AAB17B251D307000F6BDC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39AAB17A251D307000F6BDC4 /* GoogleService-Info.plist */; };
 		39DCDC422538CA95005C6E7B /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DCDC412538CA95005C6E7B /* CalendarViewController.swift */; };
 		39F4E7D9252CEC65000E45D0 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F4E7D8252CEC65000E45D0 /* FavoritesViewController.swift */; };
@@ -49,6 +52,9 @@
 		399EC1332558566500E69C38 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		399EC153255B44EB00E69C38 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		399EC157255B94F500E69C38 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		399EC175255CA78E00E69C38 /* AddNewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewItemViewController.swift; sourceTree = "<group>"; };
+		399EC179255CADD200E69C38 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		399EC17C255CB38600E69C38 /* ClothesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesData.swift; sourceTree = "<group>"; };
 		39AAB17A251D307000F6BDC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		39DCDC412538CA95005C6E7B /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		39F4E7D8252CEC65000E45D0 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +115,7 @@
 		395BE0AB2547E32C008EF624 /* ClosetFiles */ = {
 			isa = PBXGroup;
 			children = (
+				399EC175255CA78E00E69C38 /* AddNewItemViewController.swift */,
 				395BE096254278FE008EF624 /* DetailViewController.swift */,
 				395BE0BB2548B5B5008EF624 /* ClosetViewController.swift */,
 				395BE0A72547DD35008EF624 /* ImageCategory.swift */,
@@ -132,6 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				399EC157255B94F500E69C38 /* AuthService.swift */,
+				399EC179255CADD200E69C38 /* Config.swift */,
+				399EC17C255CB38600E69C38 /* ClothesData.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -344,7 +353,9 @@
 			files = (
 				39DCDC422538CA95005C6E7B /* CalendarViewController.swift in Sources */,
 				395BE0B52548AD8E008EF624 /* CustomHeaderView.swift in Sources */,
+				399EC176255CA78F00E69C38 /* AddNewItemViewController.swift in Sources */,
 				AF3B85F225118CE80040FA7E /* HomeViewController.swift in Sources */,
+				399EC17A255CADD200E69C38 /* Config.swift in Sources */,
 				39F4E7D9252CEC65000E45D0 /* FavoritesViewController.swift in Sources */,
 				395BE0BC2548B5B5008EF624 /* ClosetViewController.swift in Sources */,
 				395BE0A82547DD36008EF624 /* ImageCategory.swift in Sources */,
@@ -356,6 +367,7 @@
 				395BE08625425059008EF624 /* CustomCollectionViewCell.swift in Sources */,
 				395BE097254278FE008EF624 /* DetailViewController.swift in Sources */,
 				399EC1342558566500E69C38 /* LogInViewController.swift in Sources */,
+				399EC17D255CB38600E69C38 /* ClothesData.swift in Sources */,
 				399EC158255B94F600E69C38 /* AuthService.swift in Sources */,
 				395BE08125424E6B008EF624 /* CustomTableViewCell.swift in Sources */,
 				AF3B8604251198770040FA7E /* SlideInTransition.swift in Sources */,

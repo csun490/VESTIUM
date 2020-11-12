@@ -563,14 +563,51 @@
                         <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="10"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" id="Tlf-9R-0kB"/>
+                    <navigationItem key="navigationItem" id="Tlf-9R-0kB">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="BRp-Se-4Gh">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="FSY-6l-KOc">
+                                <rect key="frame" x="302" y="5.6666666666666661" width="85" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Add Item">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addNewItem:" destination="jRB-Yd-xFE" eventType="touchUpInside" id="FrK-hN-VCG"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addNewItem_button" destination="FSY-6l-KOc" id="23j-kZ-lFf"/>
                         <outlet property="myTableView" destination="88T-ZN-8Hn" id="nb8-Ig-fMC"/>
+                        <segue destination="8J3-41-Kla" kind="show" identifier="" id="nAa-oH-eMu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7RS-nn-6ta" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="951" y="1596"/>
+        </scene>
+        <!--Add New Item View Controller-->
+        <scene sceneID="tKc-XH-MfT">
+            <objects>
+                <viewController storyboardIdentifier="AddNewItem" modalPresentationStyle="fullScreen" id="8J3-41-Kla" customClass="AddNewItemViewController" customModule="SlideInTransition" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aWK-dw-Bw1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Rcd-yv-DPB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="R4A-cy-f1s"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dPN-qI-8Uv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1817" y="1596"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="8ft-Fg-mE7">
@@ -732,7 +769,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mlp-Ty-pqa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1699" y="1596"/>
+            <point key="canvasLocation" x="951" y="2267"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="rvR-Bn-J6Z">
