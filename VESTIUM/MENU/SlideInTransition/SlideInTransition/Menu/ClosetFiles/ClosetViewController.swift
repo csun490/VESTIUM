@@ -77,7 +77,9 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // access to photolibrary to add new item in closet
     @IBAction func addNewItem(_ sender: Any) {
         handleSelectPhoto()
-       /*
+    }
+    
+    func addImageToFirebase() {
         guard let imageSelected = self.selectedImage else {
             print("photo is nil")
             return
@@ -86,30 +88,24 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         guard let imageData = imageSelected.jpegData(compressionQuality: 0.1) else {
             return
         }
-       
-            let photoIdString = NSUUID().uuidString
-            let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOF_REF).child("new item").child(photoIdString)
-            storageRef.putData(imageData, metadata: nil) { (metadata, error) in
-                if error != nil {
-                    //ProgressHUD.showError(error!.localizedDescription)
-                    print(error!.localizedDescription)
-                    return
-                }
-                storageRef.downloadURL(completion: { (url: URL?, error: Error?) in
-                    if let photoUrl = url?.absoluteString {
-                        self.sendDataToDatabase(photoUrl: photoUrl)
-                        //onSuccess(photoUrl)
-                    }
-                    
-                })
-            }
-        */
-   
         
+        let photoIdString = NSUUID().uuidString
+        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOF_REF).child("new item").child(photoIdString)
+        storageRef.putData(imageData, metadata: nil) { (metadata, error) in
+            if error != nil {
+                //ProgressHUD.showError(error!.localizedDescription)
+                print(error!.localizedDescription)
+                return
+            }
+            storageRef.downloadURL(completion: { (url: URL?, error: Error?) in
+                if let photoUrl = url?.absoluteString {
+                    self.sendDataToDatabase(photoUrl: photoUrl)
+                    //onSuccess(photoUrl)
+                }
+            })
+        }
     }
     
-    
-
     
     func clean() {
         self.selectedImage = nil
@@ -176,37 +172,13 @@ extension ClosetViewController: UIImagePickerControllerDelegate, UINavigationCon
             selectedImage = image
         }
         
-        // sends image to firebase immediately after choosing
         if let imageEdited = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             selectedImage = imageEdited
         }
         dismiss(animated: true, completion: nil)
         
-        guard let imageSelected = self.selectedImage else {
-            print("photo is nil")
-            return
-        }
-        
-        guard let imageData = imageSelected.jpegData(compressionQuality: 0.1) else {
-            return
-        }
-       
-            let photoIdString = NSUUID().uuidString
-            let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOF_REF).child("new item").child(photoIdString)
-            storageRef.putData(imageData, metadata: nil) { (metadata, error) in
-                if error != nil {
-                    //ProgressHUD.showError(error!.localizedDescription)
-                    print(error!.localizedDescription)
-                    return
-                }
-                storageRef.downloadURL(completion: { (url: URL?, error: Error?) in
-                    if let photoUrl = url?.absoluteString {
-                        self.sendDataToDatabase(photoUrl: photoUrl)
-                        //onSuccess(photoUrl)
-                    }
-                    
-                })
-            }
+        //send image to firebase immediately after picking
+        addImageToFirebase()
     }
 }
 

@@ -212,6 +212,7 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
+  - Alamofire (4.9.1)
   - BoringSSL-GRPC (0.0.7):
     - BoringSSL-GRPC/Implementation (= 0.0.7)
     - BoringSSL-GRPC/Interface (= 0.0.7)
@@ -350,10 +351,15 @@ PODS:
     - nanopb/encode (= 1.30906.0)
   - nanopb/decode (1.30906.0)
   - nanopb/encode (1.30906.0)
+  - NVActivityIndicatorView (5.1.1):
+    - NVActivityIndicatorView/Base (= 5.1.1)
+  - NVActivityIndicatorView/Base (5.1.1)
   - ProgressHUD (13.4)
   - PromisesObjC (1.2.10)
+  - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.7)
   - DropDown
   - Firebase/Auth
   - Firebase/Core
@@ -362,11 +368,14 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Storage
   - FSCalendar
+  - NVActivityIndicatorView
   - ProgressHUD
+  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   trunk:
     - abseil
+    - Alamofire
     - BoringSSL-GRPC
     - DropDown
     - Firebase
@@ -388,11 +397,14 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - NVActivityIndicatorView
     - ProgressHUD
     - PromisesObjC
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   Firebase: 8db6f2d1b2c5e2984efba4949a145875a8f65fe5
@@ -414,9 +426,11 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   ProgressHUD: 137a7fc677487c5581668f4490563124fb35c232
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: b3b854df92959e82f89244341a2e1301aebd4124
+PODFILE CHECKSUM: 7faed117382c84ed267decfa2edaf6e83491c7ec
 
 COCOAPODS: 1.9.3

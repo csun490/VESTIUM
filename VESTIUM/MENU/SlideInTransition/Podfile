@@ -2,9 +2,10 @@
 # platform :ios, '9.0'
 
 target 'SlideInTransition' do
-  # Comment the next line if you don't want to use dynamic frameworks
+# Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
+# Pods for Firebase
 pod 'Firebase/Firestore'
 pod 'DropDown' 
 pod 'Firebase/Core'
@@ -15,6 +16,11 @@ pod 'FSCalendar'
 pod 'Firebase/Auth'
 pod 'ProgressHUD'
 
-  # Pods for SlideInTransition
+# Pods for SlideInTransition
+
+# Pods for Weather
+  pod 'Alamofire', '~> 4.7'
+  pod 'SwiftyJSON', '~> 4.0'
+  pod 'NVActivityIndicatorView'
 
 end
