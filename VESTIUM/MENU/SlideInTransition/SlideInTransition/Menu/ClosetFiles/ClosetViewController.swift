@@ -56,11 +56,15 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func sendDataToDatabase(photoUrl: String) {
         let ref = Database.database().reference()
         let itemReference = ref.child("new items")
+        guard let currentUser = Auth.auth().currentUser?.uid else {
+            return
+        }
+        let currentUserId = currentUser
         // new item img location
         let newItemID = itemReference.childByAutoId().key
         let newItemReference = itemReference.child(newItemID!)
         // push img to firebase storage
-        newItemReference.setValue(["photoUrl": photoUrl], withCompletionBlock: { (error, ref) in
+        newItemReference.setValue(["uid": currentUserId, "photoUrl": photoUrl], withCompletionBlock: { (error, ref) in
             if error != nil {
                 ProgressHUD.showError(error!.localizedDescription)
                 return
