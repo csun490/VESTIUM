@@ -356,6 +356,9 @@ PODS:
   - NVActivityIndicatorView/Base (5.1.1)
   - ProgressHUD (13.4)
   - PromisesObjC (1.2.10)
+  - SDWebImage (5.9.5):
+    - SDWebImage/Core (= 5.9.5)
+  - SDWebImage/Core (5.9.5)
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
@@ -370,6 +373,7 @@ DEPENDENCIES:
   - FSCalendar
   - NVActivityIndicatorView
   - ProgressHUD
+  - SDWebImage
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
@@ -400,6 +404,7 @@ SPEC REPOS:
     - NVActivityIndicatorView
     - ProgressHUD
     - PromisesObjC
+    - SDWebImage
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -429,8 +434,9 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   ProgressHUD: 137a7fc677487c5581668f4490563124fb35c232
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
+  SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 7faed117382c84ed267decfa2edaf6e83491c7ec
+PODFILE CHECKSUM: cd899ab5fbb466379efea3013948e429d92b4009
 
 COCOAPODS: 1.9.3

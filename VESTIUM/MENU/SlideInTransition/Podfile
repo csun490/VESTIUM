@@ -7,14 +7,17 @@ target 'SlideInTransition' do
 
 # Pods for Firebase
 pod 'Firebase/Firestore'
-pod 'DropDown' 
 pod 'Firebase/Core'
 pod 'Firebase/Crashlytics'
 pod 'Firebase/Database'
 pod 'Firebase/Storage'
 pod 'FSCalendar'
 pod 'Firebase/Auth'
+
+# Pods for Closet
+pod 'DropDown' 
 pod 'ProgressHUD'
+pod 'SDWebImage'
 
 # Pods for SlideInTransition
 
@@ -22,5 +25,7 @@ pod 'ProgressHUD'
   pod 'Alamofire', '~> 4.7'
   pod 'SwiftyJSON', '~> 4.0'
   pod 'NVActivityIndicatorView'
+
+
 
 end

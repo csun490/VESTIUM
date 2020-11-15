@@ -11,6 +11,7 @@ import FirebaseStorage
 import FirebaseAuth
 import FirebaseDatabase
 import ProgressHUD
+import SDWebImage
 
 
 class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -20,6 +21,7 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // to hold the data to be displayed
     var categories = [ImageCategory]()
     var selectedImage: UIImage?
+    var posts = [Post]()
     
     @IBOutlet weak var myTableView: UITableView!
     
@@ -32,6 +34,8 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.myTableView.register(headerNib, forHeaderFooterViewReuseIdentifier: headerReuseId)
         setupData()
         self.myTableView.reloadData()
+        loadPosts()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -107,6 +111,18 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
+    //retrieves "new item" images from firebase
+    func loadPosts() {
+        Database.database().reference().child("new items").observe(.childAdded) { (snapshot: DataSnapshot) in
+            if let dict = snapshot.value as? [String: Any] {
+                let newPost = Post.transformPost(dict: dict)
+                self.posts.append(newPost)
+                print(self.posts)
+                self.myTableView.reloadData()
+            }
+        }
+    }
+    
     func clean() {
         self.selectedImage = nil
     }
@@ -129,6 +145,14 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if cell == nil {
             cell = CustomTableViewCell.customCell
         }
+        /*
+        let post = posts[indexPath.row]
+        if let photoUrlString = post.photoUrl {
+            let photoUrl = URL(string: photoUrlString)
+            cell!.myCollectionView.sd_setImage(with: photoUrl)
+        }
+        */
+        
         let aCategory = self.categories[indexPath.section]
         cell?.updateCellWith(category: aCategory)
         cell?.cellDelegate = self

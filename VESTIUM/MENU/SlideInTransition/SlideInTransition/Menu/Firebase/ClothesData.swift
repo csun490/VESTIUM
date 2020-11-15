@@ -7,7 +7,16 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
+// retrieves "new item" posts from firebase
+func loadPosts() {
+    Database.database().reference().child("new items").observe(.childAdded) { (snapshot: DataSnapshot) in
+        if let dict = snapshot.value as? [String: Any] {
+            print(dict)
+        }
+    }
+}
 class ClothesData {
     static func dataForIndex(index:Int) -> [String:Any] {
         var data = [String:Any]()
@@ -56,3 +65,5 @@ class ClothesData {
         return data
     }
 }
+
+
