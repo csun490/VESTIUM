@@ -14,7 +14,6 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var myImage: UIImageView!
     
     let transiton = SlideInTransition()
-    
 
     
     override func viewDidLoad() {
