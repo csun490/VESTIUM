@@ -131,6 +131,14 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.selectedImage = nil
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier ==  "filterSegue" {
+            let filterVC = segue.destination as! FilterViewController
+            filterVC.selectedImage = self.selectedImage
+        }
+    }
+    
+    
     //MARK:Tableview Delegates and Datasource Methods
     func numberOfSections(in tableView: UITableView) -> Int {
         return categories.count
@@ -198,15 +206,18 @@ extension ClosetViewController: UIImagePickerControllerDelegate, UINavigationCon
         print("image chosen")
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             selectedImage = image
+            dismiss(animated: true, completion: {
+                self.performSegue(withIdentifier: "filterSegue", sender: nil)
+            })
         }
         
         if let imageEdited = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             selectedImage = imageEdited
         }
-        dismiss(animated: true, completion: nil)
+        //dismiss(animated: true, completion: nil)
         
         //send image to firebase immediately after picking
-        addImageToFirebase()
+        //addImageToFirebase()
     }
 }
 
