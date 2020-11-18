@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3930246E256495D300E14D16 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930246D256495D300E14D16 /* User.swift */; };
 		395BE08125424E6B008EF624 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE07F25424E6B008EF624 /* CustomTableViewCell.swift */; };
 		395BE08225424E6B008EF624 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 395BE08025424E6B008EF624 /* CustomTableViewCell.xib */; };
 		395BE08625425059008EF624 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE08425425059008EF624 /* CustomCollectionViewCell.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		2823EB27D08DDE789CDFAC9C /* Pods-SlideInTransition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideInTransition.debug.xcconfig"; path = "Target Support Files/Pods-SlideInTransition/Pods-SlideInTransition.debug.xcconfig"; sourceTree = "<group>"; };
+		3930246D256495D300E14D16 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		395BE07F25424E6B008EF624 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		395BE08025424E6B008EF624 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		395BE08425425059008EF624 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				399EC157255B94F500E69C38 /* AuthService.swift */,
+				3930246D256495D300E14D16 /* User.swift */,
 				399EC179255CADD200E69C38 /* Config.swift */,
 				399EC17C255CB38600E69C38 /* ClothesData.swift */,
 				399EC1BC255F2EB000E69C38 /* Post.swift */,
@@ -364,6 +367,7 @@
 				395BE0A82547DD36008EF624 /* ImageCategory.swift in Sources */,
 				AF3B85EE25118CE80040FA7E /* AppDelegate.swift in Sources */,
 				399EC154255B44EB00E69C38 /* SettingsViewController.swift in Sources */,
+				3930246E256495D300E14D16 /* User.swift in Sources */,
 				AF3B85F025118CE80040FA7E /* SceneDelegate.swift in Sources */,
 				AF3B860225118E340040FA7E /* MenuViewController.swift in Sources */,
 				399EC1BD255F2EB200E69C38 /* Post.swift in Sources */,

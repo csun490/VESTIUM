@@ -10,7 +10,7 @@ import Foundation
 
 class Post {
     var photoUrl: String?
-
+    var uid: String?    
 }
 
 extension Post {
@@ -18,6 +18,7 @@ extension Post {
     static func transformPost(dict: [String: Any]) -> Post {
         let post = Post()
         post.photoUrl = dict["photoUrl"] as? String
+        post.uid = dict["uid"] as? String
         return post
     }
 }

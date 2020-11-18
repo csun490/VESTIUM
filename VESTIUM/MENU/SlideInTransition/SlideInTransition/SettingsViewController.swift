@@ -8,15 +8,37 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class SettingsViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    
+    @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var email: UILabel!
+    
+    var post: Post? {
+        didSet {
+            setUpUserInfo()
+        }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUpUserInfo()
+    }
+    
+    
+    func setUpUserInfo() {
+        let uid = Auth.auth().currentUser?.uid
+            Database.database().reference().child("users").child(uid!).observeSingleEvent(of: DataEventType.value) {  (snapshot: DataSnapshot) in
+                let dict = snapshot.value as? [String: Any]
+                let user = User.transformUser(dict: dict!)
+                self.username.text =  user.username
+                self.email.text = user.email
+                //print(uid)
+                //print(user.username)
+            }
+    }
     // log out button
     @IBAction func logoutButton(_ sender: Any) {
         print(Auth.auth().currentUser)
