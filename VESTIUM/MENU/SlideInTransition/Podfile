@@ -18,6 +18,7 @@ pod 'Firebase/Auth'
 pod 'DropDown' 
 pod 'ProgressHUD'
 pod 'SDWebImage'
+pod 'TTGTagCollectionView'
 
 # Pods for SlideInTransition
 

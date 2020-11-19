@@ -10,6 +10,7 @@
 		3930246E256495D300E14D16 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930246D256495D300E14D16 /* User.swift */; };
 		393024712564F50C00E14D16 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393024702564F50C00E14D16 /* FilterViewController.swift */; };
 		3930247425657B2500E14D16 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930247325657B2500E14D16 /* FilterCollectionViewCell.swift */; };
+		393024802566028E00E14D16 /* TagImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930247F2566028E00E14D16 /* TagImageViewController.swift */; };
 		395BE08125424E6B008EF624 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE07F25424E6B008EF624 /* CustomTableViewCell.swift */; };
 		395BE08225424E6B008EF624 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 395BE08025424E6B008EF624 /* CustomTableViewCell.xib */; };
 		395BE08625425059008EF624 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE08425425059008EF624 /* CustomCollectionViewCell.swift */; };
@@ -23,7 +24,6 @@
 		399EC1342558566500E69C38 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399EC1332558566500E69C38 /* LogInViewController.swift */; };
 		399EC154255B44EB00E69C38 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399EC153255B44EB00E69C38 /* SettingsViewController.swift */; };
 		399EC158255B94F600E69C38 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399EC157255B94F500E69C38 /* AuthService.swift */; };
-		399EC176255CA78F00E69C38 /* AddNewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399EC175255CA78E00E69C38 /* AddNewItemViewController.swift */; };
 		399EC17A255CADD200E69C38 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399EC179255CADD200E69C38 /* Config.swift */; };
 		399EC17D255CB38600E69C38 /* ClothesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399EC17C255CB38600E69C38 /* ClothesData.swift */; };
 		399EC1BD255F2EB200E69C38 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399EC1BC255F2EB000E69C38 /* Post.swift */; };
@@ -46,6 +46,7 @@
 		3930246D256495D300E14D16 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		393024702564F50C00E14D16 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		3930247325657B2500E14D16 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		3930247F2566028E00E14D16 /* TagImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagImageViewController.swift; sourceTree = "<group>"; };
 		395BE07F25424E6B008EF624 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		395BE08025424E6B008EF624 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		395BE08425425059008EF624 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -59,7 +60,6 @@
 		399EC1332558566500E69C38 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		399EC153255B44EB00E69C38 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		399EC157255B94F500E69C38 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		399EC175255CA78E00E69C38 /* AddNewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewItemViewController.swift; sourceTree = "<group>"; };
 		399EC179255CADD200E69C38 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		399EC17C255CB38600E69C38 /* ClothesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesData.swift; sourceTree = "<group>"; };
 		399EC1BC255F2EB000E69C38 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -132,8 +132,8 @@
 		395BE0AB2547E32C008EF624 /* ClosetFiles */ = {
 			isa = PBXGroup;
 			children = (
-				399EC175255CA78E00E69C38 /* AddNewItemViewController.swift */,
 				395BE096254278FE008EF624 /* DetailViewController.swift */,
+				3930247F2566028E00E14D16 /* TagImageViewController.swift */,
 				395BE0BB2548B5B5008EF624 /* ClosetViewController.swift */,
 				395BE0A72547DD35008EF624 /* ImageCategory.swift */,
 				3930247725657E2800E14D16 /* FilterViewController */,
@@ -373,10 +373,10 @@
 			files = (
 				39DCDC422538CA95005C6E7B /* CalendarViewController.swift in Sources */,
 				395BE0B52548AD8E008EF624 /* CustomHeaderView.swift in Sources */,
-				399EC176255CA78F00E69C38 /* AddNewItemViewController.swift in Sources */,
 				AF3B85F225118CE80040FA7E /* HomeViewController.swift in Sources */,
 				399EC17A255CADD200E69C38 /* Config.swift in Sources */,
 				39F4E7D9252CEC65000E45D0 /* FavoritesViewController.swift in Sources */,
+				393024802566028E00E14D16 /* TagImageViewController.swift in Sources */,
 				395BE0BC2548B5B5008EF624 /* ClosetViewController.swift in Sources */,
 				393024712564F50C00E14D16 /* FilterViewController.swift in Sources */,
 				395BE0A82547DD36008EF624 /* ImageCategory.swift in Sources */,

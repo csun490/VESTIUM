@@ -14,12 +14,12 @@ protocol CustomCollectionCellDelegate:class {
     //other delegate methods that you can define to perform action in viewcontroller
 }
 
-class CustomTableViewCell:UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
-    weak var cellDelegate:CustomCollectionCellDelegate? //define delegate
+class CustomTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
+    weak var cellDelegate: CustomCollectionCellDelegate? //define delegate
     @IBOutlet weak var myCollectionView: UICollectionView!
-    var aCategory:ImageCategory?
+    var aCategory: ImageCategory?
     let cellReuseId = "CollectionViewCell"
-    class var customCell : CustomTableViewCell {
+    class var customCell: CustomTableViewCell {
         let cell = Bundle.main.loadNibNamed("CustomTableViewCell", owner: self, options: nil)?.last
         return cell as! CustomTableViewCell
     }
@@ -34,7 +34,7 @@ class CustomTableViewCell:UITableViewCell, UICollectionViewDataSource, UICollect
         flowLayout.minimumInteritemSpacing = 5.0
         self.myCollectionView.collectionViewLayout = flowLayout
         
-        //Comment if you set Datasource and delegate in .xib
+       
         self.myCollectionView.dataSource = self
         self.myCollectionView.delegate = self
         

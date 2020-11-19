@@ -34,7 +34,7 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.myTableView.register(headerNib, forHeaderFooterViewReuseIdentifier: headerReuseId)
         setupData()
         self.myTableView.reloadData()
-        loadPosts()
+        //loadPosts()
         
     }
     

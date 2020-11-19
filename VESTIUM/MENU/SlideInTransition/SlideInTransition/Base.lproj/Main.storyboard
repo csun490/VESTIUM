@@ -579,29 +579,12 @@
                     <connections>
                         <outlet property="addNewItem_button" destination="FSY-6l-KOc" id="23j-kZ-lFf"/>
                         <outlet property="myTableView" destination="88T-ZN-8Hn" id="nb8-Ig-fMC"/>
-                        <segue destination="8J3-41-Kla" kind="show" identifier="" id="nAa-oH-eMu"/>
                         <segue destination="alq-6x-af8" kind="presentation" identifier="filterSegue" id="Mnc-a6-6wM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7RS-nn-6ta" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="951" y="1596"/>
-        </scene>
-        <!--Add New Item View Controller-->
-        <scene sceneID="tKc-XH-MfT">
-            <objects>
-                <viewController storyboardIdentifier="AddNewItem" modalPresentationStyle="fullScreen" id="8J3-41-Kla" customClass="AddNewItemViewController" customModule="SlideInTransition" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aWK-dw-Bw1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Rcd-yv-DPB"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="R4A-cy-f1s"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dPN-qI-8Uv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1817" y="1596"/>
         </scene>
         <!--Find-->
         <scene sceneID="nIC-ur-HcH">
@@ -1024,7 +1007,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FilterCollectionViewCell" id="coW-Tt-wA8" customClass="FilterCollectionViewCell" customModule="InstagramClone" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FilterCollectionViewCell" id="coW-Tt-wA8" customClass="FilterCollectionViewCell" customModule="SlideInTransition" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1072,11 +1055,27 @@
                     <connections>
                         <outlet property="collectionView" destination="1Si-n8-kLd" id="j3p-94-ySx"/>
                         <outlet property="filterPhoto" destination="EdP-Gy-xpd" id="ovJ-Ng-Lad"/>
+                        <segue destination="q6e-eF-QWT" kind="presentation" identifier="tagImageSegue" modalPresentationStyle="fullScreen" id="6k8-E2-7lw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jtU-q4-FO8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1786" y="2307"/>
+            <point key="canvasLocation" x="1735" y="1596"/>
+        </scene>
+        <!--Tag Image View Controller-->
+        <scene sceneID="64p-qV-04Q">
+            <objects>
+                <viewController id="q6e-eF-QWT" customClass="TagImageViewController" customModule="SlideInTransition" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P2E-fc-xji">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="vMf-jM-Zjy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K6B-dY-MQ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2571" y="1596"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
