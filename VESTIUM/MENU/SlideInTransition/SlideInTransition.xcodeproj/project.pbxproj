@@ -35,6 +35,9 @@
 		AF3B85FA25118CEF0040FA7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF3B85F825118CEF0040FA7E /* LaunchScreen.storyboard */; };
 		AF3B860225118E340040FA7E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3B860125118E340040FA7E /* MenuViewController.swift */; };
 		AF3B8604251198770040FA7E /* SlideInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3B8603251198770040FA7E /* SlideInTransition.swift */; };
+		B7F1F61B256EBA9C00AB74BA /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F1F61A256EBA9C00AB74BA /* SettingsCell.swift */; };
+		B7F1F61E256EBB2400AB74BA /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F1F61D256EBB2400AB74BA /* SettingsSection.swift */; };
+		B7F1F621256EBBB700AB74BA /* UserInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F1F620256EBBB600AB74BA /* UserInfoHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,9 @@
 		AF3B85FB25118CEF0040FA7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF3B860125118E340040FA7E /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		AF3B8603251198770040FA7E /* SlideInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInTransition.swift; sourceTree = "<group>"; };
+		B7F1F61A256EBA9C00AB74BA /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		B7F1F61D256EBB2400AB74BA /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
+		B7F1F620256EBBB600AB74BA /* UserInfoHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,8 +182,10 @@
 			children = (
 				AF3B8616251297890040FA7E /* Menu */,
 				AF3B85F325118CE80040FA7E /* Main.storyboard */,
-				399EC153255B44EB00E69C38 /* SettingsViewController.swift */,
 				399EC1302558564800E69C38 /* SignUpViewController.swift */,
+				B7F1F620256EBBB600AB74BA /* UserInfoHeader.swift */,
+				B7F1F61D256EBB2400AB74BA /* SettingsSection.swift */,
+				B7F1F61A256EBA9C00AB74BA /* SettingsCell.swift */,
 				399EC1332558566500E69C38 /* LogInViewController.swift */,
 				AF3B85F625118CEF0040FA7E /* Assets.xcassets */,
 				AF3B85EF25118CE80040FA7E /* SceneDelegate.swift */,
@@ -199,6 +207,7 @@
 				39F4E7D8252CEC65000E45D0 /* FavoritesViewController.swift */,
 				AF3B8603251198770040FA7E /* SlideInTransition.swift */,
 				39DCDC412538CA95005C6E7B /* CalendarViewController.swift */,
+				399EC153255B44EB00E69C38 /* SettingsViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -362,9 +371,12 @@
 				AF3B85EE25118CE80040FA7E /* AppDelegate.swift in Sources */,
 				399EC154255B44EB00E69C38 /* SettingsViewController.swift in Sources */,
 				AF3B85F025118CE80040FA7E /* SceneDelegate.swift in Sources */,
+				B7F1F621256EBBB700AB74BA /* UserInfoHeader.swift in Sources */,
 				AF3B860225118E340040FA7E /* MenuViewController.swift in Sources */,
 				399EC1312558564800E69C38 /* SignUpViewController.swift in Sources */,
 				395BE08625425059008EF624 /* CustomCollectionViewCell.swift in Sources */,
+				B7F1F61E256EBB2400AB74BA /* SettingsSection.swift in Sources */,
+				B7F1F61B256EBA9C00AB74BA /* SettingsCell.swift in Sources */,
 				395BE097254278FE008EF624 /* DetailViewController.swift in Sources */,
 				399EC1342558566500E69C38 /* LogInViewController.swift in Sources */,
 				399EC17D255CB38600E69C38 /* ClothesData.swift in Sources */,
@@ -518,14 +530,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7AN6CV4AF3;
+				DEVELOPMENT_TEAM = 8N8228S873;
 				INFOPLIST_FILE = SlideInTransition/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "csun-vestium77";
+				PRODUCT_BUNDLE_IDENTIFIER = "csun-vestium88";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -538,14 +550,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7AN6CV4AF3;
+				DEVELOPMENT_TEAM = 8N8228S873;
 				INFOPLIST_FILE = SlideInTransition/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "csun-vestium77";
+				PRODUCT_BUNDLE_IDENTIFIER = "csun-vestium88";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

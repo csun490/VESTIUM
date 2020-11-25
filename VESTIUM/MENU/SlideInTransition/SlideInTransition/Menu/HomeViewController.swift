@@ -18,6 +18,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Home" 
         // Do any additionl setup after loading the view.
     }
     
