@@ -9,30 +9,35 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
-
 class UserInfoHeader: UIView {
     
-    var username = UILabel()
+    var userName = UILabel()
     var email = UILabel()
-    
-   /* var post: Post? {
-        didSet{
-            setUpUserInfo()
-        }
-    }*/
+
     func setUpUserInfo() {
-        username.text = "erick"
-        email.text = "nobody@gmail.com"
-        /*
+        
+       /* var myArr = [String]()
+        Database.database().reference().child("users").observe(.value){(snapshot) in
+            if snapshot.childrenCount > 1{
+                myArr.removeAll()
+                for data in snapshot.children.allObjects as! [DataSnapshot]{
+                    if let d = data.value as? [String: Any]{
+                        if Auth.auth.currentuser.uid == d["username"]{
+                            userName.text = d[
+                        }
+                    }
+                }
+                
+            }*/
         let uid = Auth.auth().currentUser?.uid
             Database.database().reference().child("users").child(uid!).observeSingleEvent(of: DataEventType.value) {  (snapshot: DataSnapshot) in
                 let dict = snapshot.value as? [String: Any]
-                let user = User.transformUser(dict: dict!)
-                self.username.text =  user.username
-                self.email.text = user.email
-                print(uid)
-                print(user.username)
-            } */
+                //let user = User.transformUser(dict: dict!)
+                self.userName.text =  dict?["username"] as! String
+                self.email.text = dict?["email"] as! String
+                //print(uid)
+                //print(user.username)
+            }
     }
     //properties
     var profileImageView: UIImageView = {
@@ -73,16 +78,16 @@ class UserInfoHeader: UIView {
         profileImageView.heightAnchor.constraint(equalToConstant: profileImageDimension).isActive = true
         profileImageView.layer.cornerRadius = profileImageDimension / 2
         
-        username.font = UIFont.systemFont(ofSize: 14)
-        username.translatesAutoresizingMaskIntoConstraints = false
-        username.textColor = .white
+        userName.font = UIFont.systemFont(ofSize: 14)
+        userName.translatesAutoresizingMaskIntoConstraints = false
+        userName.textColor = .white
         email.font = UIFont.systemFont(ofSize: 14)
         email.translatesAutoresizingMaskIntoConstraints = false
         email.textColor = .white
 
-        addSubview(username)
-        username.centerYAnchor.constraint(equalTo: profileImageView.centerYAnchor, constant: -10).isActive = true
-        username.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 12).isActive = true
+        addSubview(userName)
+        userName.centerYAnchor.constraint(equalTo: profileImageView.centerYAnchor, constant: -10).isActive = true
+        userName.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 12).isActive = true
         
         addSubview(email)
         email.centerYAnchor.constraint(equalTo: profileImageView.centerYAnchor, constant: 10).isActive = true
