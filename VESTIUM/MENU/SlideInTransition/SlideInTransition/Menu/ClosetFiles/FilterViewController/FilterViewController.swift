@@ -74,12 +74,15 @@ extension FilterViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FilterCollectionViewCell", for: indexPath) as! FilterCollectionViewCell
+        let context = CIContext(options: nil)
         let newImage = resizeImage(image: selectedImage, newWidth: 150)
         let ciImage = CIImage(image: newImage)
         let filter = CIFilter(name: CIFilterNames[indexPath.item])
         filter?.setValue(ciImage, forKey: kCIInputImageKey)
         if let filteredImage = filter?.value(forKey: kCIOutputImageKey) as? CIImage {
-            cell.filterPhoto.image = UIImage(ciImage: filteredImage)
+            let result = context.createCGImage(filteredImage, from: filteredImage.extent)
+            cell.filterPhoto.image = UIImage(cgImage: result!)
+
         }
         return cell
     }

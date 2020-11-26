@@ -1069,13 +1069,38 @@
                     <view key="view" contentMode="scaleToFill" id="P2E-fc-xji">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HpY-Cw-N75">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="tAg-sl-vg2">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tAg-sl-vg2" id="6f6-YF-2H0">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vMf-jM-Zjy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HpY-Cw-N75" firstAttribute="top" secondItem="P2E-fc-xji" secondAttribute="top" id="055-vK-AmL"/>
+                            <constraint firstAttribute="bottom" secondItem="HpY-Cw-N75" secondAttribute="bottom" id="Dfn-S1-aTN"/>
+                            <constraint firstItem="HpY-Cw-N75" firstAttribute="trailing" secondItem="vMf-jM-Zjy" secondAttribute="trailing" id="SN3-4u-azY"/>
+                            <constraint firstItem="HpY-Cw-N75" firstAttribute="leading" secondItem="vMf-jM-Zjy" secondAttribute="leading" id="rjS-Wj-pMg"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="HpY-Cw-N75" id="qx0-Yb-Ggu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K6B-dY-MQ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2571" y="1596"/>
+            <point key="canvasLocation" x="2569.5652173913045" y="1595.7589285714284"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
