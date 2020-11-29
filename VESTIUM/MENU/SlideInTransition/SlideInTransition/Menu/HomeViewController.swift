@@ -53,6 +53,20 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             present(imagePicker, animated: true, completion: nil)
         }
     }
+    
+    // create collage
+    @IBAction func collageButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "collageSegue", sender: nil)
+          
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier ==  "collageSegue" {
+            let photoCollageVC = segue.destination as! CollageMakerViewController
+        }
+    }
+    
+        
     // share button
     @IBAction func shareButton(_ sender: Any) {
         

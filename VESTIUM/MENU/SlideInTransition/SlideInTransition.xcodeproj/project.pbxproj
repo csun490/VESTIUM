@@ -11,6 +11,11 @@
 		393024712564F50C00E14D16 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393024702564F50C00E14D16 /* FilterViewController.swift */; };
 		3930247425657B2500E14D16 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930247325657B2500E14D16 /* FilterCollectionViewCell.swift */; };
 		393024802566028E00E14D16 /* TagImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930247F2566028E00E14D16 /* TagImageViewController.swift */; };
+		394B442D257430BC008DF2F3 /* CollageMakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394B442C257430BB008DF2F3 /* CollageMakerViewController.swift */; };
+		394B44312574310E008DF2F3 /* FetchPhotoServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394B44302574310E008DF2F3 /* FetchPhotoServiceViewModel.swift */; };
+		394B4438257431D0008DF2F3 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394B4436257431D0008DF2F3 /* PhotoCollectionViewCell.swift */; };
+		394B4439257431D0008DF2F3 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 394B4437257431D0008DF2F3 /* PhotoCollectionViewCell.xib */; };
+		394B443C2574369F008DF2F3 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394B443B2574369E008DF2F3 /* PhotosCollectionViewController.swift */; };
 		395BE08125424E6B008EF624 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE07F25424E6B008EF624 /* CustomTableViewCell.swift */; };
 		395BE08225424E6B008EF624 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 395BE08025424E6B008EF624 /* CustomTableViewCell.xib */; };
 		395BE08625425059008EF624 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE08425425059008EF624 /* CustomCollectionViewCell.swift */; };
@@ -47,6 +52,11 @@
 		393024702564F50C00E14D16 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		3930247325657B2500E14D16 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		3930247F2566028E00E14D16 /* TagImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagImageViewController.swift; sourceTree = "<group>"; };
+		394B442C257430BB008DF2F3 /* CollageMakerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollageMakerViewController.swift; sourceTree = "<group>"; };
+		394B44302574310E008DF2F3 /* FetchPhotoServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPhotoServiceViewModel.swift; sourceTree = "<group>"; };
+		394B4436257431D0008DF2F3 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		394B4437257431D0008DF2F3 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		394B443B2574369E008DF2F3 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		395BE07F25424E6B008EF624 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		395BE08025424E6B008EF624 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		395BE08425425059008EF624 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -108,6 +118,18 @@
 				393024702564F50C00E14D16 /* FilterViewController.swift */,
 			);
 			path = FilterViewController;
+			sourceTree = "<group>";
+		};
+		394B442B25743083008DF2F3 /* PhotoCollage */ = {
+			isa = PBXGroup;
+			children = (
+				394B442C257430BB008DF2F3 /* CollageMakerViewController.swift */,
+				394B443B2574369E008DF2F3 /* PhotosCollectionViewController.swift */,
+				394B44302574310E008DF2F3 /* FetchPhotoServiceViewModel.swift */,
+				394B4436257431D0008DF2F3 /* PhotoCollectionViewCell.swift */,
+				394B4437257431D0008DF2F3 /* PhotoCollectionViewCell.xib */,
+			);
+			path = PhotoCollage;
 			sourceTree = "<group>";
 		};
 		395BE08F2542567C008EF624 /* TableViewCell */ = {
@@ -214,6 +236,7 @@
 			children = (
 				399EC156255B94AA00E69C38 /* Firebase */,
 				395BE0AB2547E32C008EF624 /* ClosetFiles */,
+				394B442B25743083008DF2F3 /* PhotoCollage */,
 				AF3B85F125118CE80040FA7E /* HomeViewController.swift */,
 				AF3B860125118E340040FA7E /* MenuViewController.swift */,
 				39F4E7D8252CEC65000E45D0 /* FavoritesViewController.swift */,
@@ -300,6 +323,7 @@
 				395BE08725425059008EF624 /* CustomCollectionViewCell.xib in Resources */,
 				39AAB17B251D307000F6BDC4 /* GoogleService-Info.plist in Resources */,
 				AF3B85F725118CEF0040FA7E /* Assets.xcassets in Resources */,
+				394B4439257431D0008DF2F3 /* PhotoCollectionViewCell.xib in Resources */,
 				AF3B85F525118CE80040FA7E /* Main.storyboard in Resources */,
 				395BE0B82548ADC0008EF624 /* CustomHeaderView.xib in Resources */,
 			);
@@ -374,6 +398,7 @@
 				39DCDC422538CA95005C6E7B /* CalendarViewController.swift in Sources */,
 				395BE0B52548AD8E008EF624 /* CustomHeaderView.swift in Sources */,
 				AF3B85F225118CE80040FA7E /* HomeViewController.swift in Sources */,
+				394B443C2574369F008DF2F3 /* PhotosCollectionViewController.swift in Sources */,
 				399EC17A255CADD200E69C38 /* Config.swift in Sources */,
 				39F4E7D9252CEC65000E45D0 /* FavoritesViewController.swift in Sources */,
 				393024802566028E00E14D16 /* TagImageViewController.swift in Sources */,
@@ -385,7 +410,10 @@
 				3930246E256495D300E14D16 /* User.swift in Sources */,
 				AF3B85F025118CE80040FA7E /* SceneDelegate.swift in Sources */,
 				AF3B860225118E340040FA7E /* MenuViewController.swift in Sources */,
+				394B4438257431D0008DF2F3 /* PhotoCollectionViewCell.swift in Sources */,
+				394B442D257430BC008DF2F3 /* CollageMakerViewController.swift in Sources */,
 				399EC1BD255F2EB200E69C38 /* Post.swift in Sources */,
+				394B44312574310E008DF2F3 /* FetchPhotoServiceViewModel.swift in Sources */,
 				399EC1312558564800E69C38 /* SignUpViewController.swift in Sources */,
 				395BE08625425059008EF624 /* CustomCollectionViewCell.swift in Sources */,
 				395BE097254278FE008EF624 /* DetailViewController.swift in Sources */,
