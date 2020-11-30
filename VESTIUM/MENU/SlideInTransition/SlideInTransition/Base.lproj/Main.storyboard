@@ -13,7 +13,7 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="SlideInTransition" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="HomeViewController" customModule="SlideInTransition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,7 +129,7 @@
         <!--Menu View Controller-->
         <scene sceneID="qAk-ZP-co3">
             <objects>
-                <tableViewController storyboardIdentifier="MenuViewController" id="ErM-0J-F2U" customClass="MenuViewController" customModule="SlideInTransition" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MenuViewController" modalPresentationStyle="fullScreen" id="ErM-0J-F2U" customClass="MenuViewController" customModule="SlideInTransition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="AGf-dm-gZx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -530,7 +530,7 @@
         <!--Navigation Controller-->
         <scene sceneID="BC4-s0-quj">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="Kns-Eg-a3k" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="fullScreen" id="Kns-Eg-a3k" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="xY8-CG-mYW"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="vQ1-DJ-xWo">
@@ -1090,7 +1090,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HpY-Cw-N75">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="107" width="414" height="789"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="tAg-sl-vg2">
@@ -1103,23 +1103,62 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kEJ-gX-KgP">
+                                <rect key="frame" x="0.0" y="44" width="414" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xne-KC-vhc">
+                                        <rect key="frame" x="15" y="17" width="48" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="QNz-mS-zO3"/>
+                                        </constraints>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelButton:" destination="q6e-eF-QWT" eventType="touchUpInside" id="6v5-lS-c01"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAM-xt-n7b">
+                                        <rect key="frame" x="350" y="17" width="49" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="DZH-bo-h64"/>
+                                        </constraints>
+                                        <state key="normal" title="Upload"/>
+                                        <connections>
+                                            <action selector="uploadButton:" destination="q6e-eF-QWT" eventType="touchUpInside" id="p3e-4N-KSj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="OAM-xt-n7b" secondAttribute="trailing" constant="15" id="LL0-Hh-mVO"/>
+                                    <constraint firstItem="Xne-KC-vhc" firstAttribute="top" secondItem="kEJ-gX-KgP" secondAttribute="top" constant="17" id="Nsb-8D-Qzv"/>
+                                    <constraint firstItem="Xne-KC-vhc" firstAttribute="leading" secondItem="kEJ-gX-KgP" secondAttribute="leading" constant="15" id="QdV-jA-hOm"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xne-KC-vhc" secondAttribute="bottom" constant="17" id="dhn-JU-F5i"/>
+                                    <constraint firstAttribute="bottom" secondItem="OAM-xt-n7b" secondAttribute="bottom" constant="17" id="nlY-rG-FCH"/>
+                                    <constraint firstAttribute="height" constant="64" id="utk-iG-zOb"/>
+                                    <constraint firstItem="OAM-xt-n7b" firstAttribute="top" secondItem="kEJ-gX-KgP" secondAttribute="top" constant="17" id="vZ1-PP-X2S"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vMf-jM-Zjy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="HpY-Cw-N75" firstAttribute="top" secondItem="P2E-fc-xji" secondAttribute="top" id="055-vK-AmL"/>
-                            <constraint firstAttribute="bottom" secondItem="HpY-Cw-N75" secondAttribute="bottom" id="Dfn-S1-aTN"/>
-                            <constraint firstItem="HpY-Cw-N75" firstAttribute="trailing" secondItem="vMf-jM-Zjy" secondAttribute="trailing" id="SN3-4u-azY"/>
-                            <constraint firstItem="HpY-Cw-N75" firstAttribute="leading" secondItem="vMf-jM-Zjy" secondAttribute="leading" id="rjS-Wj-pMg"/>
+                            <constraint firstAttribute="bottom" secondItem="HpY-Cw-N75" secondAttribute="bottom" id="4W4-aI-DjD"/>
+                            <constraint firstItem="HpY-Cw-N75" firstAttribute="leading" secondItem="vMf-jM-Zjy" secondAttribute="leading" id="87H-4G-bNf"/>
+                            <constraint firstItem="HpY-Cw-N75" firstAttribute="trailing" secondItem="vMf-jM-Zjy" secondAttribute="trailing" id="UbS-6R-66x"/>
+                            <constraint firstItem="kEJ-gX-KgP" firstAttribute="top" secondItem="vMf-jM-Zjy" secondAttribute="top" id="YZ9-HA-weI"/>
+                            <constraint firstItem="HpY-Cw-N75" firstAttribute="top" secondItem="vMf-jM-Zjy" secondAttribute="top" constant="63" id="aRr-3k-aWr"/>
+                            <constraint firstItem="kEJ-gX-KgP" firstAttribute="trailing" secondItem="vMf-jM-Zjy" secondAttribute="trailing" id="cVj-ty-1MC"/>
+                            <constraint firstItem="kEJ-gX-KgP" firstAttribute="leading" secondItem="vMf-jM-Zjy" secondAttribute="leading" id="tXM-ss-E5I"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="63d-mI-hG1"/>
                     <connections>
                         <outlet property="tableView" destination="HpY-Cw-N75" id="qx0-Yb-Ggu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K6B-dY-MQ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2506" y="1596"/>
+            <point key="canvasLocation" x="2505.7971014492755" y="1595.7589285714284"/>
         </scene>
         <!--Collage Maker View Controller-->
         <scene sceneID="Gd6-06-qfG">
@@ -1314,6 +1353,9 @@
         <namedColor name="darkAndWhite">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -17,7 +17,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBOutlet weak var errorMessage: UILabel!
+   
     @IBOutlet weak var signup_button: UIButton!
     
     override func viewDidLoad() {
@@ -29,7 +29,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.delegate = self
         
         signup_button.isEnabled = false
-        errorMessage.isHidden = true
         signup_button.setTitleColor(UIColor.red, for: UIControl.State.normal)
         handleTextField()
         
@@ -55,7 +54,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         signup_button.setTitleColor(UIColor.white, for: UIControl.State.normal)
         signup_button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
         signup_button.isEnabled = true
-        errorMessage.isHidden = true
     }    
     
     // dismiss keyboard when 'return' key is pressed

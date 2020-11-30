@@ -20,8 +20,11 @@ class TagImageViewController: UIViewController, TTGTextTagCollectionViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.delegate = self
         tableView.dataSource = self
+        
+       
         
         collectionView.alignment = .left
         collectionView.delegate = self
@@ -39,6 +42,16 @@ class TagImageViewController: UIViewController, TTGTextTagCollectionViewDelegate
         collectionView.addTags(["Spring", "Summer", "Fall", "Winter"], with: season)
 
     }
+    
+    @IBAction func cancelButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func uploadButton(_ sender: Any) {
+        print("tapped")
+    }
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
