@@ -1,8 +1,8 @@
 //
-//  ClosetViewController.swift
+//  FavViewController.swift
 //  SlideInTransition
 //
-//  Created by Mimi  on 10/27/20.
+//  Created by Mimi  on 11/30/20.
 //  Copyright © 2020 CSUN-Vestium. All rights reserved.
 //
 
@@ -13,23 +13,22 @@ import FirebaseDatabase
 import ProgressHUD
 import SDWebImage
 
-
-class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var addNewItem_button: UIButton!
+    @IBOutlet weak var myTableView: UITableView!
     
     // to hold the data to be displayed
     var categories = [ImageCategory]()
     var selectedImage: UIImage?
     var posts = [Post]()
     
-    @IBOutlet weak var myTableView: UITableView!
     
     let headerReuseId = "TableHeaderViewReuseId"
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Closet"
+        
+        self.title = "Favorites"
         // Do any additional setup after loading the view, typically from a nib.
         let headerNib = UINib(nibName: "CustomHeaderView", bundle: nil)
         self.myTableView.register(headerNib, forHeaderFooterViewReuseIdentifier: headerReuseId)
@@ -40,6 +39,18 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
   
+    @IBAction func addLookButton(_ sender: Any) {
+        print("add look tapped")
+        self.performSegue(withIdentifier: "favoriteSegue", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier ==  "favoriteSegue" {
+            let favoriteVC = segue.destination as! FavoritesViewController
+        }
+    }
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -47,9 +58,9 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     //MARK: Data initializers methods
     func setupData() {
-        for index in 0..<8 {
+        for index in 0..<5 {
             var infoDict = [String:Any]()
-            infoDict = ClothesData.dataForIndex(index: index)
+            infoDict = FavData.dataForIndex(index: index)
             let aCategory = ImageCategory(withInfo: infoDict)
             categories.append(aCategory)
         }
@@ -84,10 +95,9 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         present(pickerController, animated: true, completion: nil)
     }
     
+    
     // access to photolibrary to add new item in closet
-    @IBAction func addNewItem(_ sender: Any) {
-        handleSelectPhoto()
-    }
+    
     
     func addImageToFirebase() {
         guard let imageSelected = self.selectedImage else {
@@ -129,17 +139,6 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
-    func clean() {
-        self.selectedImage = nil
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier ==  "filterSegue" {
-            let filterVC = segue.destination as! FilterViewController
-            filterVC.selectedImage = self.selectedImage
-        }
-    }
-    
     
     //MARK:Tableview Delegates and Datasource Methods
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -151,7 +150,7 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 160
+        return 100
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -188,7 +187,7 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 }
 
-extension ClosetViewController: CustomCollectionCellDelegate {
+extension FavViewController: CustomCollectionCellDelegate {
     func collectionView(collectioncell: CustomCollectionViewCell?, didTappedInTableview TableCell: CustomTableViewCell) {
         if let cell = collectioncell, let selCategory = TableCell.aCategory {
             if let imageName = cell.cellImageName {
@@ -203,13 +202,13 @@ extension ClosetViewController: CustomCollectionCellDelegate {
     }
 }
 
-extension ClosetViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension FavViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         print("image chosen")
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             selectedImage = image
             dismiss(animated: true, completion: {
-                self.performSegue(withIdentifier: "filterSegue", sender: nil)
+               // self.performSegue(withIdentifier: "filterSegue", sender: nil)
             })
         }
         
@@ -222,5 +221,4 @@ extension ClosetViewController: UIImagePickerControllerDelegate, UINavigationCon
         //addImageToFirebase()
     }
 }
-
 
