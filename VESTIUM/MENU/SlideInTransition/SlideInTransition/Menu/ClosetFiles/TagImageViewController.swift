@@ -7,16 +7,20 @@
 //
 
 import UIKit
+import FirebaseStorage
+import FirebaseAuth
+import FirebaseDatabase
+import ProgressHUD
 import TTGTagCollectionView
 
-class TagImageViewController: UIViewController, TTGTextTagCollectionViewDelegate  {
+class TagImageViewController: UIViewController, TTGTextTagCollectionViewDelegate, UIImagePickerControllerDelegate  {
    
     @IBOutlet var tableView: UITableView!
     var selectedImage: UIImage?
     let collectionView = TTGTextTagCollectionView()
 
     
-    private var selections = [String]()
+    var selections = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,15 +47,77 @@ class TagImageViewController: UIViewController, TTGTextTagCollectionViewDelegate
 
     }
     
+
     @IBAction func cancelButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
     
     @IBAction func uploadButton(_ sender: Any) {
-        print("tapped")
+        print("image uploaded")
+        addImageToFirebase()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tagToClosetVC = storyboard.instantiateViewController(identifier: "ClosetViewController")
+        self.present(tagToClosetVC, animated: true, completion: nil)
     }
     
+    
+    func sendDataToDatabase(photoUrl: String) {
+        // create new tag node
+        let ref = Database.database().reference()
+        let itemReference = ref.child("tags")
+        
+        
+        guard let currentUser = Auth.auth().currentUser?.uid else {
+            return
+        }
+        let currentUserId = currentUser
+        // new item img location
+        let newItemID = itemReference.childByAutoId().key
+        let newItemReference = itemReference.child(newItemID!)
+        
+        for selection in selections {
+            let newTagRef = Api.Tag.REF_TAG.child(selection)
+            newTagRef.updateChildValues([newItemID : true])
+        }
+    
+        // push current user and img to firebase storage
+        newItemReference.setValue(["uid": currentUserId, "photoUrl": photoUrl], withCompletionBlock: { (error, ref) in
+            if error != nil {
+                ProgressHUD.showError(error!.localizedDescription)
+                return
+            }
+            ProgressHUD.showSuccess("Success")
+        })
+    }
+ 
+    
+    func addImageToFirebase() {
+        guard let imageSelected = self.selectedImage else {
+            print("photo is nil")
+            return
+        }
+        
+        guard let imageData = imageSelected.jpegData(compressionQuality: 0.1) else {
+            return
+        }
+        
+        let photoIdString = NSUUID().uuidString
+        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOF_REF).child("new item").child(photoIdString)
+        storageRef.putData(imageData, metadata: nil) { (metadata, error) in
+            if error != nil {
+                //ProgressHUD.showError(error!.localizedDescription)
+                print(error!.localizedDescription)
+                return
+            }
+            storageRef.downloadURL(completion: { (url: URL?, error: Error?) in
+                if let photoUrl = url?.absoluteString {
+                    self.sendDataToDatabase(photoUrl: photoUrl)
+                    //onSuccess(photoUrl)
+                }
+            })
+        }
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -66,9 +132,10 @@ class TagImageViewController: UIViewController, TTGTextTagCollectionViewDelegate
 
 }
 
+
 extension TagImageViewController: FilterViewControllerDelegate {
     func updatePhoto(image: UIImage) {
-        //self.selectedImage.image = image
+        self.selectedImage = image
     }
 }
 
@@ -82,7 +149,7 @@ extension TagImageViewController: UITableViewDelegate{
 extension TagImageViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return selections.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -91,3 +158,4 @@ extension TagImageViewController: UITableViewDataSource{
         return cell
     }
 }
+

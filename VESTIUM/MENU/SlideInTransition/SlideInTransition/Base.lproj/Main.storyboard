@@ -553,7 +553,7 @@
         <!--Closet View Controller-->
         <scene sceneID="u42-lm-tKF">
             <objects>
-                <viewController title="Closet View Controller" id="jRB-Yd-xFE" customClass="ClosetViewController" customModule="SlideInTransition" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ClosetViewController" title="Closet View Controller" id="jRB-Yd-xFE" customClass="ClosetViewController" customModule="SlideInTransition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pVc-DL-Ggo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -787,7 +787,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mlp-Ty-pqa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="978" y="2300"/>
+            <point key="canvasLocation" x="951" y="2269"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="rvR-Bn-J6Z">
@@ -1113,7 +1113,7 @@
                                         </constraints>
                                         <state key="normal" title="Cancel"/>
                                         <connections>
-                                            <action selector="cancelButton:" destination="q6e-eF-QWT" eventType="touchUpInside" id="6v5-lS-c01"/>
+                                            <action selector="cancelButton:" destination="q6e-eF-QWT" eventType="touchUpInside" id="7yk-TA-xqf"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAM-xt-n7b">
@@ -1123,7 +1123,7 @@
                                         </constraints>
                                         <state key="normal" title="Upload"/>
                                         <connections>
-                                            <action selector="uploadButton:" destination="q6e-eF-QWT" eventType="touchUpInside" id="p3e-4N-KSj"/>
+                                            <action selector="uploadButton:" destination="q6e-eF-QWT" eventType="touchUpInside" id="Hro-JL-5tj"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1332,7 +1332,7 @@
         <segue reference="wyl-9O-ojV"/>
         <segue reference="Qhq-OE-wA1"/>
         <segue reference="03C-Lm-oIx"/>
-        <segue reference="2Gg-II-jjN"/>
+        <segue reference="LKA-iL-Yt7"/>
         <segue reference="Fb6-xL-KHa"/>
         <segue reference="9oJ-uL-hgL"/>
     </inferredMetricsTieBreakers>

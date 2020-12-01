@@ -41,7 +41,7 @@ class FilterViewController: UIViewController {
     
     @IBAction func nextButton(_ sender: Any) {
         self.performSegue(withIdentifier: "tagImageSegue", sender: nil)
-          
+        delegate?.updatePhoto(image: self.filterPhoto.image!)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

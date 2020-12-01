@@ -42,8 +42,8 @@ class SettingsViewController: UIViewController {
             print(Auth.auth().currentUser)
         }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let loginInVC = storyboard.instantiateViewController(identifier: "LogInViewController")
-        self.present(loginInVC, animated: true, completion: nil)
+        let loginVC = storyboard.instantiateViewController(identifier: "LogInViewController")
+        self.present(loginVC, animated: true, completion: nil)
     }
     
 }
