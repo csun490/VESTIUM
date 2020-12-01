@@ -148,13 +148,15 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
             if (SocialOptions.init(rawValue: indexPath.row)?.description == "Logout"){
                 print(SocialOptions(rawValue: indexPath.row)?.description)
                 logoutButton()
+                tableView.deselectRow(at: indexPath, animated: true)
             }
             else if (SocialOptions.init(rawValue: indexPath.row)?.description == "Change Profile Picture") {
                 openLibrary()
-                
+                tableView.deselectRow(at: indexPath, animated: true)
             }
         case .Communications:
             print(CommunicationOptions(rawValue: indexPath.row)?.description)
+            tableView.deselectRow(at: indexPath, animated: true)
         }
     }
 }
