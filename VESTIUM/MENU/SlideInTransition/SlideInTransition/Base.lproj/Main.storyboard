@@ -1387,6 +1387,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Save"/>
                             </button>
+                            <connections>
+                                <action selector="saveButton:" destination="ws1-LB-ELt" id="OVJ-f5-WPh"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

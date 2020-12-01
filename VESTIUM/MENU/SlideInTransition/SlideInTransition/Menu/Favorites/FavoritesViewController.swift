@@ -57,11 +57,7 @@ class FavoritesViewController: UIViewController, UIImagePickerControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additionl setup after loading the view.
-        tshirtAdd.isHidden = false
-        pantsAdd.isHidden = false
-        shoesAdd.isHidden = false
-        misc1Add.isHidden = false
-        misc2Add.isHidden = false
+        setFalse()
     }
     
     @IBAction func switchDidChange(_ sender: UISwitch) {
@@ -100,6 +96,8 @@ class FavoritesViewController: UIViewController, UIImagePickerControllerDelegate
         misc2Add.isHidden = false
     }
 
+    @IBAction func saveButton(_ sender: Any) {
+    }
     
     // cancel button in photo library
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

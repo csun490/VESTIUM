@@ -17,7 +17,6 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Closet"
         self.updateViewControllerWithDetails()
     }
     

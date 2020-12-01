@@ -96,8 +96,6 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     
-    // access to photolibrary to add new item in closet
-    
     
     func addImageToFirebase() {
         guard let imageSelected = self.selectedImage else {
