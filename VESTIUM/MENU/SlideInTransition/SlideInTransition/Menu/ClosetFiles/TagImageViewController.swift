@@ -56,9 +56,7 @@ class TagImageViewController: UIViewController, TTGTextTagCollectionViewDelegate
     @IBAction func uploadButton(_ sender: Any) {
         print("image uploaded")
         addImageToFirebase()
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let tagToClosetVC = storyboard.instantiateViewController(identifier: "ClosetViewController")
-        self.present(tagToClosetVC, animated: true, completion: nil)
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     
