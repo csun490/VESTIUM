@@ -16,7 +16,6 @@
 		394B4438257431D0008DF2F3 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394B4436257431D0008DF2F3 /* PhotoCollectionViewCell.swift */; };
 		394B4439257431D0008DF2F3 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 394B4437257431D0008DF2F3 /* PhotoCollectionViewCell.xib */; };
 		394B443C2574369F008DF2F3 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394B443B2574369E008DF2F3 /* PhotosCollectionViewController.swift */; };
-		394B444225748681008DF2F3 /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394B444125748681008DF2F3 /* TagViewController.swift */; };
 		394B44452574AB09008DF2F3 /* TagApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394B44442574AB07008DF2F3 /* TagApi.swift */; };
 		394B44482575B646008DF2F3 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394B44472575B645008DF2F3 /* Api.swift */; };
 		395BE08125424E6B008EF624 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE07F25424E6B008EF624 /* CustomTableViewCell.swift */; };
@@ -60,7 +59,6 @@
 		394B4436257431D0008DF2F3 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		394B4437257431D0008DF2F3 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		394B443B2574369E008DF2F3 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
-		394B444125748681008DF2F3 /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
 		394B44442574AB07008DF2F3 /* TagApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagApi.swift; sourceTree = "<group>"; };
 		394B44472575B645008DF2F3 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		395BE07F25424E6B008EF624 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 				399EC17C255CB38600E69C38 /* ClothesData.swift */,
 				395BE096254278FE008EF624 /* DetailViewController.swift */,
 				3930247F2566028E00E14D16 /* TagImageViewController.swift */,
-				394B444125748681008DF2F3 /* TagViewController.swift */,
 				395BE0BB2548B5B5008EF624 /* ClosetViewController.swift */,
 				395BE0A72547DD35008EF624 /* ImageCategory.swift */,
 				3930247725657E2800E14D16 /* FilterViewController */,
@@ -417,7 +414,6 @@
 				394B44482575B646008DF2F3 /* Api.swift in Sources */,
 				AF3B85EE25118CE80040FA7E /* AppDelegate.swift in Sources */,
 				399EC154255B44EB00E69C38 /* SettingsViewController.swift in Sources */,
-				394B444225748681008DF2F3 /* TagViewController.swift in Sources */,
 				3930246E256495D300E14D16 /* User.swift in Sources */,
 				AF3B85F025118CE80040FA7E /* SceneDelegate.swift in Sources */,
 				AF3B860225118E340040FA7E /* MenuViewController.swift in Sources */,
