@@ -58,7 +58,7 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     //MARK: Data initializers methods
     func setupData() {
-        for index in 0..<5 {
+        for index in 0..<7 {
             var infoDict = [String:Any]()
             infoDict = FavData.dataForIndex(index: index)
             let aCategory = ImageCategory(withInfo: infoDict)
@@ -148,7 +148,7 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 140
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
