@@ -165,7 +165,7 @@
 			path = ../../..;
 			sourceTree = "<group>";
 		};
-		395BE0AB2547E32C008EF624 /* ClosetFiles */ = {
+		395BE0AB2547E32C008EF624 /* Closet */ = {
 			isa = PBXGroup;
 			children = (
 				399EC17C255CB38600E69C38 /* ClothesData.swift */,
@@ -178,7 +178,7 @@
 				395BE090254256B6008EF624 /* CollectionViewCell */,
 				395BE08F2542567C008EF624 /* TableViewCell */,
 			);
-			path = ClosetFiles;
+			path = Closet;
 			sourceTree = "<group>";
 		};
 		395BE0B32548ACFF008EF624 /* TableHeaderView */ = {
@@ -267,7 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				399EC156255B94AA00E69C38 /* Firebase */,
-				395BE0AB2547E32C008EF624 /* ClosetFiles */,
+				395BE0AB2547E32C008EF624 /* Closet */,
 				394B442B25743083008DF2F3 /* PhotoCollage */,
 				397FB60F25762861004CEBBB /* Favorites */,
 				39C3535D25787EA500C1F611 /* Settings */,

@@ -41,7 +41,7 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barStyle = .black
+        //navigationController?.navigationBar.barStyle = .black
         navigationController?.navigationBar.barTintColor = .white
         navigationItem.title = "Settings"
         
