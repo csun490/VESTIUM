@@ -12,19 +12,27 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        
+
 
         let fontAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16.0)]
          UITabBarItem.appearance().setTitleTextAttributes(fontAttributes, for: .normal)
          UITabBar.appearance().tintColor = .red
-
+        
         
         FirebaseApp.configure()
+        
+        // find view controller
+        window = UIWindow()
+        window?.makeKeyAndVisible()
+        let findVC = FindViewController()
+        
+        window?.rootViewController = findVC
+        
         return true
     }
 

@@ -36,7 +36,6 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         setupData()
         self.myTableView.reloadData()
         //loadPosts()
-        
     }
     
   
@@ -57,7 +56,7 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func sendDataToDatabase(photoUrl: String) {
         let ref = Database.database().reference()
-        let itemReference = ref.child("new items")
+        let itemReference = ref.child("tags")
         guard let currentUser = Auth.auth().currentUser?.uid else {
             return
         }

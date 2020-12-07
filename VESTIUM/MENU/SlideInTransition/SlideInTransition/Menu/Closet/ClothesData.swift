@@ -20,15 +20,18 @@ func loadPosts() {
 */
 
 
+
+
 class ClothesData {
     static func dataForIndex(index:Int) -> [String:Any] {
+       
         var data = [String:Any]()
         switch index {
         case 0:
             data["cat_name"] = "HEAD"
             data["cat_id"]   = "\(index)"
             data["cat_description"] = "HEAD"
-            data["cat_items"] = ["beanie","glasses","egg_hat","fleece_hat","brown_hat", "cap"]
+            data["cat_items"] = ["beanie","glasses","egg_hat","fleece_hat","brown_hat", "cap", "black_white_beanie"]
         case 1:
             data["cat_name"] = "TOP-INNER"
             data["cat_id"]   = "\(index)"
