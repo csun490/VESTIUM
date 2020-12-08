@@ -16,22 +16,22 @@ class FavData {
             data["cat_name"] = "SPRING"
             data["cat_id"]   = "\(index)"
             data["cat_description"] = "Spring"
-            data["cat_items"] = ["spring"]
+            data["cat_items"] = ["sp", "sp1", "sp2", "sp3"]
         case 1:
             data["cat_name"] = "SUMMER"
             data["cat_id"]   = "\(index)"
             data["cat_description"] = "Summer"
-            data["cat_items"] = ["summer"]
+            data["cat_items"] = ["s", "s1", "s2", "s3", "s4"]
         case 2:
             data["cat_name"] = "FALL"
             data["cat_id"]   = "\(index)"
             data["cat_description"] = "Fall"
-            data["cat_items"] = ["fall"]
+            data["cat_items"] = ["f", "f1", "f2", "f3"]
         case 3:
             data["cat_name"] = "WINTER"
             data["cat_id"]   = "\(index)"
             data["cat_description"] = "Winter"
-            data["cat_items"] = ["winter"]
+            data["cat_items"] = ["w", "w1", "w2", "w3", "w4"]
         case 4:
             data["cat_name"] = "FORMAL"
             data["cat_id"]   = "\(index)"
