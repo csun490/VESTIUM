@@ -8,7 +8,7 @@
 
 import SwiftUI
 import UIKit
-import FirebaseAuth
+//import FirebaseAuth
 
 class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
