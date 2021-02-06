@@ -41,7 +41,7 @@ class TagImageViewController: UIViewController, TTGTextTagCollectionViewDelegate
         collectionView.addTags(["Head", "Top-Inner", "Top-Mid", "Top-Outer", "Bottom", "Feet", "Other"], with: body)
         
         let season = TTGTextTagConfig()
-        //body.backgroundColor = .white
+        body.backgroundColor = .white
         season.textColor = .black
         collectionView.addTags(["Spring", "Summer", "Fall", "Winter"], with: season)
 
@@ -124,9 +124,16 @@ class TagImageViewController: UIViewController, TTGTextTagCollectionViewDelegate
     
     // append selection tags in array
     func textTagCollectionView(_ textTagCollectionView: TTGTextTagCollectionView!, didTapTag tagText: String!, at index: UInt, selected: Bool, tagConfig config: TTGTextTagConfig!) {
+        
         selections.append(tagText)
+        let lastElement = selections.last
+        
+        
+        
         print("\(selections)")
+        print(lastElement)
     }
+    
 
 }
 
@@ -157,3 +164,12 @@ extension TagImageViewController: UITableViewDataSource{
     }
 }
 
+extension Array where Element: Equatable {
+
+  // Remove first collection element that is equal to the given `object`:
+  mutating func remove(object: Element) {
+      guard let index = firstIndex(of: object) else {return}
+      remove(at: index)
+  }
+
+}

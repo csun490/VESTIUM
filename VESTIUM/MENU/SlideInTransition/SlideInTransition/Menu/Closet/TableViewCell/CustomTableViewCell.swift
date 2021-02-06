@@ -3,7 +3,7 @@
 //  SlideInTransition
 //
 //  Created by Mimi  on 10/22/20.
-//  Copyright © 2020 Murat Bekgi. All rights reserved.
+//  Copyright © 2020 CSUN-Vestium. All rights reserved.
 //
 
 import Foundation
@@ -15,10 +15,12 @@ protocol CustomCollectionCellDelegate:class {
 }
 
 class CustomTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
-    weak var cellDelegate: CustomCollectionCellDelegate? //define delegate
+    //define delegate
+    weak var cellDelegate: CustomCollectionCellDelegate?
     @IBOutlet weak var myCollectionView: UICollectionView!
     var aCategory: ImageCategory?
     let cellReuseId = "CollectionViewCell"
+    
     class var customCell: CustomTableViewCell {
         let cell = Bundle.main.loadNibNamed("CustomTableViewCell", owner: self, options: nil)?.last
         return cell as! CustomTableViewCell

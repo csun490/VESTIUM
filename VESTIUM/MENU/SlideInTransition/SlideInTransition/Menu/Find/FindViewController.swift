@@ -28,6 +28,7 @@ class FindViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
             
             view.addSubview(label)
             setupLabel()
+            
         }
         
         

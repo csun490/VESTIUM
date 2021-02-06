@@ -360,6 +360,7 @@ PODS:
     - SDWebImage/Core (= 5.9.5)
   - SDWebImage/Core (5.9.5)
   - SwiftyJSON (4.3.0)
+  - TagListView (1.4.1)
   - TTGTagCollectionView (1.11.1)
 
 DEPENDENCIES:
@@ -376,6 +377,7 @@ DEPENDENCIES:
   - ProgressHUD
   - SDWebImage
   - SwiftyJSON (~> 4.0)
+  - TagListView (~> 1.0)
   - TTGTagCollectionView
 
 SPEC REPOS:
@@ -408,6 +410,7 @@ SPEC REPOS:
     - PromisesObjC
     - SDWebImage
     - SwiftyJSON
+    - TagListView
     - TTGTagCollectionView
 
 SPEC CHECKSUMS:
@@ -439,8 +442,9 @@ SPEC CHECKSUMS:
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
   SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  TagListView: a1c236d17960a0cf64156725a76ce6d73ebce2be
   TTGTagCollectionView: 86fcbfa6a7493c9e860b01c2e693cffc8acf6de1
 
-PODFILE CHECKSUM: fa1887aa8ee47ebe2ff69c418f1c13b1f5e13891
+PODFILE CHECKSUM: 869fee56d2c6a65eb8610d968602bd4efc05f66d
 
 COCOAPODS: 1.9.3

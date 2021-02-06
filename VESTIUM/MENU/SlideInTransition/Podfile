@@ -19,6 +19,7 @@ pod 'DropDown'
 pod 'ProgressHUD'
 pod 'SDWebImage'
 pod 'TTGTagCollectionView'
+pod 'TagListView', '~> 1.0'
 
 # Pods for SlideInTransition
 
