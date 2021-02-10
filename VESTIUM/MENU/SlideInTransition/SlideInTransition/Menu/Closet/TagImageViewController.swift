@@ -66,7 +66,7 @@ class TagImageViewController: UIViewController, TTGTextTagCollectionViewDelegate
     }
     
     
-    func sendDataToDatabase(photoUrl: String) {
+    func sendDataToDatabase(photoUrl: String, taggedImage: String) {
         // create new tag node
         let ref = Database.database().reference()
         let itemReference = ref.child("tags")
@@ -86,7 +86,7 @@ class TagImageViewController: UIViewController, TTGTextTagCollectionViewDelegate
         }
     
         // push current user and img to firebase storage
-        newItemReference.setValue(["uid": currentUserId, "photoUrl": photoUrl], withCompletionBlock: { (error, ref) in
+        newItemReference.setValue(["uid": currentUserId, "photoUrl": photoUrl, "taggedImage": taggedImage], withCompletionBlock: { (error, ref) in
             if error != nil {
                 ProgressHUD.showError(error!.localizedDescription)
                 return
@@ -116,7 +116,7 @@ class TagImageViewController: UIViewController, TTGTextTagCollectionViewDelegate
             }
             storageRef.downloadURL(completion: { (url: URL?, error: Error?) in
                 if let photoUrl = url?.absoluteString {
-                    self.sendDataToDatabase(photoUrl: photoUrl)
+                    self.sendDataToDatabase(photoUrl: photoUrl, taggedImage: self.taggedImage!)
                     //onSuccess(photoUrl)
                 }
             })
@@ -154,7 +154,6 @@ extension TagImageViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         taggedImage = tagData[indexPath.row]
         print(tagData[indexPath.row])
-        
     }
 }
 
