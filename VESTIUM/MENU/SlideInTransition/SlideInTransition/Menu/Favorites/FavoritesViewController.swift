@@ -11,6 +11,8 @@ import UIKit
 
 class FavoritesViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    //let vc = UIView()
+    
     // image view for items
     @IBOutlet weak var shirtImage: UIImageView!
     @IBOutlet weak var pantsImage: UIImageView!
@@ -27,6 +29,8 @@ class FavoritesViewController: UIViewController, UIImagePickerControllerDelegate
     
     @IBOutlet weak var mySwitch: UISwitch!
     
+    
+    var selectedImage: UIImage?
     var imagePicked = 0
     
     @IBAction func tshirtButton(_ sender: UIButton) {
@@ -78,7 +82,6 @@ class FavoritesViewController: UIViewController, UIImagePickerControllerDelegate
         image.accessibilityRespondsToUserInteraction = true
         self.present(image, animated: true)
     }
-    
    
     func setTrue() {
         tshirtAdd.isHidden = true
@@ -96,8 +99,12 @@ class FavoritesViewController: UIViewController, UIImagePickerControllerDelegate
         misc2Add.isHidden = false
     }
 
-    @IBAction func saveButton(_ sender: Any) {
+    @IBAction func saveBut(_ sender: Any) {
+        //selectedImage = vc.asImage()
     }
+ 
+    
+
     
     // cancel button in photo library
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -126,6 +133,25 @@ class FavoritesViewController: UIViewController, UIImagePickerControllerDelegate
     self.dismiss(animated: true, completion: nil)
     }
 }
-    
-    
+  
+// convert ui view controller and save as image
+/*
+extension UIView {
+    // using a function since `var image` might conflict with an existing variable
+    func asImage() -> UIImage {
+        if #available(iOS 10.0, *) {
+            let renderer = UIGraphicsImageRenderer(bounds: bounds)
+            return renderer.image { rendererContext in
+                layer.render(in: rendererContext.cgContext)
+            }
+        } else {
+            UIGraphicsBeginImageContext(self.frame.size)
+            self.layer.render(in:UIGraphicsGetCurrentContext()!)
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            return UIImage(cgImage: image!.cgImage!)
+        }
+    }
+}
 
+*/

@@ -13,23 +13,28 @@ import FirebaseDatabase
 import ProgressHUD
 import TTGTagCollectionView
 
-class TagImageViewController: UIViewController, TTGTextTagCollectionViewDelegate, UIImagePickerControllerDelegate  {
+class TagImageViewController: UIViewController, TTGTextTagCollectionViewDelegate, UIImagePickerControllerDelegate {
    
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
+    
     var selectedImage: UIImage?
-    let collectionView = TTGTextTagCollectionView()
+    var taggedImage: String?
+    
+   // let collectionView = TTGTextTagCollectionView()
 
     
     var selections = [String]()
     
+    let tagData = ["Head", "Top-Inner", "Top-Mid", "Top-Outer", "Bottom", "Feet", "Other"]
+                                                    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = 60
         
-       
-        
+      /*
         collectionView.alignment = .left
         collectionView.delegate = self
         view.addSubview(collectionView)
@@ -44,7 +49,8 @@ class TagImageViewController: UIViewController, TTGTextTagCollectionViewDelegate
         body.backgroundColor = .white
         season.textColor = .black
         collectionView.addTags(["Spring", "Summer", "Fall", "Winter"], with: season)
-
+        
+        */
     }
     
 
@@ -117,6 +123,7 @@ class TagImageViewController: UIViewController, TTGTextTagCollectionViewDelegate
         }
     }
     
+    /*
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.frame = CGRect(x: 0, y: 100 , width: view.frame.size.width, height: view.frame.size.height)
@@ -128,12 +135,10 @@ class TagImageViewController: UIViewController, TTGTextTagCollectionViewDelegate
         selections.append(tagText)
         let lastElement = selections.last
         
-        
-        
         print("\(selections)")
         print(lastElement)
     }
-    
+    */
 
 }
 
@@ -147,23 +152,26 @@ extension TagImageViewController: FilterViewControllerDelegate {
 // handles interaction of cells
 extension TagImageViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("tapped")
+        taggedImage = tagData[indexPath.row]
+        print(tagData[indexPath.row])
+        
     }
 }
 
 extension TagImageViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return selections.count
+        return tagData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
+        cell.textLabel?.text = tagData[indexPath.row]
         return cell
     }
 }
 
+/*
 extension Array where Element: Equatable {
 
   // Remove first collection element that is equal to the given `object`:
@@ -173,3 +181,4 @@ extension Array where Element: Equatable {
   }
 
 }
+*/

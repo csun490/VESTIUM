@@ -25,7 +25,6 @@
 		395BE0B52548AD8E008EF624 /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE0B42548AD8E008EF624 /* CustomHeaderView.swift */; };
 		395BE0B82548ADC0008EF624 /* CustomHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 395BE0B72548ADC0008EF624 /* CustomHeaderView.xib */; };
 		395BE0BC2548B5B5008EF624 /* ClosetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395BE0BB2548B5B5008EF624 /* ClosetViewController.swift */; };
-		3978CB88259D1C3D000FFDF9 /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978CB87259D1C3D000FFDF9 /* TagViewController.swift */; };
 		397FB60D25761E55004CEBBB /* FavoriteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397FB60C25761E55004CEBBB /* FavoriteData.swift */; };
 		397FB6132576E4A6004CEBBB /* FavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397FB6122576E4A6004CEBBB /* FavViewController.swift */; };
 		399EC1312558564800E69C38 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399EC1302558564800E69C38 /* SignUpViewController.swift */; };
@@ -76,7 +75,6 @@
 		395BE0B42548AD8E008EF624 /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
 		395BE0B72548ADC0008EF624 /* CustomHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomHeaderView.xib; sourceTree = "<group>"; };
 		395BE0BB2548B5B5008EF624 /* ClosetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetViewController.swift; sourceTree = "<group>"; };
-		3978CB87259D1C3D000FFDF9 /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
 		397FB60C25761E55004CEBBB /* FavoriteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteData.swift; sourceTree = "<group>"; };
 		397FB6122576E4A6004CEBBB /* FavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavViewController.swift; sourceTree = "<group>"; };
 		399EC1302558564800E69C38 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -174,7 +172,6 @@
 		395BE0AB2547E32C008EF624 /* Closet */ = {
 			isa = PBXGroup;
 			children = (
-				3978CB87259D1C3D000FFDF9 /* TagViewController.swift */,
 				399EC17C255CB38600E69C38 /* ClothesData.swift */,
 				395BE096254278FE008EF624 /* DetailViewController.swift */,
 				3930247F2566028E00E14D16 /* TagImageViewController.swift */,
@@ -480,7 +477,6 @@
 				399EC1342558566500E69C38 /* LogInViewController.swift in Sources */,
 				39C35376257ED74D00C1F611 /* Resnet50.mlmodel in Sources */,
 				399EC17D255CB38600E69C38 /* ClothesData.swift in Sources */,
-				3978CB88259D1C3D000FFDF9 /* TagViewController.swift in Sources */,
 				394B44452574AB09008DF2F3 /* TagApi.swift in Sources */,
 				399EC158255B94F600E69C38 /* AuthService.swift in Sources */,
 				395BE08125424E6B008EF624 /* CustomTableViewCell.swift in Sources */,
@@ -641,7 +637,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "csun-vestium22";
+				PRODUCT_BUNDLE_IDENTIFIER = "csun-vestium33";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -661,7 +657,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "csun-vestium22";
+				PRODUCT_BUNDLE_IDENTIFIER = "csun-vestium33";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

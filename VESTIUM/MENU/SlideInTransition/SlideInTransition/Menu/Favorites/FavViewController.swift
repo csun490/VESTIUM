@@ -16,6 +16,7 @@ import SDWebImage
 class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var myTableView: UITableView!
+
     
     // to hold the data to be displayed
     var categories = [ImageCategory]()
