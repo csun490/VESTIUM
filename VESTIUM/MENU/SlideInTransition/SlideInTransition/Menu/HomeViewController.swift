@@ -8,6 +8,7 @@
 
 import SwiftUI
 import UIKit
+import FirebaseAuth
 
 class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -15,40 +16,31 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     let transiton = SlideInTransition()
     
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additionl setup after loading the view.
     }
-   
+    
     @IBAction func didTapMenu(_ sender: UIBarButtonItem) {
-       guard let menuViewController = storyboard?.instantiateViewController(withIdentifier:"MenuViewController") as?
-        MenuViewController else {return}
+        guard let menuViewController = storyboard?.instantiateViewController(withIdentifier:"MenuViewController") as?
+                MenuViewController else {return}
         menuViewController.didTapMenuType = { menuType in
-                   print(menuType)
-               }
+            print(menuType)
+        }
         menuViewController.modalPresentationStyle = .overCurrentContext
         menuViewController.transitioningDelegate = self
         present(menuViewController, animated: true)
-    }
-    // save button
-    
-    @IBAction func Save_button(_ sender: Any) {
-   saveImage(imageName: "test.png")
-        
     }
     
     // camera button
     @IBAction func cameraButton(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let imagePicker = UIImagePickerController()
-               imagePicker.delegate = self
-               imagePicker.sourceType = .camera;
-               imagePicker.allowsEditing = true
-               present(imagePicker, animated: true, completion: nil)
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera;
+            imagePicker.allowsEditing = true
+            present(imagePicker, animated: true, completion: nil)
         }
-        
     }
     
     // photo library button
@@ -61,40 +53,39 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             present(imagePicker, animated: true, completion: nil)
         }
     }
-    @IBAction func share(_ sender: Any) {
-        
-        var items = [Any]()
-        
-      
-            items = [myImage.image!]
-        
-        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
-        present(ac, animated: true)
-              
+    
+    // create collage
+    @IBAction func collageButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "collageSegue", sender: nil)
+          
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier ==  "collageSegue" {
+            let photoCollageVC = segue.destination as! CollageMakerViewController
+        }
+    }
+    
+        
+    // share button
+    @IBAction func shareButton(_ sender: Any) {
+        
+        var items = [Any]()
+        items = [myImage.image!]
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(ac, animated: true)
+        
+    }
     
     
     // accessing photo library
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-            myImage.image! = image
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            myImage.image = image
         }
         dismiss(animated: true, completion: nil)
     }
- // save photo on UI View
-    func saveImage(imageName: String ){
-        //  create instance of FileManager
-        let fileManager = FileManager.default
-        // get the image path
-        let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) [0] as NSString).appendingPathComponent(imageName)
-        // get the image took from camera
-        let image = myImage.image!
-        // get the PNG data for image
-        let data = image.pngData()
-        // store it in the document directory
-        fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
-    }
+    
     
 }
 
@@ -103,13 +94,13 @@ extension HomeViewController: UIViewControllerTransitioningDelegate {
         transiton.isPresenting = true
         return transiton
     }
-
+    
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transiton.isPresenting = false
         return transiton
     }
     
-
+    
 }
 
 struct HomeViewController_Previews: PreviewProvider {
