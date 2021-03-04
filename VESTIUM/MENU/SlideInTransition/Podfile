@@ -1,0 +1,33 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'SlideInTransition' do
+# Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+# Pods for Firebase
+pod 'Firebase/Firestore'
+pod 'Firebase/Core'
+pod 'Firebase/Crashlytics'
+pod 'Firebase/Database'
+pod 'Firebase/Storage'
+pod 'FSCalendar'
+pod 'Firebase/Auth'
+
+# Pods for Closet
+pod 'DropDown' 
+pod 'ProgressHUD'
+pod 'SDWebImage'
+pod 'TTGTagCollectionView'
+pod 'TagListView', '~> 1.0'
+
+# Pods for SlideInTransition
+
+# Pods for Weather
+  pod 'Alamofire', '~> 4.7'
+  pod 'SwiftyJSON', '~> 4.0'
+  pod 'NVActivityIndicatorView'
+
+
+
+end

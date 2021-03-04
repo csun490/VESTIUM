@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>332919625659-dj5lkh3qb8pdmbg2l666gsq4ergvm002.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.332919625659-dj5lkh3qb8pdmbg2l666gsq4ergvm002</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCGh1BFyorQ4RSUX_thMrd7uGx8aD2OtDc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>332919625659</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>csun-vestium77</string>
+	<key>PROJECT_ID</key>
+	<string>csun-vestium</string>
+	<key>STORAGE_BUCKET</key>
+	<string>csun-vestium.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:332919625659:ios:c10c7cb72f8d3c2395969e</string>
+	<key>DATABASE_URL</key>
+	<string>https://csun-vestium.firebaseio.com</string>
+</dict>
+</plist>
