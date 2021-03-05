@@ -62,7 +62,7 @@ class FetchPhotoServiceViewModel {
         
         func loadPhoto() {
             
-            fetchImage(asset: (self.photoAssets?.object(at: index))!, contentMode: .aspectFit, targetSize: CGSize(width: itemSize, height: itemSize)) { (image) in
+            fetchImage(asset: (self.photoAssets?.object(at: index))!, contentMode: .aspectFit, targetSize: CGSize(width: itemSize + 250, height: itemSize + 250)) { (image) in
                 
                 if let image = image {
                     
