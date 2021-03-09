@@ -15,10 +15,21 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var detailImageView: UIImageView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.updateViewControllerWithDetails()
+       
+        let deleteBarButtonItem = UIBarButtonItem(title: "Delete", style: .done, target: self, action: #selector(buttonAction))
+        deleteBarButtonItem.tintColor = UIColor.red
+          self.navigationItem.rightBarButtonItem  = deleteBarButtonItem
+        
     }
+
+    @objc
+       func buttonAction() {
+           print("Button pressed")
+       }
     
     func updateViewControllerWithDetails() {
         if let selCategory = self.category, let imageTitle = self.imageName {
