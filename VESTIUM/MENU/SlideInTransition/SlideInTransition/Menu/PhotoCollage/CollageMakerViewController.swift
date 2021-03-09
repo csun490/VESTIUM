@@ -4,7 +4,6 @@
 //  Created by Cesar Barrera on 11/19/20.
 //  Copyright © 2020 CSUN-Vestium. All rights reserved.
 //
-
 import UIKit
 
 class CollageMakerViewController: UIViewController, MultiplePhotoSelectionDelegate{
@@ -109,7 +108,7 @@ class CollageMakerViewController: UIViewController, MultiplePhotoSelectionDelega
             
             if photoViews.count <= 0 {
                 
-                photoView.frame = CGRect(x: (canvasView.frame.width / 3 + 5), y: (canvasView.frame.height / 3 + 5), width: image.size.width, height: image.size.height)
+                photoView.frame = CGRect(x: (canvasView.frame.width / 30 + 5), y: (canvasView.frame.height / 30 + 5), width: image.size.width, height: image.size.height)
                 
             } else {
                 
