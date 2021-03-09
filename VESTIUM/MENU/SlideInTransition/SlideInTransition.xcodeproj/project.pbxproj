@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -45,7 +45,6 @@
 		39C3537E257ED8BC00C1F611 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C3537C257ED8BC00C1F611 /* CustomCollectionViewCell.swift */; };
 		39DCDC422538CA95005C6E7B /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DCDC412538CA95005C6E7B /* CalendarViewController.swift */; };
 		39F4E7D9252CEC65000E45D0 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F4E7D8252CEC65000E45D0 /* FavoritesViewController.swift */; };
-		8579E294DCE84465A0265828 /* Pods_SlideInTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B650606163D3DD6BF1A36C2 /* Pods_SlideInTransition.framework */; };
 		AF3B85EE25118CE80040FA7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3B85ED25118CE80040FA7E /* AppDelegate.swift */; };
 		AF3B85F025118CE80040FA7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3B85EF25118CE80040FA7E /* SceneDelegate.swift */; };
 		AF3B85F225118CE80040FA7E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3B85F125118CE80040FA7E /* HomeViewController.swift */; };
@@ -53,10 +52,10 @@
 		AF3B85FA25118CEF0040FA7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF3B85F825118CEF0040FA7E /* LaunchScreen.storyboard */; };
 		AF3B860225118E340040FA7E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3B860125118E340040FA7E /* MenuViewController.swift */; };
 		AF3B8604251198770040FA7E /* SlideInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3B8603251198770040FA7E /* SlideInTransition.swift */; };
+		BBA128877493E91E4D35C24C /* Pods_SlideInTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93068045AF8182593F763BC0 /* Pods_SlideInTransition.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2823EB27D08DDE789CDFAC9C /* Pods-SlideInTransition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideInTransition.debug.xcconfig"; path = "Target Support Files/Pods-SlideInTransition/Pods-SlideInTransition.debug.xcconfig"; sourceTree = "<group>"; };
 		3930246D256495D300E14D16 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		393024702564F50C00E14D16 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		3930247325657B2500E14D16 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -95,8 +94,8 @@
 		39C3537C257ED8BC00C1F611 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		39DCDC412538CA95005C6E7B /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		39F4E7D8252CEC65000E45D0 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
-		5B650606163D3DD6BF1A36C2 /* Pods_SlideInTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlideInTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7C293503DA87140267F19BDD /* Pods-SlideInTransition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideInTransition.release.xcconfig"; path = "Target Support Files/Pods-SlideInTransition/Pods-SlideInTransition.release.xcconfig"; sourceTree = "<group>"; };
+		678A1D524DA770512C3A03DA /* Pods-SlideInTransition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideInTransition.debug.xcconfig"; path = "Target Support Files/Pods-SlideInTransition/Pods-SlideInTransition.debug.xcconfig"; sourceTree = "<group>"; };
+		93068045AF8182593F763BC0 /* Pods_SlideInTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlideInTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF3B85EA25118CE80040FA7E /* SlideInTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideInTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF3B85ED25118CE80040FA7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF3B85EF25118CE80040FA7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +105,7 @@
 		AF3B85FB25118CEF0040FA7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF3B860125118E340040FA7E /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		AF3B8603251198770040FA7E /* SlideInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInTransition.swift; sourceTree = "<group>"; };
+		BD86C42005AA4086511090E8 /* Pods-SlideInTransition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideInTransition.release.xcconfig"; path = "Target Support Files/Pods-SlideInTransition/Pods-SlideInTransition.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,18 +113,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8579E294DCE84465A0265828 /* Pods_SlideInTransition.framework in Frameworks */,
+				BBA128877493E91E4D35C24C /* Pods_SlideInTransition.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		128A488344CEFDC6337F6AB9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93068045AF8182593F763BC0 /* Pods_SlideInTransition.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1D31E689306E473643FF75EE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2823EB27D08DDE789CDFAC9C /* Pods-SlideInTransition.debug.xcconfig */,
-				7C293503DA87140267F19BDD /* Pods-SlideInTransition.release.xcconfig */,
+				678A1D524DA770512C3A03DA /* Pods-SlideInTransition.debug.xcconfig */,
+				BD86C42005AA4086511090E8 /* Pods-SlideInTransition.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -204,6 +212,26 @@
 			path = Favorites;
 			sourceTree = "<group>";
 		};
+		399D9CE325F7D2B10079F439 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				AF3B860125118E340040FA7E /* MenuViewController.swift */,
+				AF3B85F125118CE80040FA7E /* HomeViewController.swift */,
+				399EC1302558564800E69C38 /* SignUpViewController.swift */,
+				399EC1332558566500E69C38 /* LogInViewController.swift */,
+				AF3B8603251198770040FA7E /* SlideInTransition.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		399D9CE425F7D2F60079F439 /* CalendarWeather */ = {
+			isa = PBXGroup;
+			children = (
+				39DCDC412538CA95005C6E7B /* CalendarViewController.swift */,
+			);
+			path = CalendarWeather;
+			sourceTree = "<group>";
+		};
 		399EC156255B94AA00E69C38 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,21 +265,13 @@
 			path = Find;
 			sourceTree = "<group>";
 		};
-		59DFA2369E659BCF413FF616 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5B650606163D3DD6BF1A36C2 /* Pods_SlideInTransition.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		AF3B85E125118CE80040FA7E = {
 			isa = PBXGroup;
 			children = (
 				AF3B85EC25118CE80040FA7E /* SlideInTransition */,
 				AF3B85EB25118CE80040FA7E /* Products */,
 				1D31E689306E473643FF75EE /* Pods */,
-				59DFA2369E659BCF413FF616 /* Frameworks */,
+				128A488344CEFDC6337F6AB9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -284,14 +304,10 @@
 				394B442B25743083008DF2F3 /* PhotoCollage */,
 				397FB60F25762861004CEBBB /* Favorites */,
 				39C3535D25787EA500C1F611 /* Settings */,
+				399D9CE325F7D2B10079F439 /* Main */,
 				39C35370257ED2D200C1F611 /* Find */,
-				AF3B860125118E340040FA7E /* MenuViewController.swift */,
-				AF3B85F125118CE80040FA7E /* HomeViewController.swift */,
+				399D9CE425F7D2F60079F439 /* CalendarWeather */,
 				AF3B85F325118CE80040FA7E /* Main.storyboard */,
-				399EC1302558564800E69C38 /* SignUpViewController.swift */,
-				399EC1332558566500E69C38 /* LogInViewController.swift */,
-				AF3B8603251198770040FA7E /* SlideInTransition.swift */,
-				39DCDC412538CA95005C6E7B /* CalendarViewController.swift */,
 				39C3536A2578858200C1F611 /* Assets.xcassets */,
 			);
 			path = Menu;
@@ -314,13 +330,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF3B85FE25118CEF0040FA7E /* Build configuration list for PBXNativeTarget "SlideInTransition" */;
 			buildPhases = (
-				1476ABDAD53847A8127C56C6 /* [CP] Check Pods Manifest.lock */,
+				CD3EBA3CE5038741CD1A4502 /* [CP] Check Pods Manifest.lock */,
 				392FDBE92523DA130080B44D /* Headers */,
 				AF3B85E625118CE80040FA7E /* Sources */,
 				AF3B85E725118CE80040FA7E /* Frameworks */,
 				AF3B85E825118CE80040FA7E /* Resources */,
-				4C27FD25721C10192C423C56 /* [CP] Embed Pods Frameworks */,
 				392FDBEA2523DA220080B44D /* ShellScript */,
+				0092EE6909ACD5F5167A65BD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -355,6 +371,9 @@
 				Base,
 			);
 			mainGroup = AF3B85E125118CE80040FA7E;
+			packageReferences = (
+				399D9BF725EEF8230079F439 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = AF3B85EB25118CE80040FA7E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -383,26 +402,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1476ABDAD53847A8127C56C6 /* [CP] Check Pods Manifest.lock */ = {
+		0092EE6909ACD5F5167A65BD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SlideInTransition/Pods-SlideInTransition-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SlideInTransition-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-SlideInTransition/Pods-SlideInTransition-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SlideInTransition/Pods-SlideInTransition-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		392FDBEA2523DA220080B44D /* ShellScript */ = {
@@ -422,21 +436,26 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
-		4C27FD25721C10192C423C56 /* [CP] Embed Pods Frameworks */ = {
+		CD3EBA3CE5038741CD1A4502 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SlideInTransition/Pods-SlideInTransition-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SlideInTransition/Pods-SlideInTransition-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SlideInTransition-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SlideInTransition/Pods-SlideInTransition-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -547,7 +566,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -607,7 +626,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -626,7 +645,7 @@
 		};
 		AF3B85FF25118CEF0040FA7E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2823EB27D08DDE789CDFAC9C /* Pods-SlideInTransition.debug.xcconfig */;
+			baseConfigurationReference = 678A1D524DA770512C3A03DA /* Pods-SlideInTransition.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -646,7 +665,7 @@
 		};
 		AF3B860025118CEF0040FA7E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C293503DA87140267F19BDD /* Pods-SlideInTransition.release.xcconfig */;
+			baseConfigurationReference = BD86C42005AA4086511090E8 /* Pods-SlideInTransition.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -686,6 +705,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		399D9BF725EEF8230079F439 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = AF3B85E225118CE80040FA7E /* Project object */;
 }

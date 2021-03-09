@@ -15,11 +15,8 @@ pod 'FSCalendar'
 pod 'Firebase/Auth'
 
 # Pods for Closet
-pod 'DropDown' 
 pod 'ProgressHUD'
 pod 'SDWebImage'
-pod 'TTGTagCollectionView'
-pod 'TagListView', '~> 1.0'
 
 # Pods for SlideInTransition
 
@@ -29,5 +26,5 @@ pod 'TagListView', '~> 1.0'
   pod 'NVActivityIndicatorView'
 
 
-
 end
+
