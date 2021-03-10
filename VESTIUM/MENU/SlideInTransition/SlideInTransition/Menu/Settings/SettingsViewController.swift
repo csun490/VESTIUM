@@ -28,17 +28,23 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         let uid = Auth.auth().currentUser?.uid
         //var userName = String()
         //var email = String()
-        Database.database().reference().child("users").child(uid!).observeSingleEvent(of: DataEventType.value) {  (snapshot: DataSnapshot) in
-            let dict = snapshot.value as? [String: Any]
-            //let user = User.transformUser(dict: dict!)
-            //userName =  dict?["username"] as! String
-            //email = dict?["email"] as! String
-            self.profilePictureUrl = dict?["profile_picture_url"] as! String
-            
-            let url = URL(string: self.profilePictureUrl);
-            self.userInfoHeader.profileImageView.sd_setImage(with: url, placeholderImage: UIImage(systemName:"vestium_logo"), options:.continueInBackground, completed: nil)
-            //print("THIS IS PROFILE URL : " + self.profilePictureUrl);
-        }
+        let ref = Database.database().reference()
+        ref.child("users").child(uid!).observeSingleEvent(of: .value, with: {(snapshot) in
+            if snapshot.hasChild("profile_picture_url"){
+                //print("user has profile picture")
+                Database.database().reference().child("users").child(uid!).observeSingleEvent(of: DataEventType.value) {  (snapshot: DataSnapshot) in
+                    let dict = snapshot.value as? [String: Any]
+                    self.profilePictureUrl = dict?["profile_picture_url"] as! String
+                    
+                    let url = URL(string: self.profilePictureUrl);
+                    self.userInfoHeader.profileImageView.sd_setImage(with: url, placeholderImage: UIImage(systemName:"vestium_logo"), options:.continueInBackground, completed: nil)
+                    //print("THIS IS PROFILE URL : " + self.profilePictureUrl);
+                }
+            }else{
+                print("User does not have profile picture")
+            }
+        })
+
 
         
         
