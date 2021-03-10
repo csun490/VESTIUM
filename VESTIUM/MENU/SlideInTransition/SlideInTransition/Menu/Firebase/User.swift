@@ -7,10 +7,11 @@
 //
 
 import Foundation
-
+import UIKit
 class User {
     var email: String?
     var username: String?
+    var profilePicture: UIImage?
 }
 
 extension User {
@@ -18,6 +19,7 @@ extension User {
         let user = User()
         user.email = dict["email"] as? String
         user.username = dict["username"] as? String
+        user.profilePicture = UIImage(named: "vestium_logo")
         
         return user
     }

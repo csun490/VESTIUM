@@ -11,16 +11,38 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
-
+import FirebaseStorage
+import SDWebImage
+import ProgressHUD
 private let reuseIdentifier = "SettingsCell"
 class SettingsViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     // MARK: Properties
-    
+    var selectedImage: UIImage?
     var tableView: UITableView!
     var userInfoHeader: UserInfoHeader!
+    var profilePictureUrl = String()
+    var profileImage = UIImage()
     
     //MARK: Helper funcs
-    
+    func configuerProfilePicture(){
+        let uid = Auth.auth().currentUser?.uid
+        //var userName = String()
+        //var email = String()
+        Database.database().reference().child("users").child(uid!).observeSingleEvent(of: DataEventType.value) {  (snapshot: DataSnapshot) in
+            let dict = snapshot.value as? [String: Any]
+            //let user = User.transformUser(dict: dict!)
+            //userName =  dict?["username"] as! String
+            //email = dict?["email"] as! String
+            self.profilePictureUrl = dict?["profile_picture_url"] as! String
+            
+            let url = URL(string: self.profilePictureUrl);
+            self.userInfoHeader.profileImageView.sd_setImage(with: url, placeholderImage: UIImage(systemName:"vestium_logo"), options:.continueInBackground, completed: nil)
+            //print("THIS IS PROFILE URL : " + self.profilePictureUrl);
+        }
+
+        
+        
+}
     func configureTableView() {
         tableView = UITableView()
         tableView.delegate = self
@@ -38,7 +60,7 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     func configureUI() {
         configureTableView()
-        
+        configuerProfilePicture()
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.isTranslucent = false
         //navigationController?.navigationBar.barStyle = .black
@@ -60,6 +82,7 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        configuerProfilePicture()
         //setUpUserInfo()
     }
     
@@ -86,11 +109,64 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            userInfoHeader.profileImageView.image = image
+            selectedImage = image
+            addProfileImageToFirebase();
+            userInfoHeader.profileImageView.image = selectedImage
         }
         dismiss(animated: true, completion: nil)
     }
-    
+    func addProfileImageToFirebase(){
+        guard let currentUser = Auth.auth().currentUser?.uid else{
+            return;
+        }
+        let currentUserId = currentUser
+        guard let imageSelected = self.selectedImage else{
+            print("photo is nil")
+            return
+        }
+        guard let imageData = imageSelected.jpegData(compressionQuality: 0.1)
+            else{
+                return;
+            }
+        //let photoIdString = NSUUID().uuidString
+        //storageref, need reference to unique uuid to select proper storage location of url
+        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOF_REF).child("users").child(currentUserId).child("profile_picture_url")
+        storageRef.putData(imageData, metadata: nil){
+            (metadata, error) in
+            if error != nil{
+                print(error!.localizedDescription)
+            return
+            }
+            
+        }
+        storageRef.downloadURL(completion: { (url: URL?, error: Error?) in
+            if let photoUrl = url?.absoluteString {
+                self.sendDataToDatabase(photoUrl: photoUrl)
+                //onSuccess(photoUrl)
+            }
+        })
+    }
+    func sendDataToDatabase(photoUrl: String){
+        let ref = Database.database().reference()
+        let itemReference = ref.child("users");
+        guard let currentUser = Auth.auth().currentUser?.uid else{
+            return
+        }
+        /*
+        let thisUsersProfilePictureRef = ref.child("users").child(currentUser).child("profile_picture_url")
+        thisUsersProfilePictureRef.setValue(photoUrl) */
+        let newItemReference = itemReference.child(currentUser)//.child("profile_picture_url")
+        newItemReference.updateChildValues(["profile_picture_url": photoUrl], withCompletionBlock: {(error, ref) in
+            if error != nil{
+                ProgressHUD.showError(error!.localizedDescription)
+                return
+            }
+            ProgressHUD.showSuccess("Success")
+        })
+       
+        
+        
+    }
 }
 
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
