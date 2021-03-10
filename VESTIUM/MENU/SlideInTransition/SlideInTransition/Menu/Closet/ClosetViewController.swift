@@ -23,10 +23,14 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var selectedImage: UIImage?
     var posts = [Post]()
     
-    @IBOutlet weak var myTableView: UITableView!
     
+    @IBOutlet weak var myTableView: UITableView!
     let headerReuseId = "TableHeaderViewReuseId"
+    
+    
     //MARK: Lifecycle
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Closet"
@@ -35,10 +39,10 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.myTableView.register(headerNib, forHeaderFooterViewReuseIdentifier: headerReuseId)
         setupData()
         self.myTableView.reloadData()
-      //  loadPosts()
+        //  loadPosts()
     }
     
-  
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -168,6 +172,7 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell!
     }
     
+ 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
     }

@@ -13,9 +13,6 @@ import FirebaseStorage
 import FirebaseAuth
 
 
-var posts = [Post]()
-
-
 
 func loadPosts() {
     

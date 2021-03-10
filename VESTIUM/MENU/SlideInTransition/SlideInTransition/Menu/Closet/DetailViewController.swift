@@ -19,6 +19,8 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.updateViewControllerWithDetails()
+        
+       
        
         let deleteBarButtonItem = UIBarButtonItem(title: "Delete", style: .done, target: self, action: #selector(buttonAction))
         deleteBarButtonItem.tintColor = UIColor.red
@@ -28,7 +30,8 @@ class DetailViewController: UIViewController {
 
     @objc
        func buttonAction() {
-           print("Button pressed")
+           print("Delete pressed")
+          
        }
     
     func updateViewControllerWithDetails() {

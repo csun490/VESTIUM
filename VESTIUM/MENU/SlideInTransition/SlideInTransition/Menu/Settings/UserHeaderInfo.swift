@@ -5,15 +5,15 @@
 //  Created by demi on 11/19/20.
 //  Copyright © 2020 CSUN-Vestium. All rights reserved.
 //
-
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import SDWebImage
+var profilePicture = UIImage()
 class UserInfoHeader: UIView {
     
     var userName = UILabel()
     var email = UILabel()
-
     func setUpUserInfo() {
         
        /* var myArr = [String]()
@@ -35,9 +35,12 @@ class UserInfoHeader: UIView {
                 //let user = User.transformUser(dict: dict!)
                 self.userName.text =  dict?["username"] as! String
                 self.email.text = dict?["email"] as! String
+                //profilePicture = dict?["profile_picture_url"] as! UIImage
                 //print(uid)
+                
                 //print(user.username)
             }
+      
     }
     //properties
     var profileImageView: UIImageView = {
@@ -45,9 +48,12 @@ class UserInfoHeader: UIView {
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.image = UIImage(named: "vestium_logo")
+        iv.image = profilePicture
+
         return iv
     }()
+    
+    
   /*  let usernameLabel: UILabel = {
         let label = UILabel()
         label.text = username
@@ -97,4 +103,3 @@ class UserInfoHeader: UIView {
         fatalError("init(coder: ) has not been implemented")
     }
 }
-
