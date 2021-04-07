@@ -12,6 +12,7 @@ import FirebaseAuth
 import FirebaseDatabase
 import ProgressHUD
 import SDWebImage
+import FirebaseUI
 
 class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -21,7 +22,6 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     var categories = [ImageCategory]()
     var selectedImage: UIImage?
     var posts = [Post]()
-    
     
     let headerReuseId = "TableHeaderViewReuseId"
     //MARK: Lifecycle
@@ -38,7 +38,7 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
     }
     
-  
+    
     @IBAction func addLookButton(_ sender: Any) {
         print("add look tapped")
         self.performSegue(withIdentifier: "favoriteSegue", sender: nil)
@@ -50,7 +50,7 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         }
     }
 
-    
+ 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -94,8 +94,6 @@ class FavViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         pickerController.allowsEditing = true
         present(pickerController, animated: true, completion: nil)
     }
-    
-    
     
     func addImageToFirebase() {
         guard let imageSelected = self.selectedImage else {
@@ -218,5 +216,12 @@ extension FavViewController: UIImagePickerControllerDelegate, UINavigationContro
         //send image to firebase immediately after picking
         //addImageToFirebase()
     }
+    
+    /*  here is the part where it is downloading the outfit from firebase */
+    
+    
+    
+    
+    
 }
 
