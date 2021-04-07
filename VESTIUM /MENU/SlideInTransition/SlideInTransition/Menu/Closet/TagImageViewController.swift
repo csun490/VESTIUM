@@ -11,9 +11,8 @@ import FirebaseStorage
 import FirebaseAuth
 import FirebaseDatabase
 import ProgressHUD
-import TTGTagCollectionView
 
-class TagImageViewController: UIViewController, TTGTextTagCollectionViewDelegate, UIImagePickerControllerDelegate {
+class TagImageViewController: UIViewController, UIImagePickerControllerDelegate {
    
     @IBOutlet weak var tableView: UITableView!
     

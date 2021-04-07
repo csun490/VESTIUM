@@ -2,9 +2,9 @@
 //  CalendarViewController.swift
 //  SlideInTransition
 //
-//  Created by CSUN-Vestium on 10/13/20.
+//  Created by Murat on 10/13/20.
 //  Copyright © 2020 CSUN-Vestium. All rights reserved.
-//
+
 import Foundation
 import UIKit
 import Alamofire
@@ -12,6 +12,7 @@ import SwiftyJSON
 import NVActivityIndicatorView
 import CoreLocation
 import FSCalendar
+import EventKit
 
 class CalendarViewController: UIViewController,FSCalendarDelegate, CLLocationManagerDelegate {
     
@@ -21,9 +22,39 @@ class CalendarViewController: UIViewController,FSCalendarDelegate, CLLocationMan
     @IBOutlet var conditionLabel: UILabel!
     @IBOutlet var temperatureLabel: UILabel!
     @IBOutlet var backgroundView: UIView!
+
     
+    //for add EVENT
+    @IBAction func btnAddEventTapped(_ sender: Any) {
+        let eventStore:EKEventStore = EKEventStore ()
+        
+        eventStore.requestAccess(to: .event, completion: {(granted, error) in
+            if (granted ) && (error == nil)
+            {
+                print("granted \(granted)")
+                print("error \(String(describing: error))")
+                
+                let event : EKEvent = EKEvent(eventStore: eventStore)
+                event.title = "VESTIUM"
+                event.startDate = Date()
+                event.endDate = Date()
+                event.notes = "This is a reminder from VESTIUM to check for weather"
+                event.calendar = eventStore.defaultCalendarForNewEvents
+                do {
+                    try eventStore.save(event, span: .thisEvent)
+                }catch let error as NSError{
+                    print("error: \(error)")
+                }
+                print ("Save Event")
+            }else{
+                print("error : \(String(describing: error))")
+            }
+        })
+    }
+
+
     // for WEATHER
-    let gradientLayer = CAGradientLayer()
+     let gradientLayer = CAGradientLayer()
     //d7b0c00a3a37265a8e057a3a80b5c543
     let apiKey = "d7b0c00a3a37265a8e057a3a80b5c543"
     var lat = 11.344533
@@ -31,15 +62,21 @@ class CalendarViewController: UIViewController,FSCalendarDelegate, CLLocationMan
     var activityIndicator: NVActivityIndicatorView!
     let locationManager = CLLocationManager()
     
-    
+
+   
     // for CALENDAR
     var calendar = FSCalendar ()
+     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         //for CALENDAR
         calendar.delegate = self
         
+      
+    
+    
         //for WEATHER
         // backgroundView.layer.addSublayer(gradientLayer)
         
@@ -60,6 +97,9 @@ class CalendarViewController: UIViewController,FSCalendarDelegate, CLLocationMan
         
     } // func viewDidLoad() ends
     
+    
+  
+ 
     // for CALENDAR
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -73,7 +113,9 @@ class CalendarViewController: UIViewController,FSCalendarDelegate, CLLocationMan
         print("\(string)")
     }// func calendar() ends
     
-    
+   
+
+
     // for WEATHER
     //    override func viewWillAppear(_ animated: Bool) {
     //        setBlueGradientBackground()
@@ -133,6 +175,9 @@ class CalendarViewController: UIViewController,FSCalendarDelegate, CLLocationMan
     //    }
     
     
+    //for ADD EVENT
+    
     
     
 } // main ends
+

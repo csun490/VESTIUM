@@ -8,16 +8,26 @@
 
 import Foundation
 import FirebaseDatabase
+import SDWebImage
+import FirebaseStorage
+import FirebaseAuth
 
-/*
+
+
 func loadPosts() {
-    Database.database().reference().child("new items").observe(.childAdded) { (snapshot: DataSnapshot) in
+    
+    let ref = Database.database().reference()
+    let uid = Auth.auth().currentUser?.uid
+    let userRef = ref.child("tags").child(uid!)
+    }
+    
+    /*
+    Database.database().reference().child("tags").observe(.childAdded) { (snapshot: DataSnapshot) in
         if let dict = snapshot.value as? [String: Any] {
             print(dict)
         }
     }
-}
-*/
+ */
 
 
 

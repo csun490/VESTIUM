@@ -4,7 +4,6 @@
 //  Created by Cesar Barrera on 11/19/20.
 //  Copyright © 2020 CSUN-Vestium. All rights reserved.
 //
-
 import UIKit
 
 class CollageMakerViewController: UIViewController, MultiplePhotoSelectionDelegate{
