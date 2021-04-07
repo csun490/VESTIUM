@@ -14,7 +14,8 @@ protocol CustomCollectionCellDelegate:class {
     //other delegate methods that you can define to perform action in viewcontroller
 }
 
-class CustomTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
+class CustomTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
     //define delegate
     weak var cellDelegate: CustomCollectionCellDelegate?
     @IBOutlet weak var myCollectionView: UICollectionView!
@@ -51,6 +52,7 @@ class CustomTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollec
         self.myCollectionView.reloadData()
     }
     
+    
     //MARK: Collection view datasource and Delegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as? CustomCollectionViewCell
@@ -75,10 +77,15 @@ class CustomTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollec
         if let categoryImageName = self.aCategory?.categoryItems[indexPath.item] {
             cell?.updateCellWithImage(name: categoryImageName)
         }
+      
         return cell!
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
     }
+
+  
+              
+    
 }

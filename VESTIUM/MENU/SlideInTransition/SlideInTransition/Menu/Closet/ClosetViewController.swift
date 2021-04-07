@@ -40,8 +40,27 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         setupData()
         self.myTableView.reloadData()
         //  loadPosts()
+        
+        navigationItem.rightBarButtonItem = editButtonItem
+        navigationController?.setToolbarHidden(false, animated: true)
+                let addButton = UIButton()
+                addButton.backgroundColor = UIColor.red
+                addButton.layer.cornerRadius = 5.0
+                addButton.setTitle("  ADD ITEM  ", for: .normal)
+        addButton.addTarget(self, action: #selector(addItemTapped), for: .touchUpInside)
+                let spaceItemLeft = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+               // let addItem = UIBarButtonItem(title: "ADD ITEM", style: .plain, target: self, action: #selector(addItemTapped))
+                let addItem = UIBarButtonItem(customView: addButton)
+                let spaceItemRight = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+                toolbarItems = [spaceItemLeft, addItem, spaceItemRight]
+        addItem.tintColor = .red
+     
     }
     
+    
+    @objc func addItemTapped() {
+        handleSelectPhoto()
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -143,7 +162,6 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
-    
     //MARK:Tableview Delegates and Datasource Methods
     func numberOfSections(in tableView: UITableView) -> Int {
         return categories.count
@@ -162,9 +180,6 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if cell == nil {
             cell = CustomTableViewCell.customCell
         }
-        
-        //uploading data from firebase
-        //let post = posts[indexPath.row]
         
         let aCategory = self.categories[indexPath.section]
         cell?.updateCellWith(category: aCategory)
@@ -186,6 +201,8 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         view?.headerLabel.text = aCategory.name
         return view
     }
+    
+   
 }
 
 extension ClosetViewController: CustomCollectionCellDelegate {
@@ -197,7 +214,6 @@ extension ClosetViewController: CustomCollectionCellDelegate {
                 detailController?.category = selCategory
                 detailController?.imageName = imageName
                 self.navigationController?.pushViewController(detailController!, animated: true)
-                
             }
         }
     }

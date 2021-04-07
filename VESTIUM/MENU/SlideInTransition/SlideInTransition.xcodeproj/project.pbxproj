@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		390861A4261E74C300591F6E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390861A3261E74C300591F6E /* WebViewController.swift */; };
 		3930246E256495D300E14D16 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930246D256495D300E14D16 /* User.swift */; };
 		393024712564F50C00E14D16 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393024702564F50C00E14D16 /* FilterViewController.swift */; };
 		3930247425657B2500E14D16 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930247325657B2500E14D16 /* FilterCollectionViewCell.swift */; };
@@ -56,6 +57,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		390861A3261E74C300591F6E /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		3930246D256495D300E14D16 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		393024702564F50C00E14D16 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		3930247325657B2500E14D16 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			children = (
 				39C35375257ED74D00C1F611 /* Resnet50.mlmodel */,
 				39C35372257ED43300C1F611 /* FindViewController.swift */,
+				390861A3261E74C300591F6E /* WebViewController.swift */,
 			);
 			path = Find;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				397FB6132576E4A6004CEBBB /* FavViewController.swift in Sources */,
 				3930246E256495D300E14D16 /* User.swift in Sources */,
 				AF3B85F025118CE80040FA7E /* SceneDelegate.swift in Sources */,
+				390861A4261E74C300591F6E /* WebViewController.swift in Sources */,
 				AF3B860225118E340040FA7E /* MenuViewController.swift in Sources */,
 				394B4438257431D0008DF2F3 /* PhotoCollectionViewCell.swift in Sources */,
 				394B442D257430BC008DF2F3 /* CollageMakerViewController.swift in Sources */,

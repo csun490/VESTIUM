@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class DetailViewController: UIViewController {
     var category: ImageCategory?
     var imageName: String?
@@ -15,25 +16,41 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var detailImageView: UIImageView!
     
+
+    @IBOutlet weak var donateButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.updateViewControllerWithDetails()
-        
-       
-       
-        let deleteBarButtonItem = UIBarButtonItem(title: "Delete", style: .done, target: self, action: #selector(buttonAction))
-        deleteBarButtonItem.tintColor = UIColor.red
-          self.navigationItem.rightBarButtonItem  = deleteBarButtonItem
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveTapped))
+        navigationController?.setToolbarHidden(false, animated: true)
+    }
+    
+ 
+    @objc func saveTapped(_ sender: AnyObject) {
+      dismiss(animated: true, completion: nil)
     }
 
-    @objc
-       func buttonAction() {
-           print("Delete pressed")
-          
-       }
     
+    @IBAction func laundryButton(_ sender: UIButton) {
+        if sender.isSelected{
+            sender.isSelected = false
+            detailImageView.alpha = 1
+        } else {
+            sender.isSelected = true
+            detailImageView.alpha = 0.2
+        }
+    }
+    
+    @IBAction func donateButton(_ sender: UIButton) {
+        if sender.isSelected{
+            sender.isSelected = false
+        } else {
+            sender.isSelected = true
+        }
+    }
+    
+
     func updateViewControllerWithDetails() {
         if let selCategory = self.category, let imageTitle = self.imageName {
             self.descriptionLabel.text = selCategory.catDescription

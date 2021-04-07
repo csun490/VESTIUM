@@ -12,6 +12,9 @@ import Vision
 
 class FindViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
+    
+        static var searchword = " "
+    
         let label: UILabel = {
             let label = UILabel()
             label.textColor = .white
@@ -20,7 +23,9 @@ class FindViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
             label.font = label.font.withSize(30)
             return label
         }()
-        
+    
+       // let vc = FindViewController()
+     
         override func viewDidLoad() {
             super.viewDidLoad()
             
@@ -30,8 +35,12 @@ class FindViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
             setupLabel()
             
         }
-        
-        
+        //to web
+    @IBAction func webButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "webSegue", sender: nil)
+          
+    }
+    
         
         func setupCaptureSession() {
             
@@ -73,8 +82,13 @@ class FindViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
                 
                 DispatchQueue.main.async(execute: {
                     self.label.text = "\(Observation.identifier)"
-                    print(Observation.confidence)
+                    FindViewController.searchword = (Observation.identifier.components(separatedBy: ",").first!)
+                    //print(Observation.identifier.components(separatedBy: ",").first)
+                   
+                   // print(Observation.identifier.first)
+                    //print(Observation.confidence)
                 })
+                
             }
             guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
             
@@ -86,4 +100,12 @@ class FindViewController: UIViewController, AVCaptureVideoDataOutputSampleBuffer
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             label.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
         }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier ==  "webSegue" {
+            let webVC = segue.destination as! WebViewController
+            
+        }
+    }
+    
     }
