@@ -19,7 +19,7 @@ class WebViewController: UIViewController,WKNavigationDelegate,UISearchBarDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let url  = URL(string: "https://www.google.com/search?q=SKECHERS&sxsrf=ALeKk01XrqAx8Q7Qwv1MBZ5EDwNTZkVsMA%3A1617794119321&source=hp&ei=R5RtYLTBEMLh-gTwhKTgDQ&iflsig=AINFCbYAAAAAYG2iV12hQegvQaUY6acmqLYftakdceRP&oq=&gs_lcp=Cgdnd3Mtd2l6EAEYADIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJ1AAWABg54oBaAFwAHgAgAEAiAEAkgEAmAEAqgEHZ3dzLXdperABCg&sclient=gws-wiz")
+        let url  = URL(string: "https://www.amazon.com/s?k=Loafer&ref=nb_sb_noss_2")
         let request = URLRequest(url: url!)
         
         webView.load(request)
