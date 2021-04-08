@@ -24,33 +24,33 @@ class CalendarViewController: UIViewController,FSCalendarDelegate, CLLocationMan
     @IBOutlet var backgroundView: UIView!
 
     
-    //for add EVENT
-    @IBAction func btnAddEventTapped(_ sender: Any) {
-        let eventStore:EKEventStore = EKEventStore ()
-        
-        eventStore.requestAccess(to: .event, completion: {(granted, error) in
-            if (granted ) && (error == nil)
-            {
-                print("granted \(granted)")
-                print("error \(String(describing: error))")
-                
-                let event : EKEvent = EKEvent(eventStore: eventStore)
-                event.title = "VESTIUM"
-                event.startDate = Date()
-                event.endDate = Date()
-                event.notes = "This is a reminder from VESTIUM to check for weather"
-                event.calendar = eventStore.defaultCalendarForNewEvents
-                do {
-                    try eventStore.save(event, span: .thisEvent)
-                }catch let error as NSError{
-                    print("error: \(error)")
-                }
-                print ("Save Event")
-            }else{
-                print("error : \(String(describing: error))")
-            }
-        })
-    }
+//    //for add EVENT
+//    @IBAction func btnAddEventTapped(_ sender: Any) {
+//        let eventStore:EKEventStore = EKEventStore ()
+//
+//        eventStore.requestAccess(to: .event, completion: {(granted, error) in
+//            if (granted ) && (error == nil)
+//            {
+//                print("granted \(granted)")
+//                print("error \(String(describing: error))")
+//
+//                let event : EKEvent = EKEvent(eventStore: eventStore)
+//                event.title = "VESTIUM"
+//                event.startDate = Date()
+//                event.endDate = Date()
+//                event.notes = "This is a reminder from VESTIUM to check for weather"
+//                event.calendar = eventStore.defaultCalendarForNewEvents
+//                do {
+//                    try eventStore.save(event, span: .thisEvent)
+//                }catch let error as NSError{
+//                    print("error: \(error)")
+//                }
+//                print ("Save Event")
+//            }else{
+//                print("error : \(String(describing: error))")
+//            }
+//        })
+//    }
 
 
     // for WEATHER

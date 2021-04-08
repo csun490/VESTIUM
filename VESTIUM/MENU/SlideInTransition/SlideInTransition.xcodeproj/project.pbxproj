@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		390861A4261E74C300591F6E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390861A3261E74C300591F6E /* WebViewController.swift */; };
+		390861C8261E80C200591F6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390861C7261E80C200591F6E /* ViewController.swift */; };
+		390861CB261E80DD00591F6E /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390861CA261E80DD00591F6E /* AddViewController.swift */; };
 		3930246E256495D300E14D16 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930246D256495D300E14D16 /* User.swift */; };
 		393024712564F50C00E14D16 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393024702564F50C00E14D16 /* FilterViewController.swift */; };
 		3930247425657B2500E14D16 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930247325657B2500E14D16 /* FilterCollectionViewCell.swift */; };
@@ -58,6 +60,8 @@
 
 /* Begin PBXFileReference section */
 		390861A3261E74C300591F6E /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		390861C7261E80C200591F6E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		390861CA261E80DD00591F6E /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		3930246D256495D300E14D16 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		393024702564F50C00E14D16 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		3930247325657B2500E14D16 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -137,6 +141,15 @@
 				BD86C42005AA4086511090E8 /* Pods-SlideInTransition.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		390861C4261E809B00591F6E /* Reminders */ = {
+			isa = PBXGroup;
+			children = (
+				390861C7261E80C200591F6E /* ViewController.swift */,
+				390861CA261E80DD00591F6E /* AddViewController.swift */,
+			);
+			path = Reminders;
 			sourceTree = "<group>";
 		};
 		3930247725657E2800E14D16 /* FilterViewController */ = {
@@ -229,6 +242,7 @@
 		399D9CE425F7D2F60079F439 /* CalendarWeather */ = {
 			isa = PBXGroup;
 			children = (
+				390861C4261E809B00591F6E /* Reminders */,
 				39DCDC412538CA95005C6E7B /* CalendarViewController.swift */,
 			);
 			path = CalendarWeather;
@@ -478,6 +492,7 @@
 				397FB60D25761E55004CEBBB /* FavoriteData.swift in Sources */,
 				39C3536425787F3300C1F611 /* SettingsSection.swift in Sources */,
 				395BE0BC2548B5B5008EF624 /* ClosetViewController.swift in Sources */,
+				390861CB261E80DD00591F6E /* AddViewController.swift in Sources */,
 				393024712564F50C00E14D16 /* FilterViewController.swift in Sources */,
 				395BE0A82547DD36008EF624 /* ImageCategory.swift in Sources */,
 				394B44482575B646008DF2F3 /* Api.swift in Sources */,
@@ -489,6 +504,7 @@
 				AF3B85F025118CE80040FA7E /* SceneDelegate.swift in Sources */,
 				390861A4261E74C300591F6E /* WebViewController.swift in Sources */,
 				AF3B860225118E340040FA7E /* MenuViewController.swift in Sources */,
+				390861C8261E80C200591F6E /* ViewController.swift in Sources */,
 				394B4438257431D0008DF2F3 /* PhotoCollectionViewCell.swift in Sources */,
 				394B442D257430BC008DF2F3 /* CollageMakerViewController.swift in Sources */,
 				399EC1BD255F2EB200E69C38 /* Post.swift in Sources */,
