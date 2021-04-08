@@ -39,13 +39,17 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.myTableView.register(headerNib, forHeaderFooterViewReuseIdentifier: headerReuseId)
         setupData()
         self.myTableView.reloadData()
-        //  loadPosts()
+        loadPosts()
     }
     
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    func testFunction(){
+        let testref = Database.database().reference()
+        
     }
     
     //MARK: Data initializers methods
@@ -97,7 +101,6 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             print("photo is nil")
             return
         }
-        
         guard let imageData = imageSelected.jpegData(compressionQuality: 0.1) else {
             return
         }
@@ -122,14 +125,41 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     //retrieves tagged images from "tags" folder on Firebase
     func loadPosts() {
-        Database.database().reference().child("tags").observe(.childAdded) { (snapshot: DataSnapshot) in
+       /* Database.database().reference().child("tags").observe(.childAdded) { (snapshot: DataSnapshot) in
             if let dict = snapshot.value as? [String: Any] {
                 let newPost = Post.transformPost(dict: dict)
                 self.posts.append(newPost)
                 print(self.posts)
                 self.myTableView.reloadData()
             }
-        }
+        }*/
+        var tags = String()
+        let uid = Auth.auth().currentUser?.uid
+        let ref = Database.database().reference()
+        ref.child("users").child(uid!).child("tags").observeSingleEvent(of: .value, with: {(snapshot) in
+            //print(snapshot.childrenCount)
+            /*if let dict = snapshot.value as? [String: Any]{
+                for key in dict.keys{
+                    print(dict[key])
+                }
+                
+            }*/
+            //this prints the urls of all items tagged as "Head" 
+            if(snapshot.hasChild("Head")){
+                print("We've found a Head!")
+                let snapshot2 = snapshot.childSnapshot(forPath: "Head")
+                for child in snapshot2.children.allObjects as! [DataSnapshot]{
+                    let url = child.value as! String
+                    print(url)
+                }
+                
+                print(snapshot2.childrenCount)
+            }
+            
+            
+            
+        })
+ 
     }
     
     func clean() {

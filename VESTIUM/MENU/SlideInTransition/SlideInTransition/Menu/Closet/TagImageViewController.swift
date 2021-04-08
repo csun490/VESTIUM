@@ -18,7 +18,7 @@ class TagImageViewController: UIViewController, UIImagePickerControllerDelegate 
     
     var selectedImage: UIImage?
     var taggedImage: String?
-    
+    var num = UInt()
    // let collectionView = TTGTextTagCollectionView()
 
     
@@ -65,10 +65,11 @@ class TagImageViewController: UIViewController, UIImagePickerControllerDelegate 
     }
     
     
-    func sendDataToDatabase(photoUrl: String, taggedImage: String) {
+    func sendDataToDatabase(photoUrl: String, taggedImage: String, count: String) {
         // create new tag node
         let ref = Database.database().reference()
-        let itemReference = ref.child("tags")
+        let itemReference = ref.child("users")
+        
         
         
         guard let currentUser = Auth.auth().currentUser?.uid else {
@@ -77,21 +78,28 @@ class TagImageViewController: UIViewController, UIImagePickerControllerDelegate 
         let currentUserId = currentUser
         // new item img location
         let newItemID = itemReference.childByAutoId().key
-        let newItemReference = itemReference.child(newItemID!)
+        let newItemReference = itemReference.child(currentUser).child("tags").child(self.taggedImage!)
+        newItemReference.updateChildValues([count: photoUrl], withCompletionBlock: {(error, ref) in
+            if error != nil{
+                ProgressHUD.showError(error!.localizedDescription)
+            }
+            ProgressHUD.showSuccess("Success!")
+        })
         
-        for selection in selections {
+        
+       /* for selection in selections {
             let newTagRef = Api.Tag.REF_TAG.child(selection)
-            newTagRef.updateChildValues([newItemID : true])
-        }
+            //newTagRef.updateChildValues([newItemID : true])
+        }*/
     
         // push current user and img to firebase storage
-        newItemReference.setValue(["uid": currentUserId, "photoUrl": photoUrl, "taggedImage": taggedImage], withCompletionBlock: { (error, ref) in
+        /*newItemReference.setValue(["uid": currentUserId, "photoUrl": photoUrl, "taggedImage": taggedImage], withCompletionBlock: { (error, ref) in
             if error != nil {
                 ProgressHUD.showError(error!.localizedDescription)
                 return
             }
             ProgressHUD.showSuccess("Success")
-        })
+        })*/
     }
  
     
@@ -104,9 +112,30 @@ class TagImageViewController: UIViewController, UIImagePickerControllerDelegate 
         guard let imageData = imageSelected.jpegData(compressionQuality: 0.1) else {
             return
         }
+        guard let currentUser = Auth.auth().currentUser?.uid else{
+            return;
+        }
+        let currentUserId = currentUser
+        
+        //don't need this anymore
         
         let photoIdString = NSUUID().uuidString
-        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOF_REF).child("new item").child(photoIdString)
+        /*let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOF_REF).child("new item").child(photoIdString)*/
+        let ref = Database.database().reference()
+        var count = UInt()
+        ref.child("users").child(currentUser).child("tags").child(self.taggedImage!).observeSingleEvent(of: DataEventType.value, with: {(snapshot) in
+            print("tagged image is ", self.taggedImage!)
+            print(snapshot.childrenCount)
+            count = snapshot.childrenCount
+            self.num = count + 1
+            print("COUNT IS, ", self.num)
+            
+
+            
+        
+        print("location is ", self.num)
+            let location = String(self.num)
+            let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOF_REF).child("users").child(currentUserId).child("tags").child(self.taggedImage!).child(location)
         storageRef.putData(imageData, metadata: nil) { (metadata, error) in
             if error != nil {
                 //ProgressHUD.showError(error!.localizedDescription)
@@ -115,12 +144,13 @@ class TagImageViewController: UIViewController, UIImagePickerControllerDelegate 
             }
             storageRef.downloadURL(completion: { (url: URL?, error: Error?) in
                 if let photoUrl = url?.absoluteString {
-                    self.sendDataToDatabase(photoUrl: photoUrl, taggedImage: self.taggedImage!)
+                    self.sendDataToDatabase(photoUrl: photoUrl, taggedImage: self.taggedImage!, count:location)
                     //onSuccess(photoUrl)
                 }
             })
         }
-    }
+    }) // og ref that gets the count, because closure properities THANK YOU SWIFT
+}
     
     /*
     override func viewDidLayoutSubviews() {

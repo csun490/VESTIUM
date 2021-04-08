@@ -123,6 +123,7 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         dismiss(animated: true, completion: nil)
     }
     func addProfileImageToFirebase(){
+        print("inside addProfileImageToFirebase!")
         guard let currentUser = Auth.auth().currentUser?.uid else{
             return;
         }
@@ -154,6 +155,7 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         })
     }
     func sendDataToDatabase(photoUrl: String){
+        print("Inside sendData to database!");
         let ref = Database.database().reference()
         let itemReference = ref.child("users");
         guard let currentUser = Auth.auth().currentUser?.uid else{
