@@ -202,7 +202,7 @@ class ClosetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return view
     }
     
-   
+    
 }
 
 extension ClosetViewController: CustomCollectionCellDelegate {
@@ -214,10 +214,12 @@ extension ClosetViewController: CustomCollectionCellDelegate {
                 detailController?.category = selCategory
                 detailController?.imageName = imageName
                 self.navigationController?.pushViewController(detailController!, animated: true)
+ 
             }
         }
     }
 }
+
 
 extension ClosetViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -239,4 +241,12 @@ extension ClosetViewController: UIImagePickerControllerDelegate, UINavigationCon
     }
 }
 
+
+extension ClosetViewController: dataCollectionviewProtocol{
+    func deleteData(indx: Int) {
+        categories.remove(at: indx)
+        myTableView.reloadData()
+    }
+    
+}
 

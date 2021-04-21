@@ -31,7 +31,7 @@
                                     <color key="tintColor" red="0.92546319961547852" green="0.11193949729204178" blue="0.044200390577316284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <state key="normal" image="xmark.circle" catalog="system"/>
                                     <connections>
-                                        <action selector="deleteButtonDidTap:" destination="Cnq-Rb-dNs" eventType="touchUpInside" id="BCH-aQ-Xxr"/>
+                                        <action selector="deleteButtonDidTap:" destination="Cnq-Rb-dNs" eventType="touchUpInside" id="aqh-hP-ex0"/>
                                     </connections>
                                 </button>
                             </subviews>

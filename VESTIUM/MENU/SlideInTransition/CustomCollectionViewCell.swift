@@ -9,12 +9,17 @@
 import UIKit
 
 
-import UIKit
+protocol dataCollectionviewProtocol {
+    func deleteData(indx:Int)
+}
+
 class CustomCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var cellImageView: UIImageView!
     
     @IBOutlet weak var deleteButton: UIVisualEffectView!
+    
+    var delegate: dataCollectionviewProtocol?
     var index: IndexPath?
     
     var cellImageName:String?
@@ -29,7 +34,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
         //self.backgroundColor = UIColor.black
         deleteButton.layer.cornerRadius = deleteButton.bounds.width/2.0
         deleteButton.layer.masksToBounds = true
-        deleteButton.isHidden = !isEditing
+        //deleteButton.isHidden = !isEditing
         
     }
     
@@ -48,5 +53,8 @@ class CustomCollectionViewCell: UICollectionViewCell {
     
     
     @IBAction func deleteButtonDidTap(_ sender: Any) {
+        delegate?.deleteData(indx: (index?.section)!)
+        print("delete tapped")
     }
+    
 }

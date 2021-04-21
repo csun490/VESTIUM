@@ -13,8 +13,12 @@ class DetailViewController: UIViewController {
     var category: ImageCategory?
     var imageName: String?
     
+    var closetViewController: ClosetViewController?
+    
+    
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var detailImageView: UIImageView!
+    weak var delegate: ClosetViewController!
     
 
     @IBOutlet weak var donateButton: UIButton!

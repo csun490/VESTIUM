@@ -14,6 +14,7 @@ protocol CustomCollectionCellDelegate:class {
     //other delegate methods that you can define to perform action in viewcontroller
 }
 
+
 class CustomTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     //define delegate
@@ -55,8 +56,11 @@ class CustomTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollec
     
     //MARK: Collection view datasource and Delegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         let cell = collectionView.cellForItem(at: indexPath) as? CustomCollectionViewCell
         self.cellDelegate?.collectionView(collectioncell: cell, didTappedInTableview: self)
+      
+ 
     }
     
     
@@ -84,8 +88,6 @@ class CustomTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
     }
-
-  
-              
     
 }
+
