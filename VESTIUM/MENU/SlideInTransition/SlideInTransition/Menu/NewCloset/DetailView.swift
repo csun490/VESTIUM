@@ -47,14 +47,4 @@ class DetailView : UIViewController {
     }
 }
 
-@IBAction func nextButton(_ sender: Any) {
-    self.performSegue(withIdentifier: "closetSegue", sender: nil)
-    delegate?.updatePhoto(image: self.filterPhoto.image!)
-}
 
-override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier ==  "closetSegue" {
-        let closetImageVC = segue.destination as! PhotoCollectionViewController
-        closetImageVC.filteredImage = self.filterPhoto.image
-    }
-}
