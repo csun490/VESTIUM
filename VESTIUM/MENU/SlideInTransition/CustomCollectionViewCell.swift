@@ -17,7 +17,6 @@ class CustomCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var cellImageView: UIImageView!
     
-    @IBOutlet weak var deleteButton: UIVisualEffectView!
     
     var delegate: dataCollectionviewProtocol?
     var index: IndexPath?
@@ -30,19 +29,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        //self.backgroundColor = UIColor.black
-        deleteButton.layer.cornerRadius = deleteButton.bounds.width/2.0
-        deleteButton.layer.masksToBounds = true
-        //deleteButton.isHidden = !isEditing
         
-    }
-    
-    var isEditing: Bool = false {
-        didSet {
-           deleteButton.isHidden = !isEditing
-            print("edit tapped")
-       }
     }
     
     
@@ -51,10 +38,6 @@ class CustomCollectionViewCell: UICollectionViewCell {
         self.cellImageView.image = UIImage(named: name)
     }
     
-    
-    @IBAction func deleteButtonDidTap(_ sender: Any) {
-        delegate?.deleteData(indx: (index?.section)!)
-        print("delete tapped")
-    }
+
     
 }

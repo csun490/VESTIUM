@@ -8,10 +8,13 @@
 
 import UIKit
 
+
+
 class PhotoCollectionViewController : UICollectionViewController {
     
     var photoCategories: [PhotoCategory] = PhotosLibrary.fetchPhotos()
-    let addButton = UIButton()
+    var selectedImage: UIImage!
+    var filteredImage: UIImage?
     
     struct Storyboard {
         static let photoCell = "PhotoCell"
@@ -36,27 +39,17 @@ class PhotoCollectionViewController : UICollectionViewController {
         navigationItem.rightBarButtonItem = editButtonItem
         
         navigationController?.setToolbarHidden(false, animated: true)
-                addButton.backgroundColor = UIColor.red
-                addButton.layer.cornerRadius = 5.0
-                addButton.setTitle("  ADD ITEM  ", for: .normal)
-        addButton.addTarget(self, action: #selector(addNewItemDidTap), for: .touchUpInside)
-                let spaceItemLeft = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-               // let addItem = UIBarButtonItem(title: "ADD ITEM", style: .plain, target: self, action: #selector(addItemTapped))
-                let addItem = UIBarButtonItem(customView: addButton)
-                let spaceItemRight = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-                toolbarItems = [spaceItemLeft, addItem, spaceItemRight]
-        addItem.tintColor = .red
-     
     }
     
-    // MARK: - Target / Action
-    
-    @IBAction func addNewItemDidTap(_ sender: Any) {
+    @IBAction func addItemDidTap(_ sender: Any) {
+        handleSelectPhoto()
+        
+        /*
         // 1 - get a random image
         let firstCategoryImageNames = photoCategories[0].imageNames
         let randomIndex = Int(arc4random()) % firstCategoryImageNames.count
         let randomImageName = firstCategoryImageNames[randomIndex]
-        
+      
         // 2 - add the new image into your data model
         photoCategories[0].imageNames.append(randomImageName)
         
@@ -65,12 +58,20 @@ class PhotoCollectionViewController : UICollectionViewController {
         
         let insertedIndexPath = IndexPath(item: firstCategoryImageNames.count, section: 0)
         collectionView?.insertItems(at: [insertedIndexPath])
+    */
     }
+    // MARK: - Target / Action
     
     
-    @IBAction func backItemDidTap(_ sender: Any) {
-        
+    func handleSelectPhoto() {
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        pickerController.sourceType = .photoLibrary;
+        pickerController.mediaTypes = ["public.image", "public.movie"]
+        pickerController.allowsEditing = true
+        present(pickerController, animated: true, completion: nil)
     }
+    
     // MARK: - UICollectionViewDataSource
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -106,7 +107,7 @@ class PhotoCollectionViewController : UICollectionViewController {
     
     // MARK: - UICollectionViewDelegate
     
-    var selectedImage: UIImage!
+    
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let category = photoCategories[indexPath.section]
@@ -120,7 +121,7 @@ class PhotoCollectionViewController : UICollectionViewController {
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         
-        addButton.isEnabled = !editing
+       // addButton.isEnabled = !editing
         if let indexPaths = collectionView?.indexPathsForVisibleItems {
             for indexPath in indexPaths {
                 if let cell = collectionView?.cellForItem(at: indexPath) as? PhotoCell {
@@ -137,6 +138,11 @@ class PhotoCollectionViewController : UICollectionViewController {
             let detailVC = segue.destination as! DetailView
             detailVC.image = selectedImage
         }
+        
+        if segue.identifier ==  "filterSegue" {
+            let filterVC = segue.destination as! FilterViewController
+            filterVC.selectedImage = self.selectedImage
+        }
     }
 }
 
@@ -152,6 +158,41 @@ extension PhotoCollectionViewController : PhotoCellDelegate {
     }
 }
 
+extension PhotoCollectionViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        print("image chosen")
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            selectedImage = image
+            dismiss(animated: true, completion: { [self] in
+                self.performSegue(withIdentifier: "filterSegue", sender: nil)
+          
+     /*
+            let firstCategoryImageNames = photoCategories[0].imageNames
+            let randomIndex = Int(arc4random()) % firstCategoryImageNames.count
+            let randomImageName = firstCategoryImageNames[randomIndex]
+          
+            // 2 - add the new image into your data model
+            photoCategories[0].imageNames.append(randomImageName)
+                
+                
+            // 3 - update the collection because there's a change in your data source
+            // collectionView?.reloadData()
+            
+            let insertedIndexPath = IndexPath(item: firstCategoryImageNames.count, section: 0)
+            collectionView?.insertItems(at: [insertedIndexPath])
+      */
+            })
+        }
+        
+        if let imageEdited = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            selectedImage = imageEdited
+        }
+        //dismiss(animated: true, completion: nil)
+        
+        //send image to firebase immediately after picking
+        //addImageToFirebase()
+    }
+}
 
 
 

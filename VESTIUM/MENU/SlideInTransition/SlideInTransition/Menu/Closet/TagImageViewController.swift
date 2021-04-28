@@ -12,16 +12,14 @@ import FirebaseAuth
 import FirebaseDatabase
 import ProgressHUD
 
+
 class TagImageViewController: UIViewController, UIImagePickerControllerDelegate {
    
     @IBOutlet weak var tableView: UITableView!
     
     var selectedImage: UIImage?
     var taggedImage: String?
-    
-   // let collectionView = TTGTextTagCollectionView()
 
-    
     var selections = [String]()
     
     let tagData = ["Head", "Top-Inner", "Top-Mid", "Top-Outer", "Bottom", "Feet", "Other"]
@@ -32,24 +30,7 @@ class TagImageViewController: UIViewController, UIImagePickerControllerDelegate 
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 60
-        
-      /*
-        collectionView.alignment = .left
-        collectionView.delegate = self
-        view.addSubview(collectionView)
-
-        let body = TTGTextTagConfig()
-        body.backgroundColor = .white
-        body.textColor = .black
-       
-        collectionView.addTags(["Head", "Top-Inner", "Top-Mid", "Top-Outer", "Bottom", "Feet", "Other"], with: body)
-        
-        let season = TTGTextTagConfig()
-        body.backgroundColor = .white
-        season.textColor = .black
-        collectionView.addTags(["Spring", "Summer", "Fall", "Winter"], with: season)
-        
-        */
+    
     }
     
 
@@ -59,9 +40,22 @@ class TagImageViewController: UIViewController, UIImagePickerControllerDelegate 
     
     
     @IBAction func uploadButton(_ sender: Any) {
-        print("image uploaded")
-        addImageToFirebase()
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        //delegate?.updatePhoto(image: self.selectedImage!)
+       // delegate?.updateTagImage(string: taggedImage!)
+     /*
+        photosCollectionView.photoCategories[0].imageNames.append(taggedImage!)
+        
+        // 3 - update the collection because there's a change in your data source
+        //collectionView?.reloadData()
+        
+        let firstCategoryImageNames = photoCategories[0].imageNames
+        let insertedIndexPath = IndexPath(item: firstCategoryImageNames.count, section: 0)
+            photosCollectionView.collectionView?.insertItems(at: [insertedIndexPath])
+        //dismiss(animated: true, completion: nil)
+        //self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+         
+ */
+            
     }
     
     

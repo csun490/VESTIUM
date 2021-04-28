@@ -20,51 +20,19 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iKR-Ql-3nk">
                         <rect key="frame" x="0.0" y="0.0" width="100" height="140"/>
                     </imageView>
-                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ySt-tJ-FgG">
-                        <rect key="frame" x="3" y="3" width="20" height="19"/>
-                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hcT-hb-gmJ">
-                            <rect key="frame" x="0.0" y="0.0" width="20" height="19"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGf-au-cYG">
-                                    <rect key="frame" x="0.0" y="0.0" width="20" height="19"/>
-                                    <color key="tintColor" red="0.92546319961547852" green="0.11193949729204178" blue="0.044200390577316284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <state key="normal" image="xmark.circle" catalog="system"/>
-                                    <connections>
-                                        <action selector="deleteButtonDidTap:" destination="Cnq-Rb-dNs" eventType="touchUpInside" id="aqh-hP-ex0"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <constraints>
-                                <constraint firstItem="uGf-au-cYG" firstAttribute="top" secondItem="hcT-hb-gmJ" secondAttribute="top" id="5G7-Xh-Ne7"/>
-                                <constraint firstAttribute="bottom" secondItem="uGf-au-cYG" secondAttribute="bottom" id="Ksw-qm-mva"/>
-                                <constraint firstAttribute="trailing" secondItem="uGf-au-cYG" secondAttribute="trailing" id="PNn-Pb-QHT"/>
-                                <constraint firstItem="uGf-au-cYG" firstAttribute="leading" secondItem="hcT-hb-gmJ" secondAttribute="leading" id="xqr-6p-LfB"/>
-                            </constraints>
-                        </view>
-                        <blurEffect style="extraLight"/>
-                    </visualEffectView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="xfh-BM-WXi"/>
             <constraints>
-                <constraint firstItem="ySt-tJ-FgG" firstAttribute="top" secondItem="Cnq-Rb-dNs" secondAttribute="top" constant="3" id="Tuy-o0-OBL"/>
                 <constraint firstItem="iKR-Ql-3nk" firstAttribute="leading" secondItem="Cnq-Rb-dNs" secondAttribute="leading" id="XXf-Xe-Cxv"/>
                 <constraint firstAttribute="bottom" secondItem="iKR-Ql-3nk" secondAttribute="bottom" id="cB9-MG-mK0"/>
                 <constraint firstItem="iKR-Ql-3nk" firstAttribute="top" secondItem="Cnq-Rb-dNs" secondAttribute="top" id="hs1-BC-gio"/>
-                <constraint firstItem="ySt-tJ-FgG" firstAttribute="leading" secondItem="Cnq-Rb-dNs" secondAttribute="leading" constant="3" id="mkg-8u-6dg"/>
-                <constraint firstAttribute="bottom" secondItem="ySt-tJ-FgG" secondAttribute="bottom" constant="118" id="rTa-0V-Ijr"/>
                 <constraint firstAttribute="trailing" secondItem="iKR-Ql-3nk" secondAttribute="trailing" id="sks-ao-93c"/>
-                <constraint firstAttribute="trailing" secondItem="ySt-tJ-FgG" secondAttribute="trailing" constant="77" id="xd3-O3-smd"/>
             </constraints>
             <connections>
                 <outlet property="cellImageView" destination="iKR-Ql-3nk" id="YbZ-JR-WI1"/>
-                <outlet property="deleteButton" destination="ySt-tJ-FgG" id="uBX-db-B2I"/>
             </connections>
             <point key="canvasLocation" x="-143.47826086956522" y="101.78571428571428"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="xmark.circle" catalog="system" width="128" height="121"/>
-    </resources>
 </document>
