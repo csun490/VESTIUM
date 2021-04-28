@@ -16,6 +16,7 @@ class PhotoCollectionViewController : UICollectionViewController {
     var selectedImage: UIImage!
     var filteredImage: UIImage?
     
+    
     struct Storyboard {
         static let photoCell = "PhotoCell"
         static let sectionHeaderView = "SectionHeaderView"
@@ -39,6 +40,7 @@ class PhotoCollectionViewController : UICollectionViewController {
         navigationItem.rightBarButtonItem = editButtonItem
         
         navigationController?.setToolbarHidden(false, animated: true)
+        collectionView?.reloadData()
     }
     
     @IBAction func addItemDidTap(_ sender: Any) {
@@ -164,8 +166,17 @@ extension PhotoCollectionViewController: UIImagePickerControllerDelegate, UINavi
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             selectedImage = image
             dismiss(animated: true, completion: { [self] in
-                self.performSegue(withIdentifier: "filterSegue", sender: nil)
-          
+               // self.performSegue(withIdentifier: "filterSegue", sender: nil)
+           /*
+                self.collectionView?.performBatchUpdates({
+                    let indexPath = IndexPath(row: photoCategories.count, section: 0)
+                    photoCategories.append(image) //add your object to data source first
+                    self.collectionView?.insertItems(at: [indexPath])
+                }, completion: nil)
+                
+                
+          */
+                
      /*
             let firstCategoryImageNames = photoCategories[0].imageNames
             let randomIndex = Int(arc4random()) % firstCategoryImageNames.count
