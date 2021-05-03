@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+
 
 struct PhotoCategory {
     var categoryImageName: String
@@ -45,15 +47,15 @@ class PhotosLibrary {
             ],
             "Top-Mid" : [
                 "categoryImageName" : "shirts",
-                "imageNames" : PhotosLibrary.generateImage(categoryPrefix: "tm", numberOfImages: 6),
+                "imageNames" : PhotosLibrary.generateImage(categoryPrefix: "tm", numberOfImages: 7),
             ],
             "Top-Outer" : [
                 "categoryImageName" : "jacket",
-                "imageNames" : PhotosLibrary.generateImage(categoryPrefix: "to", numberOfImages: 6),
+                "imageNames" : PhotosLibrary.generateImage(categoryPrefix: "to", numberOfImages: 7),
             ],
             "Bottom" : [
                 "categoryImageName" : "jeans",
-                "imageNames" : PhotosLibrary.generateImage(categoryPrefix: "b", numberOfImages: 6),
+                "imageNames" : PhotosLibrary.generateImage(categoryPrefix: "b", numberOfImages: 7),
             ],
             "Feet" : [
                 "categoryImageName" : "sneakers",
@@ -66,7 +68,8 @@ class PhotosLibrary {
         ]
     }
     
-    private class func generateImage(categoryPrefix: String, numberOfImages: Int) -> [String] {
+    private class func generateImage(categoryPrefix: String, numberOfImages: Int) -> [String]
+    {
         var imageNames = [String]()
         
         for i in 1...numberOfImages {

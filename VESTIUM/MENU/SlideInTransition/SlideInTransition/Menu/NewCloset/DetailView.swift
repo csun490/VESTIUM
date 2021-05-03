@@ -9,6 +9,7 @@
 import UIKit
 
 class DetailView : UIViewController {
+    @IBOutlet weak var donateImage: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     var image: UIImage!
 
@@ -39,6 +40,7 @@ class DetailView : UIViewController {
     }
     
     @IBAction func donateDidTap(_ sender: UIButton) {
+        donateImage.isHidden = false
         if sender.isSelected{
             sender.isSelected = false
         } else {

@@ -32,7 +32,8 @@ class FilterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        filterPhoto.image = selectedImage 
+        filterPhoto.image = selectedImage
+        
     }
     
     @IBAction func cancelButton(_ sender: Any) {
@@ -41,6 +42,7 @@ class FilterViewController: UIViewController {
     
     @IBAction func nextButton(_ sender: Any) {
         self.performSegue(withIdentifier: "closetSegue", sender: nil)
+        
         delegate?.updatePhoto(image: self.filterPhoto.image!)
     }
     
